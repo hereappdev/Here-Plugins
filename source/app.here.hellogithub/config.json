@@ -1,0 +1,15 @@
+{
+   "name": "HelloGitHub",
+   "version": "1.0",
+   "description": "HelloGitHub RSS Feed",
+   "icon": "icon.png",
+   "identifier": "app.here.hellogithub",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.hellogithub/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

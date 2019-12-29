@@ -1,0 +1,14 @@
+{
+   "name": "MD5 Encode",
+   "version": "1.0.0",
+   "description": "MD5 Encode",
+   "identifier": "app.here.encode",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.md5encode/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

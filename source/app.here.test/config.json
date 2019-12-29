@@ -1,0 +1,22 @@
+{
+   "name": "API Unit Test",
+   "version": "1.0",
+   "description": "Here App API Unit Test",
+   "identifier": "app.here.test",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.test/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "mini"
+   ],
+   "preferences": [
+    {
+        "title": "Test text type",
+        "type": "text",
+        "key": "testType",
+        "default": "testType"
+    }
+   ]
+}

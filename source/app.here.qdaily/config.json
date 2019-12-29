@@ -1,0 +1,15 @@
+{
+   "name": "好奇心日报",
+   "version": "1.0.1",
+   "description": "好奇心日报 RSS Feed",
+   "icon": "icon.png",
+   "identifier": "app.here.qdaily",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.qdaily/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

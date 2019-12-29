@@ -1,0 +1,15 @@
+{
+   "name": "Product Hunt",
+   "version": "1.0",
+   "description": "Product Hunt",
+   "icon": "icon.png",
+   "identifier": "app.here.producthunt",
+   "createdBy": "here Team",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.producthunt/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

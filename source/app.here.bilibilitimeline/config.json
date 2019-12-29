@@ -1,0 +1,15 @@
+{
+   "name": "bilibili新番时间表",
+   "version": "1.0",
+   "description": "拉取bilibili新番剧目时间表",
+   "icon": "icon.png",
+   "identifier": "app.here.bilibilitimeline",
+   "createdBy": "Here App",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.bilibilitimeline/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

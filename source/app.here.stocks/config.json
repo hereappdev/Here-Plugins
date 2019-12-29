@@ -1,0 +1,31 @@
+{
+   "name": "Stocks",
+   "version": "1.3",
+   "description": "This is a sample plugin",
+   "icon": "icon.png",
+   "identifier": "app.here.stocks",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.stocks/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "mini",
+      "menuBar",
+      "dock"
+   ],
+   "preferences": [
+       {
+            "title": "Stock Name",
+            "type": "text",
+            "key": "stockName",
+            "default": "Apple Inc."
+        },
+        {
+            "title": "Stock Code",
+            "type": "text",
+            "key": "stockCode",
+            "default": "AAPL"
+        }
+   ]
+}

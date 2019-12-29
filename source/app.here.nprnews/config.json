@@ -1,0 +1,15 @@
+{
+   "name": "NPR News",
+   "version": "1.0",
+   "description": "NPR News",
+   "icon": "icon.png",
+   "identifier": "app.here.nprnews",
+   "createdBy": "here Team",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.nprnews/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

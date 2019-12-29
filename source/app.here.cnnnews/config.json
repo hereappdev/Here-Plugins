@@ -1,0 +1,15 @@
+{
+   "name": "CNN News",
+   "version": "1.0",
+   "description": "CNN News",
+   "icon": "icon.png",
+   "identifier": "app.here.cnnnews",
+   "createdBy": "here Team",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.cnnnews/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

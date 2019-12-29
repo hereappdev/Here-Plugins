@@ -1,0 +1,29 @@
+{
+   "name": "App Center Analytics",
+   "version": "1.0",
+   "description": "App Center Analytics",
+   "icon": "icon.png",
+   "identifier": "app.here.appcenteranalytics",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.appcenteranalytics/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ],
+   "preferences": [
+       {
+            "title": "API Token",
+            "type": "text",
+            "key": "apiToken",
+            "default": "xxx"
+        },
+        {
+            "title": "Request URL",
+            "type": "text",
+            "key": "apiUrl",
+            "default": "https://api.appcenter.ms/v0.1/apps/xxx/xxx/analytics/versions?%24top=30&start="
+        }
+   ]
+}

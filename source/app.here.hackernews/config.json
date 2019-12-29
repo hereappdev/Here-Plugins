@@ -1,0 +1,15 @@
+{
+   "name": "Hacker News",
+   "version": "1.0",
+   "description": "Hacker News",
+   "icon": "icon.png",
+   "identifier": "app.here.hackernews",
+   "createdBy": "Here App",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.hackernews/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

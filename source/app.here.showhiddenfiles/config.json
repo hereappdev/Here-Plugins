@@ -1,0 +1,14 @@
+{
+   "name": "Show Hidden Files",
+   "version": "1.0.0",
+   "description": "Show Hidden Files",
+   "identifier": "app.here.showhiddenfiles",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.showhiddenfiles/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

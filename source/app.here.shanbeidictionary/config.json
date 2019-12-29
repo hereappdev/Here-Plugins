@@ -1,0 +1,15 @@
+{
+   "name": "扇贝词典",
+   "version": "1.0",
+   "description": "扇贝词典",
+   "icon": "icon.png",
+   "identifier": "app.here.shanbeidictionary",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.shanbeidictionary/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

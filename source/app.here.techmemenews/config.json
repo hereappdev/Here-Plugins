@@ -1,0 +1,15 @@
+{
+   "name": "Techmeme News",
+   "version": "1.0",
+   "description": "Techmeme News",
+   "icon": "icon.png",
+   "identifier": "app.here.techmemenews",
+   "createdBy": "here Team",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.techmemenews/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

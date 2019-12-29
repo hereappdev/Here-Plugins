@@ -1,0 +1,28 @@
+{
+   "name": "Currency Exchange",
+   "version": "1.0",
+   "description": "Currency Exchange",
+   "icon": "icon.png",
+   "identifier": "app.here.currencyexchange",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.currencyexchange/appcast.xml",
+   "script": "script.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "mini"
+   ],
+   "preferences": [
+       {
+            "title": "Currency Symbols",
+            "type": "text",
+            "key": "currencySymbols",
+            "default": "CNY"
+        },{
+            "title": "Display Currency",
+            "type": "text",
+            "key": "displaySymbols",
+            "default": "JPY"
+        }
+   ]
+}

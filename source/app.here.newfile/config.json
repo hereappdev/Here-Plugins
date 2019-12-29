@@ -1,0 +1,15 @@
+{
+   "name": "New File",
+   "version": "1.0",
+   "description": "This is a sample plugin",
+   "icon": "icon.png",
+   "identifier": "app.here.newfile",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.newfile/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

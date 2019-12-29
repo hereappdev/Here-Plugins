@@ -1,0 +1,17 @@
+{
+   "name": "Subscriptions",
+   "version": "1.0",
+   "description": "Subscriptions",
+   "icon": "icon.png",
+   "identifier": "app.here.subscriptions",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.subscriptions/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "menuBar",
+      "mini",
+      "dock"
+   ]
+}

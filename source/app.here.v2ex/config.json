@@ -1,0 +1,15 @@
+{
+   "name": "V2EX",
+   "version": "1.0",
+   "description": "This is a sample plugin",
+   "icon": "icon.png",
+   "identifier": "app.here.v2ex",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.v2ex/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

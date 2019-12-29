@@ -1,0 +1,15 @@
+{
+   "name": "Open Search",
+   "version": "1.0",
+   "description": "Open Search",
+   "icon": "icon.png",
+   "identifier": "app.here.opensearch",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.opensearch/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

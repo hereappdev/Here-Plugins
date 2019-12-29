@@ -1,0 +1,15 @@
+{
+   "name": "App Store Ranking",
+   "version": "1.0",
+   "description": "App Store Ranking",
+   "icon": "icon.png",
+   "identifier": "app.here.appstorerank",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.appstorerank/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

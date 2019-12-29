@@ -1,0 +1,15 @@
+{
+   "name": "BBC News",
+   "version": "1.0",
+   "description": "BBC News",
+   "icon": "icon.png",
+   "identifier": "app.here.bbcnews",
+   "createdBy": "here Team",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.bbcnews/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

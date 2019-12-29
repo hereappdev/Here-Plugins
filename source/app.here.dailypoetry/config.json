@@ -1,0 +1,16 @@
+{
+   "name": "每日诗词",
+   "version": "1.0",
+   "description": "每日诗词",
+   "icon": "icon.png",
+   "identifier": "app.here.dailypoetry",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.dailypoetry/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini",
+      "menuBar"
+   ]
+}

@@ -1,0 +1,15 @@
+{
+   "name": "微信热搜榜",
+   "version": "1.0",
+   "description": "查看微信热搜词条",
+   "icon": "icon.png",
+   "identifier": "app.here.weixinhotsearch",
+   "createdBy": "here Team",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.weixinhotsearch/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

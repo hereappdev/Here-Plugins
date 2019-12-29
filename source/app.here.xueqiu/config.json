@@ -1,0 +1,15 @@
+{
+   "name": "雪球每日热帖",
+   "version": "1.0",
+   "description": "雪球每日热帖",
+   "icon": "icon.png",
+   "identifier": "app.here.xueqiu",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.xueqiu/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

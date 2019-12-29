@@ -1,0 +1,17 @@
+{
+   "name": "Battery Status",
+   "version": "1.0.1",
+   "description": "Show battery status",
+   "icon": "icon.png",
+   "identifier": "app.here.battery",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.battery/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "menuBar",
+      "mini",
+      "dock"
+   ]
+}

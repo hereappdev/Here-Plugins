@@ -1,0 +1,15 @@
+{
+   "name": "Github Trending",
+   "version": "1.0",
+   "description": "Github Trending",
+   "icon": "icon.png",
+   "identifier": "app.here.githubtrending",
+   "createdBy": "Here App",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.githubtrending/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

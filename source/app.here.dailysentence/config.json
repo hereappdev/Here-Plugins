@@ -1,0 +1,16 @@
+{
+   "name": "每日一句英文",
+   "version": "1.0",
+   "description": "每日一句英文",
+   "icon": "icon.png",
+   "identifier": "app.here.dailysentence",
+   "createdBy": "Here App",
+   "website": "https://here.app",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.dailysentence/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini",
+      "menuBar"
+   ]
+}

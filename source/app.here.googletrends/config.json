@@ -1,0 +1,15 @@
+{
+   "name": "Google Trends",
+   "version": "1.0",
+   "description": "Google Trends",
+   "icon": "icon.png",
+   "identifier": "app.here.googletrends",
+   "createdBy": "here Team",
+   "website": "https://here.app/",
+   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.googletrends/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}
