@@ -8,7 +8,7 @@
    "website": "https://here.app",
    "appcast": "https://plugins.herecdn.com/source/app.here.subscriptions/appcast.xml",
    "script": "index.js",
-   "defaultCategory": "fav",
+   "defaultCategory": "quick",
    "displayOn": [
       "menuBar",
       "mini",
