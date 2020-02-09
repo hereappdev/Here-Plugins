@@ -1,12 +1,12 @@
 {
    "name": "New York Times",
-   "version": "1.0",
-   "description": "New York Times",
+   "version": "1.0.0",
+   "description": "Show hot news",
    "icon": "icon.png",
    "identifier": "app.here.nytimesnews",
-   "createdBy": "here Team",
-   "website": "https://here.app/",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.nytimesnews/appcast.xml",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/app.here.nytimesnews/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

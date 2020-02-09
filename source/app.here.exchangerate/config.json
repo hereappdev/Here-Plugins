@@ -1,12 +1,12 @@
 {
    "name": "人民币汇率",
-   "version": "1.0",
-   "description": "人民币兑多国货币牌价(中国人民银行)",
+   "version": "1.0.0",
+   "description": "显示人民币兑其他货币汇率(中国人民银行)",
    "icon": "icon.png",
    "identifier": "app.here.exchangerate",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.exchangerate/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.exchangerate/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

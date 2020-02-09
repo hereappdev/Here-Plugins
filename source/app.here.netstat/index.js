@@ -30,9 +30,9 @@ function netUsage() {
             detail: "⇡" + deltaout
         })
     })
-    .catch((err) => {
-        console.error(err)
-        here.returnError(err)
+    .catch((error) => {
+        console.error(JSON.stringify(error))
+        here.setMiniWindow({ title: JSON.stringify(error) })
     })
 }
 

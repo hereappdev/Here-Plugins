@@ -1,6 +1,7 @@
 const _ = require("underscore")
 const pref = require("pref")
 const http = require("http")
+const net = require("net")
 
 function updateData() {
     const LIMIT = 10
@@ -25,7 +26,7 @@ function updateData() {
 
     } else {
         here.setMiniWindow({ title: "No API token found", detail: "MS App Center"})
-        return here.returnErrror("invalid apiToken.")
+        return here.setMiniWindow({ title: "invalid apiToken."})
     }
 
     here.setMiniWindow({ title: "Updating…" })
@@ -80,4 +81,11 @@ here.onLoad(() => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
+})
+
+net.onChange((type) => {
+    console.log("Connection type changed:", type)
+    if (net.isReachable()) {
+        updateData()
+    }
 })

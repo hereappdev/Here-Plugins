@@ -1,12 +1,12 @@
 {
    "name": "App Center Analytics",
-   "version": "1.0",
-   "description": "App Center Analytics",
+   "version": "1.0.0",
+   "description": "Show analytics from Visual Studio App Center",
    "icon": "icon.png",
    "identifier": "app.here.appcenteranalytics",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.appcenteranalytics/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.appcenteranalytics/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

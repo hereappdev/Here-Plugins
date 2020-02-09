@@ -1,12 +1,12 @@
 {
    "name": "Stocks",
    "version": "1.3",
-   "description": "This is a sample plugin",
+   "description": "Show stocks everywhere",
    "icon": "icon.png",
    "identifier": "app.here.stocks",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.stocks/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.stocks/appcast.xml",
    "script": "index.js",
    "defaultCategory": "fav",
    "displayOn": [

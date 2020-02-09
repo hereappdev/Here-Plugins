@@ -1,12 +1,12 @@
 {
    "name": "Open Search",
-   "version": "1.0",
-   "description": "Open Search",
+   "version": "1.0.0",
+   "description": "Open search engine with clipboard content",
    "icon": "icon.png",
    "identifier": "app.here.opensearch",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.opensearch/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.opensearch/appcast.xml",
    "script": "index.js",
    "defaultCategory": "quick",
    "displayOn": [

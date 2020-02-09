@@ -20,7 +20,7 @@ here.onLoad(() => {
                 }
             })
             .catch((error) => {
-                console.error(`Faild to execute command. Error: ${error}`)
+                console.error(`Faild to execute command. Error: ${JSON.stringify(error)}`)
                 here.hudNotification("Failed to empty trash")
             })
         }

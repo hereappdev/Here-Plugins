@@ -78,8 +78,8 @@ function updateBatteryInfo() {
         })
     })
     .catch((err) => {
-        console.error(err)
-        here.returnError(err)
+        console.error(`Error: ${JSON.stringify(error)}`)
+        here.setMiniWindow({ title: err })
     })
 }
 

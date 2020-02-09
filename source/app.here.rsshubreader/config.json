@@ -1,12 +1,12 @@
 {
    "name": "RSSHub Reader",
-   "version": "1.0",
-   "description": "RSSHub Reader",
+   "version": "1.0.0",
+   "description": "Show rss feeds from RSSHub APIs",
    "icon": "icon.png",
    "identifier": "app.here.rsshubreader",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.rsshubreader/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.rsshubreader/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

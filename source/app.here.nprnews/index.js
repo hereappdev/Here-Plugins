@@ -1,4 +1,5 @@
 const _ = require("underscore")
+const net = require("net")
 
 function updateData() {
     const LIMIT = 10
@@ -7,7 +8,7 @@ function updateData() {
     here.parseRSSFeed("https://www.npr.org/rss/rss.php")
     .then((feed) => {
         if (feed.items.length <= 0) {
-            return here.returnError("No item found.")
+            return here.setMiniWindow({ title: "No item found." })
         }
 
         if (feed.items.length > LIMIT) {
@@ -30,7 +31,7 @@ function updateData() {
         })
     })
     .catch((error) => {
-        console.error(`Error: ${error}`)
+        console.error(`Error: ${JSON.stringify(error)}`)
     })
 }
 
@@ -38,4 +39,11 @@ here.onLoad(() => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
+})
+
+net.onChange((type) => {
+    console.log("Connection type changed:", type)
+    if (net.isReachable()) {
+        updateData()
+    }
 })

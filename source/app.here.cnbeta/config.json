@@ -1,12 +1,12 @@
 {
    "name": "cnBeta",
-   "version": "1.0",
-   "description": "cnBeta 新闻",
+   "version": "1.0.0",
+   "description": "显示实时热文",
    "icon": "icon.png",
    "identifier": "app.here.cnbeta",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.cnbeta/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.cnbeta/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

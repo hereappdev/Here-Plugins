@@ -1,6 +1,7 @@
 const _ = require("underscore")
 const http = require("http")
 const pref = require("pref")
+const net = require("net")
 
 function updateData() {
 
@@ -32,11 +33,11 @@ function updateData() {
         currencyValue = entryList[currencySymbols]
     
         if (entryList == undefined) {
-            return here.returnErrror("Invalid data.")
+            return here.setMiniWindow({ title: "Invalid data." })
         }
     
         if (entryList.length <= 0) {
-            return here.returnErrror("Entrylist is empty.")
+            return here.setMiniWindow({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -62,4 +63,11 @@ function updateData() {
 
 here.onLoad(() => {
     updateData()
+})
+
+net.onChange((type) => {
+    console.log("Connection type changed:", type)
+    if (net.isReachable()) {
+        updateData()
+    }
 })

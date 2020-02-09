@@ -1,5 +1,6 @@
 const _ = require("underscore")
 const http = require("http")
+const net = require("net")
 
 function updateData() {
     const LIMIT = 10
@@ -13,12 +14,12 @@ function updateData() {
             || json.cards == undefined
             || json.cards[0] == undefined
             || json.cards[0].card_group == undefined) {
-            return here.returnErrror("Invalid data.")
+            return here.setMiniWindow({ title: "Invalid data." })
         }
     
         entryList = json.cards[0].card_group
         if (entryList.length <= 1) {
-            return here.returnErrror("Entrylist is empty.")
+            return here.setMiniWindow({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -55,8 +56,8 @@ function updateData() {
         })
     })
     .catch(function(error) {
-        console.error(`Error: ${error}`)
-        here.returnErrror(error)
+        console.error(`Error: ${JSON.stringify(error)}`)
+        here.setMiniWindow({ title: JSON.stringify(error) })
     })
 }
 
@@ -64,4 +65,11 @@ here.onLoad(() => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
+})
+
+net.onChange((type) => {
+    console.log("Connection type changed:", type)
+    if (net.isReachable()) {
+        updateData()
+    }
 })

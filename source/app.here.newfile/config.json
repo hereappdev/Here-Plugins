@@ -1,12 +1,12 @@
 {
    "name": "New File",
-   "version": "1.0",
-   "description": "This is a sample plugin",
+   "version": "1.0.0",
+   "description": "Create a new, blank text file",
    "icon": "icon.png",
    "identifier": "app.here.newfile",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.newfile/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.newfile/appcast.xml",
    "script": "index.js",
    "defaultCategory": "quick",
    "displayOn": [

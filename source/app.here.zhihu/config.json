@@ -1,12 +1,12 @@
 {
    "name": "知乎热榜",
-   "version": "1.0",
-   "description": "Top Questins on zhihu.com",
+   "version": "1.0.0",
+   "description": "显示热门话题",
    "icon": "icon.png",
    "identifier": "app.here.zhihu",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.zhihu/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.zhihu/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

@@ -15,13 +15,13 @@ function updateData() {
         // console.debug(`json: ${json}`)
     
         if (json == undefined) {
-            return here.returnErrror("Invalid data.")
+            return here.setMiniWindow({ title: "Invalid data." })
         }
     
         let entryList = json.default.trendingSearches
         // console.debug(entryList)
         if (entryList.length <= 1) {
-            return here.returnErrror("Entrylist is empty.")
+            return here.setMiniWindow({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -56,8 +56,8 @@ function updateData() {
         })
     })
     .catch(function(error) {
-        console.error(`Error: ${error}`)
-        here.returnErrror(error)
+        console.error(`Error: ${JSON.stringify(error)}`)
+        here.setMiniWindow({ title: JSON.stringify(error) })
     })
 }
 

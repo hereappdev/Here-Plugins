@@ -1,12 +1,12 @@
 {
    "name": "CPU Usage",
-   "version": "1.0",
-   "description": "Show CPU usage",
+   "version": "1.0.0",
+   "description": "Show system CPU usage",
    "icon": "icon.png",
    "identifier": "app.here.cpu",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.cpu/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.cpu/appcast.xml",
    "script": "index.js",
    "defaultCategory": "fav",
    "displayOn": [

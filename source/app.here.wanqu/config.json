@@ -1,12 +1,12 @@
 {
    "name": "湾区日报",
-   "version": "1.0",
-   "description": "湾区日报 RSS Feed",
+   "version": "1.0.0",
+   "description": "显示每日文章",
    "icon": "icon.png",
    "identifier": "app.here.wanqu",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.wanqu/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.wanqu/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

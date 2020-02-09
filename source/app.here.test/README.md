@@ -1,1 +1,1 @@
-# Empty Trash for Here App
+This is a sample plugin for testing 

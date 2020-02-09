@@ -1,12 +1,12 @@
 {
    "name": "每日一句英文",
-   "version": "1.0",
-   "description": "每日一句英文",
+   "version": "1.0.0",
+   "description": "英文语句，点滴积累",
    "icon": "icon.png",
    "identifier": "app.here.dailysentence",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.dailysentence/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.dailysentence/appcast.xml",
    "script": "index.js",
    "defaultCategory": "quick",
    "displayOn": [

@@ -1,13 +1,13 @@
 {
    "name": "Currency Exchange",
-   "version": "1.0",
-   "description": "Currency Exchange",
+   "version": "1.0.0",
+   "description": "Show exchange rate conversion",
    "icon": "icon.png",
    "identifier": "app.here.currencyexchange",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.currencyexchange/appcast.xml",
-   "script": "script.js",
+   "appcast": "https://plugins.herecdn.com/source/app.here.currencyexchange/appcast.xml",
+   "script": "index.js",
    "defaultCategory": "fav",
    "displayOn": [
       "mini"

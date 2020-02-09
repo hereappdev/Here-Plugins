@@ -1,12 +1,12 @@
 {
    "name": "实时金价",
-   "version": "1.0",
-   "description": "实时黄金价格",
+   "version": "1.0.0",
+   "description": "显示实时黄金价格",
    "icon": "icon.png",
    "identifier": "app.here.goldprice",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.goldprice/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.goldprice/appcast.xml",
    "script": "index.js",
    "defaultCategory": "fav",
    "displayOn": [

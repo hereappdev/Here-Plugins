@@ -1,12 +1,12 @@
 {
    "name": "雪球每日热帖",
-   "version": "1.0",
-   "description": "雪球每日热帖",
+   "version": "1.0.0",
+   "description": "显示热门文章",
    "icon": "icon.png",
    "identifier": "app.here.xueqiu",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.xueqiu/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.xueqiu/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

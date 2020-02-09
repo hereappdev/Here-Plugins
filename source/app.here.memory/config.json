@@ -1,12 +1,12 @@
 {
    "name": "Memory Usage",
-   "version": "1.0",
-   "description": "Show memory usage",
+   "version": "1.0.0",
+   "description": "Show system memory usage",
    "icon": "icon.png",
    "identifier": "app.here.memory",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.memory/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.memory/appcast.xml",
    "script": "index.js",
    "defaultCategory": "fav",
    "displayOn": [

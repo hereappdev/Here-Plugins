@@ -1,12 +1,12 @@
 {
    "name": "V2EX",
-   "version": "1.0",
-   "description": "This is a sample plugin",
+   "version": "1.0.0",
+   "description": "显示最新热帖",
    "icon": "icon.png",
    "identifier": "app.here.v2ex",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.v2ex/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.v2ex/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

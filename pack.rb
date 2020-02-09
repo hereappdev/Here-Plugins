@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+
+# How to pack your plugins: https://github.com/hereappdev/Here-Plugins/wiki/How-to-pack-your-plugins
+
 require 'optparse'
 require 'logger'
 require 'json'

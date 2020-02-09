@@ -1,6 +1,7 @@
 const _ = require("underscore")
 const http = require("http")
 const pasteboard = require('pasteboard')
+const net = require("net")
 
 var isIp = function (){
     var regexp = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/;     
@@ -61,11 +62,18 @@ function updateData() {
         })
     })
     .catch((error) => {
-        console.error(error)
+        console.error(JSON.stringify(error))
         here.setMiniWindow({ title: "Failed to get IP address.", detail: "Copy IP firstly" })
     })
 }
 
 here.onLoad(() => {
     updateData()
+})
+
+net.onChange((type) => {
+    console.log("Connection type changed:", type)
+    if (net.isReachable()) {
+        updateData()
+    }
 })

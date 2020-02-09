@@ -1,12 +1,12 @@
 {
    "name": "豆瓣电影(热映榜)",
-   "version": "1.0",
-   "description": "拉取豆瓣电影热映",
+   "version": "1.0.0",
+   "description": "显示豆瓣近期热映电影",
    "icon": "icon.png",
    "identifier": "app.here.doubanmovie",
-   "createdBy": "Here App",
-   "website": "https://here.app/",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.doubanmovie/appcast.xml",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/app.here.doubanmovie/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

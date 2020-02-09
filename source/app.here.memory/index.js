@@ -65,9 +65,9 @@ function updateMemoryInfo() {
             detail: mem_size
         })
     })
-    .catch((err) => {
-        console.error(err)
-        here.returnError(err)
+    .catch((error) => {
+        console.error(JSON.stringify(error))
+        here.setMiniWindow({ title: error })
     })
 }
 

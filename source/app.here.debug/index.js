@@ -2,7 +2,7 @@ const pb = require("pasteboard")
 const process = require("process")
 const _ = require("underscore")
 
-here.onLoad(() => {
+function updateData() {
     const versions = process.versions
     const keys = _.allKeys(versions)
     let popOvers = _.map(keys, (key) => {
@@ -22,6 +22,13 @@ here.onLoad(() => {
         title: "Reveal Plugins in Finder",
         onClick: () => { process.openPluginsFolder() }
     })
+    popOvers.push({ 
+        title: `Toggle auto install preloaded plugins: ${process.installPreloadPluginsAtLaunch()}`,
+        onClick: () => { 
+            process.toggleInstallPreloadPluginsAtLaunch() 
+            updateData()
+        }
+    })
 
     // Mini Window
     here.setMiniWindow({
@@ -33,4 +40,9 @@ here.onLoad(() => {
             here.hudNotification("Debug info copied.")
         }
     })
+
+}
+
+here.onLoad(() => {
+    updateData()
 })

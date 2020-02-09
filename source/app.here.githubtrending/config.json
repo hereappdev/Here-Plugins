@@ -1,12 +1,12 @@
 {
    "name": "Github Trending",
-   "version": "1.0",
-   "description": "Github Trending",
+   "version": "1.0.0",
+   "description": "Show what the GitHub is most excited about today",
    "icon": "icon.png",
    "identifier": "app.here.githubtrending",
-   "createdBy": "Here App",
-   "website": "https://here.app/",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.githubtrending/appcast.xml",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/app.here.githubtrending/appcast.xml",
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [

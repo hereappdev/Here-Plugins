@@ -1,11 +1,11 @@
 {
    "name": "API Unit Test",
-   "version": "1.0",
+   "version": "1.0.0",
    "description": "Here App API Unit Test",
    "identifier": "app.here.test",
-   "createdBy": "Here App",
+   "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://raw.githubusercontent.com/hereappdev/plugins/master/source/app.here.test/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/app.here.test/appcast.xml",
    "script": "index.js",
    "defaultCategory": "fav",
    "displayOn": [

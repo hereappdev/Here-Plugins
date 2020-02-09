@@ -14,11 +14,11 @@ function onClick() {
         console.debug(entryList.definition)
 
         if (entryList == undefined) {
-            return here.returnErrror("Invalid data.")
+            return here.setMiniWindow({ title: "Invalid data." })
         }
 
         if (entryList.length <= 0) {
-            return here.returnErrror("Entrylist is empty.")
+            return here.setMiniWindow({ title: "Entrylist is empty." })
         }
 
         if (entryList.length > LIMIT) {
@@ -33,8 +33,8 @@ function onClick() {
         })
     })
     .catch(function(error) {
-        // console.error(`Error: ${error}`)
-        here.returnErrror(error)
+        // console.error(`Error: ${JSON.stringify(error)}`)
+        here.setMiniWindow({ title: JSON.stringify(error) })
     })
 }
 

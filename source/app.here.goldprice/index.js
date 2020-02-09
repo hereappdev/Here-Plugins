@@ -1,5 +1,6 @@
 const _ = require("underscore")
 const http = require("http")
+const net = require("net")
     
 function strToVar(str) {
     var json = (new Function("return " + str))();
@@ -41,8 +42,8 @@ function updateData() {
         })
     })
     .catch(function(error) {
-        console.error(`Error: ${error}`)
-        here.returnErrror(error)
+        console.error(`Error: ${JSON.stringify(error)}`)
+        here.setMiniWindow({ title: JSON.stringify(error) })
     })
 }
 
@@ -50,4 +51,12 @@ here.onLoad(() => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
+})
+
+
+net.onChange((type) => {
+    console.log("Connection type changed:", type)
+    if (net.isReachable()) {
+        updateData()
+    }
 })
