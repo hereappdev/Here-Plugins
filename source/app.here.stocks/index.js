@@ -4,12 +4,21 @@ const pref = require("pref")
 const net = require("net")
 
 function updateData() {
-    // Apple gb_aapl
-    // Google gb_googl
-    // Tencent hk00700
-    // Alibaba hk09988
-    // 贵州茅台 sh600519
-    // 工商银行 sh601398
+
+    // Stock code sample
+
+    // gb_aapl Apple
+    // gb_googl Google
+
+    // hk00700 Tencent
+    // hk09988 Alibaba
+
+    // sh600519 贵州茅台
+    // sh601398 工商银行
+
+    // sz300750 宁德时代
+    // sz300418 昆仑万维
+
     var stockCode = "gb_aapl"
     var stockName = "Apple Inc."
 
@@ -49,7 +58,12 @@ function updateData() {
         case "hk":
             arrIndex = [9, 8, 7, 3, 4, 17]
             break;
-        case "sh":
+        case "sz" || "sh":
+            arr[10] =  arr[3] - arr[2]
+            arr[11] =  arr[10]/arr[2] * 100
+            arrIndex = [3, 11, 10, 2, 3, 30]
+            break;
+        default:
             arr[10] =  arr[3] - arr[2]
             arr[11] =  arr[10]/arr[2] * 100
             arrIndex = [3, 11, 10, 2, 3, 30]

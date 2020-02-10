@@ -1,6 +1,6 @@
 {
    "name": "Stocks",
-   "version": "1.3",
+   "version": "1.3.1",
    "description": "Show stocks everywhere. [Stock Code]: http://t.cn/A6PsY7nV",
    "icon": "icon.png",
    "identifier": "app.here.stocks",
