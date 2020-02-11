@@ -5,8 +5,7 @@ here.onLoad(() => {
         detail: "Clean up trash can.",
         onClick: () => {
             console.debug("Did click on miniwin cell")
-
-            here.exec("rm -rf ~/.Trash/*")
+            here.exec("osascript -e 'tell application \"Finder\" to empty trash'")
             .then((stdOut) => {
                 // console.debug("stdOut: ", stdOut)
                 if (stdOut != undefined && stdOut.length > 0) {
