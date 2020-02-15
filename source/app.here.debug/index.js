@@ -15,13 +15,20 @@ function updateData() {
         }
     })
     popOvers.push({ 
-        title: "Reveal Logs in Finder",
+        title: "Reveal Logs in Finder…",
         onClick: () => { process.openLogsFolder() }
     })
     popOvers.push({ 
-        title: "Reveal Plugins in Finder",
+        title: "Reveal Plugins in Finder…",
         onClick: () => { process.openPluginsFolder() }
     })
+    if (typeof(process.checkForUpdates) === "function") { 
+        // checkForUpdates function exists
+        popOvers.push({
+            title: "Check for Updates…",
+            onClick: () => { process.checkForUpdates() }
+        })
+    }
     popOvers.push({ 
         title: `Toggle auto install preloaded plugins: ${process.installPreloadPluginsAtLaunch()}`,
         onClick: () => { 
