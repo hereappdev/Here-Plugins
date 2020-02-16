@@ -3,7 +3,7 @@
    "version": "1.0.0",
    "description": "Show Apps rank list on App Store",
    "icon": "icon.png",
-   "identifier": "app.here.appstorerank",
+   "identifier": "app.here.appstoreranking",
    "createdBy": "Here",
    "website": "https://here.app",
    "appcast": "https://plugins.herecdn.com/source/app.here.appstorerank/appcast.xml",

@@ -5,6 +5,7 @@ const net = require("net")
 function updateData() {
     const LIMIT = 100
 
+    console.log("Featching app store data…")
     here.setMiniWindow({ title: "Updating…" })
     // API https://rss.itunes.apple.com/en-us
     http.get("https://rss.itunes.apple.com/api/v1/cn/ios-apps/top-free/all/100/explicit.json")
@@ -16,6 +17,7 @@ function updateData() {
             return here.setMiniWindow({ title: "Invalid data." })
         }
 
+        console.log("Updated. Entrylist count: ", entryList.length)
         if (entryList.length <= 0) {
             return here.setMiniWindow({ title: "Entrylist is empty." })
         }
@@ -46,7 +48,8 @@ function updateData() {
                     title: (index + 1) + ". " + entry.title,
                     accessory: {
                         title: entry.rank,
-                        imageURL: entry.appIcon
+                        imageURL: entry.appIcon,
+                        imageCornerRadius: 4
                     },
                     onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
                 }
