@@ -27,6 +27,7 @@ function updateData() {
         entryList = _.map(entryList, (entry, key) => {
             entry.title = entry["name"]
             entry.url = entry["artistUrl"]
+            entry.appIcon = entry["artworkUrl100"]
             entry.rank = entry["genres"][0]["name"]
             return entry
         })
@@ -44,7 +45,8 @@ function updateData() {
                 return {
                     title: (index + 1) + ". " + entry.title,
                     accessory: {
-                        title: entry.rank 
+                        title: entry.rank,
+                        imageURL: entry.appIcon
                     },
                     onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
                 }
