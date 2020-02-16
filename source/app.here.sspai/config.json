@@ -1,0 +1,43 @@
+{
+   "name": "SSPai",
+   "version": "1.0.0",
+   "description": "Show latest articles from sspai.com",
+   "identifier": "app.here.sspai",
+   "createdBy": "Lifesign",
+   "icon": "icon.png",
+   "website": "https://github.com/lifesign/here-plugin-sspai",
+   "script": "index.js",
+   "defaultCategory": "News",
+   "displayOn": [
+      "mini",
+   ],
+   "preferences": [
+      {
+          "title": "更新时间(h)",
+          "type": "text",
+          "key": "update-frequency",
+          "default": "2"
+      },
+      {
+          "title": "文章拉取数量",
+          "type": "popup",
+          "key": "article-num",
+          "default": 0,
+          "options": [
+              "10",
+              "15",
+              "20"
+          ]
+      },
+      {
+          "title": "更新频道",
+          "type": "popup",
+          "key": "update-channel",
+          "default": 0,
+          "options": [
+              "Matrix",
+              "首页推荐(暂未支持)",
+          ]
+      }
+   ]
+}
