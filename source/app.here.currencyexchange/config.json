@@ -1,6 +1,6 @@
 {
    "name": "Currency Exchange",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "Show exchange rate conversion",
    "icon": "icon.png",
    "identifier": "app.here.currencyexchange",
