@@ -1,14 +1,45 @@
 #!/usr/bin/env ruby
 
 # How to pack your plugins: https://github.com/hereappdev/Here-Plugins/wiki/How-to-pack-your-plugins
-
 require 'optparse'
 require 'logger'
 require 'json'
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+    opts.banner = "Usage: pack.rb"
+
+    opts.on("-a", "--all", "Pack all plugins") do |a|
+        options[:all] = a
+    end
+
+    opts.on("-p", "--Plugin path", Array, "Plugin path to be packed") do |input|
+        options[:path] = input.first
+    end
+
+    opts.on( '-h', '--help', 'Display this screen' ) do
+        puts opts
+        exit
+    end
+
+    opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
+        options[:verbose] = v
+    end
+
+end.parse!
+
+# p options
+# exit
 
 $log = Logger.new(STDOUT)
-$log.level = Logger::DEBUG
+$log.level = Logger::INFO
+if options[:verbose]
+    $log.level = Logger::DEBUG
+end
 $log.datetime_format = "%Y-%m-%d %H:%M:%S"
+
+$log.debug("argv: #{options}")
 
 def packPlugin(folder_path)
     if folder_path.empty?
@@ -40,12 +71,30 @@ def packPlugin(folder_path)
     end
 end
 
-plugins = Dir["./source/*"]
-plugins.each do |plugin| 
-    packPlugin(plugin)
-end
+if options[:all]
+    $log.info("Will pack all plugins under ./source")
+    plugins = Dir["./source/*"]
+    plugins.each do |plugin|
+        $log.debug("Packing #{plugin}")
+        packPlugin(plugin)
+    end
 
-if system("mv ./source/*.hereplugin ./downloads") != true
-    $log.error("Failed to mv files to downloads.")
-    exit 1
+    if system("mv ./source/*.hereplugin ./downloads") != true
+        $log.error("Failed to mv files to downloads.")
+        exit 1
+    end
+else
+    path = options[:path]
+    if !path
+        $log.info("No plugin path speicified. try pack.rb -p /path/to/the/plugin")
+        exit 1
+    end
+    $log.info("Will pack plugin from #{path}")
+    packPlugin(path)
+    
+    if system("mv ./source/*.hereplugin ./downloads") != true
+        $log.error("Failed to mv files to downloads.")
+        exit 1
+    end
+    
 end
