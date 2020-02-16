@@ -51,6 +51,11 @@ function updateData() {
         }
     })
 
+    // Menu Bar
+    here.setMenuBar({ title: process.version })
+
+    // Dock
+    here.setDock({ title: "Here" })
 }
 
 here.onLoad(() => {
