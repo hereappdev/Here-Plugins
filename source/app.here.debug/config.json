@@ -1,6 +1,6 @@
 {
    "name": "Debug Info",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "Show developing info",
    "icon": "icon.png",
    "identifier": "app.here.debug",

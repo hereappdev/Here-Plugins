@@ -5,6 +5,9 @@ const _ = require("underscore")
 function updateData() {
     const versions = process.versions
     const keys = _.allKeys(versions)
+    if (keys.includes("uuid")) {
+        keys.splice(keys.indexOf("uuid"), 1)
+    }
     let popOvers = _.map(keys, (key) => {
         let val = versions[key]
         return {
