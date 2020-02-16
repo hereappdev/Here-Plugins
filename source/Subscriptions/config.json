@@ -1,0 +1,15 @@
+{
+   "name": "Subscriptions",
+   "version": "1.0.2",
+   "description": "Show and calculation on all your subscription services",
+   "icon": "icon.png",
+   "identifier": "app.here.subscriptions",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Subscriptions/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

@@ -2,36 +2,36 @@ Plugins for [Here]
 ----
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE.md) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/hereappdev/Here-Plugins/pulls) [![Here contributors](https://img.shields.io/github/contributors/hereappdev/Here-Plugins.svg)](https://github.com/hereappdev/Here-Plugins/graphs/contributors)
 
-English | [简体中文](./README_zh.md) | [Homepage]
+[English](./README.md) | 简体中文 | [Homepage]
 
-[Here] is a productivity App for macOS, It's in `Beta Testing` now.  
-This repo contains the source code and downloads of [Here] plugins.
+[Here] 是一款全新的 macOS 效率工具，目前正在进行 `Beta` 内测。 
+本仓库包含了 [Here] 插件的下载和源码。
 
-![Here for macOS](https://res.here.app/img/screenshot-en.png)
+![Here for macOS](https://res.here.app/img/screenshot.png)
 
-## Resources
+## 相关资源
 
-* Homepage: https://here.app
-* Documentation: https://doc.here.app
-* Release Notes: https://here.app/release-notes/
-* Telegram Group: [@HereApp]
-* WeChat Group: [@HereApp](https://res.here.app/img/wx.png)
-* Feedback：[Github Issues]
+* 官网：https://here.app
+* 插件开发文档：https://doc.here.app
+* 发布日志：https://here.app/release-notes/
+* 电报群：[@HereApp]
+* 微信群：[@HereApp](https://res.here.app/img/wx.png)
+* 用户反馈：[Github Issues]
 
-## Contributing
+## 参与贡献
 
-Fork this repo and then submit your plugins with [Pull Request].
+`Fork` 本仓库，通过 [Pull Request] 提交发布你的作品。
 
-* [Create Your Own Custom Plugins for Here]
-* [Pack and Submit Your Plugins into Offical Repo]
-* [Plugin Developer Documentation]
+* [快速制作一个 Here 插件]
+* [打包插件并发布到官方插件库]
+* [插件开发文档]
 * [Here Plugin Generator] *by @Lifesign*
 
-## Plugin Categories
+## 插件目录
 
-### News & Feeds
+### 新闻 & 信息流
 
-| ㅤ | Plugin Name | Description | Author | Download |
+| ㅤ | 插件名 | 描述 | 作者 | 下载安装 |
 | ---- | :---- | :---- | :---- | :----: |
 <img width="24" src="https://plugins.herecdn.com/image/Hacker-News/icon.png"/> | [Hacker News](https://plugins.herecdn.com/downloads/Hacker-News.hereplugin) | Show hot posts | @Here | <a href="https://plugins.herecdn.com/downloads/Hacker-News.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Hacker-News.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Product-Hunt/icon.png"/> | [Product Hunt](https://plugins.herecdn.com/downloads/Product-Hunt.hereplugin) | Show hot posts | @Here | <a href="https://plugins.herecdn.com/downloads/Product-Hunt.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Product-Hunt.hereplugin">🔌</a> |
@@ -55,9 +55,9 @@ Fork this repo and then submit your plugins with [Pull Request].
 <img width="24" src="https://plugins.herecdn.com/image/Horrible-Subs/icon.png"/> | [HorribleSubs Monitor](https://plugins.herecdn.com/downloads/Horrible-Subs.hereplugin) | Show the latest 50 animes on Horriblesubs | [@ostrichb](https://blog.ostrichbeta.me) | <a href="https://plugins.herecdn.com/downloads/Horrible-Subs.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Horrible-Subs.hereplugin">🔌</a> |
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
-### Trends & Ranking
+### 趋势 & 排行榜
 
-| ㅤ | Plugin Name | Description | Author | Download |
+| ㅤ | 插件名 | 描述 | 作者 | 下载安装 |
 | ---- | :---- | :---- | :---- | :----: |
 <img width="24" src="https://plugins.herecdn.com/image/Google-Trends/icon.png"/> | [Google Trends](https://plugins.herecdn.com/downloads/Google-Trends.hereplugin) | Show what's trending on Google | @Here | <a href="https://plugins.herecdn.com/downloads/Google-Trends.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Google-Trends.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Github-Trending/icon.png"/> | [Github Trending](https://plugins.herecdn.com/downloads/Github-Trending.hereplugin) | Show what the GitHub is most excited about today | @Here | <a href="https://plugins.herecdn.com/downloads/Github-Trending.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Github-Trending.hereplugin">🔌</a> |
@@ -73,9 +73,9 @@ Fork this repo and then submit your plugins with [Pull Request].
 <img width="24" src="https://plugins.herecdn.com/image/Gold-Price/icon.png"/> | [实时金价](https://plugins.herecdn.com/downloads/Gold-Price.hereplugin) | 显示实时黄金价格 | @HereCN | <a href="https://plugins.herecdn.com/downloads/Gold-Price.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Gold-Price.hereplugin">🔌</a> |
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
-### System
+### 系统
 
-| ㅤ | Plugin Name | Description | Author | Download |
+| ㅤ | 插件名 | 描述 | 作者 | 下载安装 |
 | ---- | :---- | :---- | :---- | :----: |
 <img width="24" src="https://plugins.herecdn.com/image/Netstat/icon.png"/> | [Net Status](https://plugins.herecdn.com/downloads/Netstat.hereplugin) | Download/Upload network speed monitor | @Here| <a href="https://plugins.herecdn.com/downloads/Netstat.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Netstat.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Memory/icon.png"/> | [Memory Usage](https://plugins.herecdn.com/downloads/Memory.hereplugin) | Show system Memory usage | @Here | <a href="https://plugins.herecdn.com/downloads/Memory.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Memory.hereplugin">🔌</a> |
@@ -84,9 +84,9 @@ Fork this repo and then submit your plugins with [Pull Request].
 <img width="24" src="https://plugins.herecdn.com/image/Debug/icon.png"/> | [Debug Info](https://plugins.herecdn.com/downloads/Debug.hereplugin) | Show developing info | @Here | <a href="https://plugins.herecdn.com/downloads/Debug.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Debug.hereplugin">🔌</a> |
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
-### Productivity
+### 效率工具
 
-| ㅤ | Plugin Name | Description | Author | Download |
+| ㅤ | 插件名 | 描述 | 作者 | 下载安装 |
 | ---- | :---- | :---- | :---- | :----: |
 <img width="24" src="https://plugins.herecdn.com/image/Empty-Trash/icon.png"/> | [Empty Trash](https://plugins.herecdn.com/downloads/Empty-Trash.hereplugin) | Quick empty trash  | @Here | <a href="https://plugins.herecdn.com/downloads/Empty-Trash.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Empty-Trash.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Show-Hidden-Files/icon.png"/> | [Show Hidden Files](https://plugins.herecdn.com/downloads/Show-Hidden-Files.hereplugin) | Show/Hide hidden system files | @Here | <a href="https://plugins.herecdn.com/downloads/Show-Hidden-Files.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Show-Hidden-Files.hereplugin">🔌</a> |
@@ -104,26 +104,26 @@ Fork this repo and then submit your plugins with [Pull Request].
 <img width="24" src="https://plugins.herecdn.com/image/ShanBei-Dictionary/icon.png"/> | [扇贝词典](https://plugins.herecdn.com/downloads/ShanBei-Dictionary.hereplugin) | 翻译剪切板中的内容(via 扇贝词典) | @HereCN | <a href="https://plugins.herecdn.com/downloads/ShanBei-Dictionary.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/ShanBei-Dictionary.hereplugin">🔌</a> |
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
-### Others
+### 其他
 
-| ㅤ | Plugin Name | Description | Author | Download |
+| ㅤ | 插件名 | 描述 | 作者 | 下载安装 |
 | ---- | :---- | :---- | :---- | :----: |
 <img width="24" src="https://plugins.herecdn.com/image/Game-2048/icon.png"/> | [Game 2048](https://plugins.herecdn.com/downloads/Game-2048.hereplugin) | Get to the 2048 Tile! | @Here | <a href="https://plugins.herecdn.com/downloads/Game-2048.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Game-2048.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Daily-Sentence/icon.png"/> | [每日一句英文](https://plugins.herecdn.com/downloads/Daily-Sentence.hereplugin) | 英文语句，点滴积累 | @HereCN | <a href="https://plugins.herecdn.com/downloads/Daily-Sentence.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Daily-Sentence.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Daily-Poetry/icon.png"/> | [每日诗词](https://plugins.herecdn.com/downloads/Daily-Poetry.hereplugin) | 给生活增添一分诗意 | @HereCN | <a href="https://plugins.herecdn.com/downloads/Daily-Poetry.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Daily-Poetry.hereplugin">🔌</a> |
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
-## License
-All plugins are published under the [MIT License](./LICENSE.md)
+## 开源授权
+所有插件基于 [MIT License](./LICENSE.md) 协议开源。
 
 [Here]: https://here.app/
 [Homepage]: https://here.app/
 [App Homepage]: https://here.app/
-[Plugin Developer Documentation]: https://doc.here.app/
-[Create Your Own Custom Plugins for Here]: https://github.com/hereappdev/Here-Plugins/wiki/Create-You-Own-Custom-Plugins-for-Here
+[插件开发文档]: https://doc.here.app/
+[快速制作一个 Here 插件]: https://github.com/hereappdev/Here-Plugins/wiki/%E5%BF%AB%E9%80%9F%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA-Here-%E6%8F%92%E4%BB%B6
 [@HereApp]: https://t.me/HereApp
 [Github Issues]: https://github.com/hereappdev/Here-Plugins/issues
 [BBS]: https://support.qq.com/products/110843
 [Pull Request]: https://github.com/hereappdev/Here-Plugins/pulls
-[Pack and Submit Your Plugins into Offical Repo]: https://github.com/hereappdev/Here-Plugins/wiki/Pack-and-Submit-Your-Plugins-into-Offical-Repo
+[打包插件并发布到官方插件库]: https://github.com/hereappdev/Here-Plugins/wiki/%E6%89%93%E5%8C%85%E6%8F%92%E4%BB%B6%E5%B9%B6%E5%8F%91%E5%B8%83%E5%88%B0%E5%AE%98%E6%96%B9%E6%8F%92%E4%BB%B6%E5%BA%93
 [Here Plugin Generator]: https://github.com/FriendsOfHere/plugin-generator

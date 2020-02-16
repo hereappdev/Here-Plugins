@@ -1,0 +1,26 @@
+{
+    "name": "Horrible Subs",
+    "version" : "1.0.0",
+    "description": "So bad yet so good~",
+    "createdBy": "ostrichb",
+    "displayOn": [
+        "menubar"
+    ],
+    "website": "https://ostrichbeta.me/",
+    "icon": "icon.png",
+    "identifier": "app.here.ostrichb.hsubmtor",
+    "script": "index.js",
+    "preferences": [
+        {
+            "title": "Resolution",
+            "type": "popup",
+            "key": "resolution",
+            "default": 2,
+            "options": [
+                "360p/480p (SD)",
+                "720p (HD)",
+                "1080p (FHD)"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+   "name": "Empty Trash",
+   "version": "1.0.3",
+   "description": "Quick empty trash",
+   "identifier": "app.here.emptytrash",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Empty-Trash/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

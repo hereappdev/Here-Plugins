@@ -1,0 +1,35 @@
+{
+   "name": "Weather",
+   "version": "1.0.2",
+   "description": "Show world weather",
+   "icon": "icon.png",
+   "identifier": "app.here.weather",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Weather/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "mini",
+      "menuBar",
+      "dock"
+   ],
+   "preferences": [
+       {
+            "title": "Location",
+            "type": "text",
+            "key": "location",
+            "default": "newyork"
+        },
+        {
+            "title": "Degree Units",
+            "type": "popup",
+            "key": "degreeUnits",
+            "default": 0,
+            "options": [
+                "℉ - Fahrenheit",
+                "℃ - Celsius"
+            ]
+        }
+   ]
+}

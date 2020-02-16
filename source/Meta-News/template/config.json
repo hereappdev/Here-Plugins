@@ -1,0 +1,12 @@
+{
+   "name": "{{pluginName}}",
+   "version": "1.0.0",
+   "description": "{{pluginDescription}}",
+   "icon": "icon.png",
+   "identifier": "{{pluginIdentifier}}",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

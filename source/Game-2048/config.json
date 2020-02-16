@@ -1,0 +1,16 @@
+{
+   "name": "Game 2048",
+   "version": "1.0.0",
+   "description": "Get to the 2048 Tile!",
+   "icon": "icon.png",
+   "identifier": "app.here.game2048",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Game-2048/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini",
+      "menuBar"
+   ]
+}

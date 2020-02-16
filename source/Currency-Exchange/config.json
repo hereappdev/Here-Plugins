@@ -1,0 +1,28 @@
+{
+   "name": "Currency Exchange",
+   "version": "1.0.2",
+   "description": "Show exchange rate conversion",
+   "icon": "icon.png",
+   "identifier": "app.here.currencyexchange",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Currency-Exchange/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "mini"
+   ],
+   "preferences": [
+       {
+            "title": "Currency Symbols",
+            "type": "text",
+            "key": "currencySymbols",
+            "default": "CNY"
+        },{
+            "title": "Display Currency",
+            "type": "text",
+            "key": "displaySymbols",
+            "default": "USD"
+        }
+   ]
+}

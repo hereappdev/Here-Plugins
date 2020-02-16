@@ -1,0 +1,14 @@
+{
+   "name": "Solidot 最新更新",
+   "version": "1.0.0",
+   "description": "Solidot是至顶网下的科技资讯网站，主要面对开源自由软件和关心科技资讯读者群，包括众多中国开源软件的开发者，爱好者和布道者。口号是“奇客的资讯，重要的东西”。",
+   "icon": "icon.png",
+   "identifier": "com.myluoluo.solidot",
+   "createdBy": "myluoluo",
+   "website": "https://github.com/myluoluo",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

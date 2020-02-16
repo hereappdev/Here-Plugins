@@ -1,0 +1,17 @@
+{
+   "name": "Debug Info",
+   "version": "1.0.5",
+   "description": "Show developing info",
+   "icon": "icon.png",
+   "identifier": "app.here.debug",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Debug/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "menuBar",
+      "mini",
+      "dock"
+   ]
+}

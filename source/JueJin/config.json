@@ -1,0 +1,15 @@
+{
+   "name": "掘金开发者头条",
+   "version": "1.0.2",
+   "description": "显示热门文章",
+   "icon": "icon.png",
+   "identifier": "app.here.juejin",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/JueJin/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

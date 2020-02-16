@@ -1,0 +1,51 @@
+{
+   "name": "Meta News",
+   "version": "1.0.2",
+   "identifier": "foh.meta-news",
+   "description": "A plugin to generate news plugin",
+   "icon": "icon.png",
+   "createdBy": "Lifesign",
+   "website": "https://github.com/FriendsOfHere/meta-news",
+   "appcast": "https://plugins.herecdn.com/source/Meta-News/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": ["mini"],
+   "preferences": [
+      {
+          "title": "* Feed 地址(XML返回)",
+          "type": "text",
+          "key": "feedUrl",
+          "default": "https://rsshub.app/github/repos/FriendsOfHere"
+      },
+      {
+          "title": "* 插件名",
+          "type": "text",
+          "key": "pluginName",
+          "default": "FriendsOfHere 最新项目"
+      },
+      {
+          "title": "* 插件标识(identifier)",
+          "type": "text",
+          "key": "pluginIdentifier",
+          "default": "foh.helloworld"
+      },
+      {
+          "title": "插件描述",
+          "type": "text",
+          "key": "pluginDescription",
+          "default": "FOH 最新项目"
+      },
+      {
+          "title": "mini window 描述",
+          "type": "text",
+          "key": "miniDetail",
+          "default": "展示 FOH 最新项目"
+      },
+      {
+          "title": "Logo 路径(icon.png)",
+          "type": "text",
+          "key": "logoPath",
+          "default": ""
+      },
+   ]
+}

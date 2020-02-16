@@ -1,0 +1,16 @@
+{
+   "name": "IP Checker",
+   "version": "1.0.2",
+   "description": "Check IP address info",
+   "icon": "icon.png",
+   "identifier": "app.here.ipchecker",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/IP-Checker/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini",
+      "menuBar"
+   ]
+}

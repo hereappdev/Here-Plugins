@@ -1,0 +1,56 @@
+const _ = require("underscore")
+const http = require("http")
+const net = require("net")
+
+function updateData() {
+    const LIMIT = 10
+    
+    here.miniWindow.set({ title: "Updating…" })
+    http.get('https://www.v2ex.com/api/topics/hot.json')
+    .then(function(response) {
+        // console.verbose(JSON.stringify(response.data))
+        const entryList = response.data
+        if (entryList == undefined) {
+            return here.miniWindow.set({ title: "Invalid data." })
+        }
+    
+        if (entryList.length <= 0) {
+            return here.miniWindow.set({ title: "Entrylist is empty." })
+        }
+    
+        if (entryList.length > LIMIT) {
+            entryList = entryList.slice(0, LIMIT)
+        }
+    
+        const topFeed = entryList
+        // Mini Window
+        here.miniWindow.set({
+            onClick: () => { if (topFeed[0].url != undefined)  { here.openURL(topFeed[0].url) } },
+            title: topFeed[0].title,
+            detail: "V2EX"
+        })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
+    })
+    .catch(function(error) {
+        console.error(`Error: ${JSON.stringify(error)}`)
+        here.miniWindow.set({ title: JSON.stringify(error) })
+    })
+}
+
+here.onLoad(() => {
+    updateData()
+    // Update every 2 hours
+    setInterval(updateData, 2*3600*1000);
+})
+
+net.onChange((type) => {
+    console.log("Connection type changed:", type)
+    if (net.isReachable()) {
+        updateData()
+    }
+})

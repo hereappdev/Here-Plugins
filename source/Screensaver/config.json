@@ -1,0 +1,15 @@
+{
+   "name": "ScreenSaver",
+   "version": "1.0.1",
+   "description": "Turn On ScreenSaver",
+   "icon": "icon.png",
+   "identifier": "app.here.screensaver",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Screensaver/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

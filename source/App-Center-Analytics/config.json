@@ -1,0 +1,29 @@
+{
+   "name": "App Center Analytics",
+   "version": "1.0.1",
+   "description": "Show analytics from Visual Studio App Center",
+   "icon": "icon.png",
+   "identifier": "app.here.appcenteranalytics",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/app.here.App-Center-Analytics/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ],
+   "preferences": [
+       {
+            "title": "API Token",
+            "type": "text",
+            "key": "apiToken",
+            "default": "xxx"
+        },
+        {
+            "title": "Request URL",
+            "type": "text",
+            "key": "apiUrl",
+            "default": "https://api.appcenter.ms/v0.1/apps/xxx/xxx/analytics/versions?%24top=30&start="
+        }
+   ]
+}
