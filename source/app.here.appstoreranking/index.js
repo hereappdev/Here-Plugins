@@ -29,7 +29,7 @@ function updateData() {
         entryList = _.map(entryList, (entry, key) => {
             entry.title = entry["name"]
             entry.url = entry["artistUrl"]
-            entry.appIcon = entry["artworkUrl100"]
+            entry.appIcon = entry["artworkUrl100"].replace("200x2002bb.png","100x100bb.png")
             entry.rank = entry["genres"][0]["name"]
             return entry
         })
