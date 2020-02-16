@@ -5,7 +5,11 @@ function updateData() {
     const LIMIT = 10
     
     here.setMiniWindow({ title: "Updating…" })
-    http.request('https://trends.google.com/trends/api/topdailytrends?tz=-480&geo=US')
+
+    // API: https://trends.google.com/trends/api/topdailytrends?tz=-480&geo=US
+    // API Speedy: https://apispeedy.com/googletrends/
+
+    http.request('https://apispeedy.com/googletrends/')
     .then(function(response) {
     
         // console.debug(`data: ${data}`)

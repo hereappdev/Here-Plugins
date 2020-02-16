@@ -1,6 +1,6 @@
 {
    "name": "Hacker News",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "Show hot posts",
    "icon": "icon.png",
    "identifier": "app.here.hackernews",

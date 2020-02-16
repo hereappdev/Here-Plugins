@@ -6,7 +6,10 @@ function updateData() {
 
     here.setMiniWindow({ title: "Updating…" })
 
-    here.parseRSSFeed("http://rss.cnn.com/rss/cnn_topstories.rss")
+    // API: http://rss.cnn.com/rss/cnn_topstories.rss
+    // API Speedy: https://apispeedy.com/cnn/
+
+    here.parseRSSFeed("https://apispeedy.com/cnn/")
     .then((feed) => {
         if (feed.items.length <= 0) {
             return here.setMiniWindow({ title: "No item found." })

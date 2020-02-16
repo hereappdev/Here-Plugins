@@ -5,7 +5,11 @@ function updateData() {
     const LIMIT = 10
     
     here.setMiniWindow({ title: "Updating…" })
-    here.parseRSSFeed("https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml")
+
+    // API: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+    // API Speedy: https://apispeedy.com/nytimes/
+
+    here.parseRSSFeed("https://apispeedy.com/nytimes/")
     .then((feed) => {
         if (feed.items.length <= 0) {
             return here.setMiniWindow({ title: "No item found." })

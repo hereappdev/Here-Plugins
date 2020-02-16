@@ -4,8 +4,12 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
 
-    here.setMiniWindow({ title: "Upd2ating…" })
-    here.parseRSSFeed("https://www.npr.org/rss/rss.php")
+    here.setMiniWindow({ title: "Updating…" })
+
+    // API: https://www.npr.org/rss/rss.php
+    // API Speedy: https://apispeedy.com/npr/
+
+    here.parseRSSFeed("https://apispeedy.com/npr/")
     .then((feed) => {
         if (feed.items.length <= 0) {
             return here.setMiniWindow({ title: "No item found." })

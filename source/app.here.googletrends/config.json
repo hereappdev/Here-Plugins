@@ -1,6 +1,6 @@
 {
    "name": "Google Trends",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "Show what's trending on Google",
    "icon": "icon.png",
    "identifier": "app.here.googletrends",

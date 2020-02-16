@@ -5,7 +5,11 @@ function updateData() {
     const LIMIT = 10
 
     here.setMiniWindow({ title: "Updating…" })
-    here.parseRSSFeed("https://news.ycombinator.com/rss")
+
+    // API: https://news.ycombinator.com/rss
+    // API Speedy: https://apispeedy.com/ycombinator/
+
+    here.parseRSSFeed("https://apispeedy.com/ycombinator/")
     .then((feed) => {
         if (feed.items.length <= 0) {
             return here.setMiniWindow({ title: "No item found." })

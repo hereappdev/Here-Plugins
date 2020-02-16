@@ -6,7 +6,10 @@ function updateData() {
 
     here.setMiniWindow({ title: "Updating…" })
 
-    here.parseRSSFeed("https://feeds.bbci.co.uk/news/world/rss.xml")
+    // API: https://feeds.bbci.co.uk/news/world/rss.xml
+    // API Speedy: https://apispeedy.com/bbc/
+
+    here.parseRSSFeed("https://apispeedy.com/bbc/")
     .then((feed) => {
         if (feed.items.length <= 0) {
             return here.setMiniWindow({ title: "No item found." })
