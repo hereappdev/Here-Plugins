@@ -126,7 +126,7 @@ here.onLoad(() => {
     } else {
         here.setMiniWindow({ 
             title: "No save.json found.", 
-            detail: "Please rename save.json.example to save.json. Click here.",
+            detail: "Please rename [example.json] to [save.json]. Click here.",
             onClick: () => {
                 here.exec(`open "${process.cwd()}"`)
             }

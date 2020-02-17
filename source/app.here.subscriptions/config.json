@@ -1,6 +1,6 @@
 {
    "name": "Subscriptions",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "Show and calculation on all your subscription services",
    "icon": "icon.png",
    "identifier": "app.here.subscriptions",
