@@ -1,7 +1,6 @@
 const http = require("http")
 const net = require("net")
 const pref = require("pref")
-const cache = require('cache')
 
 const TvList = 'cctv1,cctv2,cctv3,cctv4,cctv5,cctv6,cctv7,cctv8,cctv9,cctv10,cctv11,cctv12,cctv13,cctv14,cctv15,cctv5plus,cctv17,cctveurope,cctvamerica'.split(',')
 const selectTv = TvList[pref.get("tvName")];
@@ -30,16 +29,19 @@ function callHere(tvList) {
     let popIndex = 0;
     for (var i = 0; i < tvList['list'].length; i++) {
         let entry = tvList['list'][i]
-        if(pref.get("skipOld") == 'true' && new Date() > new Date(entry.endTime * 1000)) {
+        let tvStartTime = new Date(entry.startTime * 1000)
+        let tvEndTime = new Date(entry.endTime * 1000)
+        if(pref.get("skipOld") == 'true' && new Date() > tvEndTime) {
             // console.log("跳过已结束项目：" + entry.title)
             // console.log(new Date(entry.endTime * 1000).Format("yyyy-MM-dd hh:mm"))
             continue
         }
         popIndex++
+
         popList.push({
             title: popIndex + ". " + entry.title,
             accessory: {
-                title: entry.showTime
+                title: entry.title == tvList['isLive'] ? "正在播放" : entry.showTime,
             }
         });
     }
@@ -66,44 +68,34 @@ function updateData() {
     here.setMiniWindow({ title: "Updating…" })
     let currentDate = new Date().Format("yyyyMMdd");
 
-    let cacheData = cache.get(selectTv + "-" + currentDate)
-    if(cacheData == undefined) {
-        // console.log('no cache!')
-        http.get(`https://api.cntv.cn/epg/getEpgInfoByChannelNew?c=${selectTv}&serviceId=tvcctv&d=${currentDate}&t=json`)
-        .then(function(response) {
-            if (response.data == undefined) {
-                return here.setMiniWindow({ title: "Invalid data." })
-            }
+    http.get(`https://api.cntv.cn/epg/getEpgInfoByChannelNew?c=${selectTv}&serviceId=tvcctv&d=${currentDate}&t=json`)
+    .then(function(response) {
+        if (response.data == undefined) {
+            return here.setMiniWindow({ title: "Invalid data." })
+        }
 
-            let tvList = response.data['data'][selectTv];
-            // console.log(JSON.stringify(tvList))
+        let tvList = response.data['data'][selectTv];
+        // console.log(JSON.stringify(tvList))
 
-            if (tvList['list'].length <= 0) {
-                return here.setMiniWindow({ title: "Entrylist is empty." })
-            }
+        if (tvList['list'].length <= 0) {
+            return here.setMiniWindow({ title: "Entrylist is empty." })
+        }
 
-            cache.set(selectTv + "-" + currentDate, tvList)
-            callHere(tvList)
-        })
-        .catch(function(error) {
-            console.error(`Error: ${JSON.stringify(error)}`)
-            return here.setMiniWindow({ title: JSON.stringify(error) })
-        })
-    } else {
-        // console.log('cache data!')
-        callHere(JSON.parse(cacheData))
-    }
+        callHere(tvList)
+    })
+    .catch(function(error) {
+        console.error(`Error: ${JSON.stringify(error)}`)
+        return here.setMiniWindow({ title: JSON.stringify(error) })
+    })
 }
 
 here.onLoad(() => {
-    cache.removeAll()
     updateData()
-    setInterval(updateData, 233*1000);
+    setInterval(updateData, 5*60*1000);
 })
 
 net.onChange((type) => {
     console.log("Connection type changed:", type)
-    cache.removeAll()
     if (net.isReachable()) {
         updateData()
     }
