@@ -36,7 +36,7 @@ function updateData() {
             title: "🎬《" + topFeed.title + "》",
             detail: "上映" + topFeed["mainland_pubdate"],
             accessory: {
-                        title: topFeed["rating"]["average"] + "️️️⭐️"
+                        badge: topFeed["rating"]["average"].toString()
                     },
             popOvers: _.map(entryList, (entry, index) => {
                 return {

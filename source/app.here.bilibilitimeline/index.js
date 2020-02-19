@@ -52,7 +52,7 @@ function updateData() {
             title: "bilibili每日新番时间表",
             detail: feedYear + "-" + feedMon + "-" + feedDate + "日" + "(" + feedWeek + ")",
             accessory: {
-                        title: entryList.seasons.length + "部"
+                        badge: entryList.seasons.length + "部"
                     },
                     // delTraditionalChinese(entryList.seasons)
             popOvers: _.map(entryList.seasons, (entry, index) => {

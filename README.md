@@ -9,16 +9,19 @@ This repo contains the source code and downloads of [Here] plugins.
 ## Resources
 
 * Homepage: https://here.app
-* [Plugin Developer Documentation]
-* [Create You Own Custom Plugins for Here]
-* [How to pack your plugins]
+* Document: https://doc.here.app
 * Telegram Group: [@HereApp]
-* 微信交流群: 请加 [@HereApp](https://res.here.app/img/wx.png) 好友进群
-* 内测反馈 & 功能需求：[Github Issues] / [用户社区]
+* WeChat Group: [@HereApp](https://res.here.app/img/wx.png)
+* Feedback：[Github Issues] / [BBS]
 
 ## Contributing
 
 Fork this repo and then submit your plugins with [Pull Request].
+
+* [Plugin Developer Documentation]
+* [Create You Own Custom Plugins for Here]
+* [Here Plugin Generator] *by @Lifesign*
+* [How to pack your plugins]
 
 ## Plugin Categories
 
@@ -101,14 +104,16 @@ Fork this repo and then submit your plugins with [Pull Request].
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
 ## License
-All plugins are published under the [MIT License](https://opensource.org/licenses/mit-license.php)
+All plugins are published under the [MIT License]
 
 [Here]: https://here.app/
-[App Homepage]: https://here.app/ 
+[App Homepage]: https://here.app/
+[MIT License]: https://github.com/hereappdev/Here-Plugins/blob/master/README.md
 [Plugin Developer Documentation]: https://doc.here.app/
 [Create You Own Custom Plugins for Here]: https://github.com/hereappdev/Here-Plugins/wiki/Create-You-Own-Custom-Plugins-for-Here
 [@HereApp]: https://t.me/hereapp
 [Github Issues]: https://github.com/hereappdev/Here-Plugins/issues
-[用户社区]: https://support.qq.com/products/110843
+[BBS]: https://support.qq.com/products/110843
 [Pull Request]: https://github.com/hereappdev/Here-Plugins/pulls
 [How to pack your plugins]: https://github.com/hereappdev/Here-Plugins/wiki/How-to-pack-your-plugins
+[Here Plugin Generator]: https://github.com/FriendsOfHere/plugin-generator

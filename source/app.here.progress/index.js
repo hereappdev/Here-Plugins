@@ -73,7 +73,7 @@ function updateData() {
         title: "Progress of the Year",
         detail: year.bar,
         accessory: {
-            title: `${year.percent}%`
+            badge: `${year.percent}%`
         },
         popOvers: popOvers
     })

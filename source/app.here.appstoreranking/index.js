@@ -11,7 +11,7 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.feed.results
-        console.debug(JSON.stringify(entryList));
+        // console.debug(JSON.stringify(entryList));
         if (entryList == undefined) {
             return here.setMiniWindow({ title: "Invalid data." })
         }
@@ -38,7 +38,7 @@ function updateData() {
             title: "No.1 " + topFeed.title,
             detail: "App Store Top Grossing(CN)",
             accessory: {
-                title: topFeed.rank 
+                badge: topFeed.rank 
             },
             popOvers: _.map(entryList, (entry, index) => {
                 return {
