@@ -1,6 +1,6 @@
 {
    "name": "CCTV 节目单",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "显示 CCTV 频道节目单",
    "icon": "icon.png",
    "identifier": "app.here.cctv",
