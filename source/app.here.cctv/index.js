@@ -52,12 +52,20 @@ function callHere(tvList) {
     //     detail: tvList['channelName']
     // })
 
+    let liveSt = "";
+    if(tvList['isLive'] == null || tvList['liveSt'] == 0) {
+        tvList['isLive'] = tvList['list'][0].title
+        liveSt = new Date(tvList['list'][0].startTime * 1000).Format("hh:mm")
+    } else {
+        liveSt = new Date(tvList['liveSt'] * 1000).Format("hh:mm")
+    }
+
     // Mini Window
     here.setMiniWindow({
         title: tvList['isLive'],
         detail: tvList['channelName'],
         accessory: {
-            title: new Date(tvList['liveSt'] * 1000).Format("hh:mm"),
+            title: liveSt,
             detail: "开始时间"
         },
         popOvers: popList

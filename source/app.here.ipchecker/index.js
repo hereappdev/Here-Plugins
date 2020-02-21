@@ -1,4 +1,3 @@
-const _ = require("underscore")
 const http = require("http")
 const pasteboard = require('pasteboard')
 const net = require("net")
@@ -25,6 +24,49 @@ var isIp = function (){
     }
 }();
 
+function clipboardQuery() {
+    var getIP = pasteboard.getText()
+    console.log(getIP);
+    if (isIp(getIP)) {
+        showIP(getIP)
+    } else {
+        here.hudNotification("Not a valid IP address in the clipboard.")
+    }
+}
+
+function showIP(ip) {
+    here.setMiniWindow({ title: "Loading...", detail: "Request " + ip + " info." })
+
+    http.get({
+        url: "http://ip.taobao.com/service/getIpInfo.php?ip=" + ip,
+        allowHTTPRequest: true
+    }).then((response) => {
+        // console.debug("getIP---" + data)
+        if(response.statusCode != 200) {
+            here.setMiniWindow({
+                title: "Bad HTTP response.",
+                detail: "HTTP " + response.statusCode + " (Click to check IP from clipboard)",
+                onClick: () => {
+                    clipboardQuery();
+                }
+            })
+            return
+        }
+
+        const json = response.data
+        const ipInfo = json.data
+
+        // Mini Window
+        here.setMiniWindow({
+            title: "IP Address: " + ip,
+            detail: ipInfo.country + "/" + ipInfo.city + "/" + ipInfo.isp + " (Click to check IP from clipboard)",
+            onClick: () => {
+                clipboardQuery();
+            }
+        })
+    })
+}
+
 function updateData() {
     let aIP = ""
 
@@ -33,37 +75,14 @@ function updateData() {
         if (response.data && response.data.ip) {
             console.log(response.data.ip)
             aIP = response.data.ip
-            return http.get({
-                url: "http://ip.taobao.com/service/getIpInfo.php?ip=" + aIP,
-                allowHTTPRequest: true
-            })
+            return showIP(aIP)
         }
         return Promise.reject("Can't get current IP.")
-    })
-    .then(function(response) {
-        // console.debug("getIP---" + data)
-        const json = response.data
-        console.log(json)
-        const ipInfo = json.data
-        // Mini Window
-        here.setMiniWindow({
-            title: "IP Address: " + aIP,
-            detail: ipInfo.country + "/" + ipInfo.city + "/" + ipInfo.isp + " (Click to check IP from clipboard)",
-            onClick: () => {
-                var getIP = pasteboard.getText()
-
-                if (isIp(getIP)) {
-                    showIP(getIP)
-                } else {
-                    showIP(myIP)
-                    here.hudNotification("Copy an IP Address to Check!")
-                }
-            }
-        })
     })
     .catch((error) => {
         console.error(JSON.stringify(error))
         here.setMiniWindow({ title: "Failed to get IP address.", detail: "Copy IP firstly" })
+        setTimeout(updateData, 3000)
     })
 }
 
