@@ -1,0 +1,26 @@
+{
+    "name": "Yandex Translator",
+    "version" : "1.0.0",
+    "description": "Translate your texts from your pasteboard",
+    "createdBy": "ostrichb",
+    "displayOn": [
+        "menubar"
+    ],
+    "website": "https://blog.ostrichbeta.me/",
+    "icon": "icon.png",
+    "identifier": "app.here.ostrichb.yandextranslator",
+    "script": "index.js",
+    "preferences": [
+        {
+            "title": "Interface Language",
+            "type": "popup",
+            "key": "language",
+            "default": 0,
+            "options": [
+                "English",
+                "简体中文",
+                "繁體中文"
+            ]
+        }
+    ]
+}
