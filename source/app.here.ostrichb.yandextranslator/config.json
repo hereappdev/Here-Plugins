@@ -1,6 +1,6 @@
 {
     "name": "Yandex Translator",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "description": "Translate your texts from your pasteboard",
     "createdBy": "ostrichb",
     "displayOn": [
@@ -21,6 +21,12 @@
                 "简体中文",
                 "繁體中文"
             ]
+        },
+        {
+            "title": "API Key",
+            "type": "text",
+            "key": "apiKey",
+            "default": ""
         }
     ]
 }
