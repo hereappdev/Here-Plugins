@@ -17,7 +17,10 @@ function getText() {
         },
         "error": {
             "notext": "ˇ你的剪贴板中没有文字",
-            "nonetwork": "没有网络连接"
+            "nonetwork": "没有网络连接",
+            "nokey": "没有输入您的翻译API金钥",
+            "keyerror": "您的API金钥无效",
+            "tutorial": "请查阅这个页面获取API金钥的获取方法"
         }
     }
     return origin;

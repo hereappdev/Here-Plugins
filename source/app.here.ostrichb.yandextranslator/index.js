@@ -1,6 +1,6 @@
 //請求位址
 const translateAPI = "https://translate.yandex.net/api/v1.5/tr.json/translate"
-const APIKey = "trnsl.1.1.20170805T110855Z.177c8fd9f408b73a.7db4329323b2907ec894418b1bb7b819aeea9c4c";
+let APIKey = "";
 let quality;
 let feedResult;
 let popup = [];
@@ -47,6 +47,28 @@ function loadGUI() {
     here.setMiniWindow({
         title: String(original['translate']['loading'])
     });
+
+    if (pr.get("apiKey") == "") {
+        //沒有金鑰
+        console.log("No key detected, stop.");
+        popup.push({
+            title: String(original['error']['nokey'])
+        })
+        popup.push({
+            title: String(original['error']['tutorial']),
+            onClick: () => {
+                here.openURL("https://blog.csdn.net/chuzhou8495/article/details/100776788");
+            }
+        })
+        here.setMiniWindow({
+            title: String(original['translate']['title']),
+            detail: String(original['translate']['detail']),
+            popOvers: popup
+        });
+        return;
+    } else {
+        APIKey = pr.get("apiKey");
+    }
     popup.push({
         title: String(original['languages']['english']),
         onClick: () => {
@@ -128,10 +150,18 @@ function translate(text, language) {
             console.log(err);
             console.log(response);
             result = response.data;
-            console.log("Got " + String(result['text'][0]) );
-            pb.setText(String(result['text'][0]));
-            here.postNotification("system", "Result", String(result['text'][0]));
-            here.postNotification("hud", original['translate']['copyResult'], );
+            if (result['code'] == 401 && result['message'] == "API key is invalid") {
+                //非法API Key
+                console.log("Invaild key, stop.");
+                here.postNotification("system", "Error - Yandex Translation", String(original['error']['keyerror']));
+                return;
+            } else {
+                console.log("Got " + String(result['text'][0]) );
+                pb.setText(String(result['text'][0]));
+                here.postNotification("system", "Result", String(result['text'][0]));
+                here.postNotification("hud", original['translate']['copyResult'], );
+            }
+            
         })
     }
 }

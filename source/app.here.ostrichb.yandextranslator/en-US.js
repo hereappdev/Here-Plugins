@@ -17,7 +17,10 @@ function getText() {
         },
         "error": {
             "notext": "There are no text in your clipboard",
-            "nonetwork": "No network connection"
+            "nonetwork": "No network connection",
+            "nokey": "No API Key has been detected.",
+            "keyerror": "You have input an invaild key.",
+            "tutorial": "Check this site to get one."
         }
     }
     return origin;
