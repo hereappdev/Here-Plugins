@@ -26,7 +26,7 @@
             "title": "API Key",
             "type": "text",
             "key": "apiKey",
-            "default": ""
+            "default": "trnsl.1.1.20171210T035429Z.695f138d4dc23b80.b857000db67d8aa6881059de1d74f45b8d09e2cc"
         }
     ]
 }
