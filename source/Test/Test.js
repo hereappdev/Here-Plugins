@@ -76,10 +76,10 @@ class Test {
                     return Promise.reject("Can't find Test.js")
                 }
             })
-            .then(() => {
+            .then((result) => {
                 ret += ret += 'here.exec(">&2 echo "test stdErr output"")'
                 res({
-                    ret: true,
+                    ret: result,
                     msg: ret
                 })
             })
@@ -133,19 +133,53 @@ class Test {
     // http ========== START
     testGet() {
         return new Promise((res, rej) => {
+            var str = ""
+
             http.get("https://www.baidu.com/")
             .then((response) => {
                 console.debug("response:", response.statusCode)
                 if (response.statusCode > 400) {
-                    res({
-                        ret: false,
-                        msg: `http.get(): Status code: ${response.statusCode}`
-                    })
+                    return Promise.reject(`http.get("https://www.baidu.com/"): status code - ${response.statusCode}`)
+
                 } else {
+                    str += 'http.get("https://www.baidu.com")\n'
+                    return new Promise((aRes, aRej) => {
+                        http.get("http://www.baidu.com")
+                        .then(() => {
+                            // 不允许 http
+                            aRes(false)
+                        })
+                        .catch((err) => {
+                            if (err.includes("No http request allowed by default")) {
+                                aRes(true)
+                            }
+                        })
+                    })
+                }
+            })
+            .then((result) => {
+                console.debug("result:", result)
+                if (result) {
+                    str += 'http.get("http://www.baidu.com") not allowed\n'
+
+                    return http.get({
+                        url: "http://www.baidu.com",
+                        allowHTTPRequest: true
+                    })
+
+                } else {
+                    return Promise.reject("http not allowed")
+                }
+            })
+            .then((response) => {
+                if (response.statusCode < 400) {
+                    str += 'http.get({ url: "http://www.baidu.com", allowHTTPRequest: true })'
                     res({
                         ret: true,
-                        msg: `http.get()`
+                        msg: str
                     })
+                } else {
+                    res({ ret: false, msg: "Test failed." })
                 }
             })
             .catch((err) => {
