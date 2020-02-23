@@ -3,11 +3,14 @@ const pasteboard = require('pasteboard')
 const http = require("http")
 
 const LIMIT = 10
-var wordIn, wordCurrent = pasteboard.getText()
+var wordIn, wordCurrent
 
 function onClick() {
+    wordCurrent = pasteboard.getText()
     http.request("https://api.shanbay.com/bdc/search/?word=" + wordCurrent)
     .then(function(response) {
+        // console.log(response.data)
+
         const json = response.data
         const entryList = json.data
 
@@ -44,7 +47,7 @@ function updateData(){
     if(wordIn != wordCurrent){
         // Mini Window
         here.setMiniWindow({
-            title: "扇贝词典查询：" + wordCurrent,
+            title: "扇贝词典查询",
             detail: "点击立即查询剪切板中的单词",
             onClick: onClick
         })

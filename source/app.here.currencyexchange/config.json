@@ -22,7 +22,7 @@
             "title": "Display Currency",
             "type": "text",
             "key": "displaySymbols",
-            "default": "JPY"
+            "default": "USD"
         }
    ]
 }
