@@ -1,5 +1,6 @@
 const http = require("http")
 const pref = require("pref")
+const fs = require("fs")
 
 class Test {
     // global
@@ -20,7 +21,7 @@ class Test {
                 return
             }
 
-            res("testRequire")
+            res("require()")
         })
     }
 
@@ -38,7 +39,7 @@ class Test {
                 rej("Not an object.")
                 return
             }
-            res("testGetPreferences")
+            res("pref.all()")
         })
     }
 
@@ -52,7 +53,7 @@ class Test {
                 }
 
                 if (obj.includes("Test.js")) {
-                    res("testExec")
+                    res("here.exec()")
                 } else {
                     rej("Can't find Test.js")
                 }
@@ -64,7 +65,7 @@ class Test {
         return new Promise((res, rej) => {
             here.postNotification("system", "Test Title", "Test Content")
             here.postNotification("hud", "Test Title", "Test Content")
-            res("testPostNotification")
+            res("here.postNotification()")
         })
     }
 
@@ -76,7 +77,7 @@ class Test {
                     rej("Not an object.")
                     return
                 }
-                res("testParseRssFeed")    
+                res("here.parseRSSFeed()")    
             })
             .catch((err) => {
                 rej(err)
@@ -90,11 +91,11 @@ class Test {
         return new Promise((res, rej) => {
             http.get("https://www.baidu.com/")
             .then((response) => {
-                console.log("response:", response.statusCode)
+                console.debug("response:", response.statusCode)
                 if (response.statusCode > 400) {
                     rej(`Status code: ${response.statusCode}`)
                 } else {
-                    res("testGet")  
+                    res("http.get()")  
                 }
             })
             .catch((err) => {
@@ -103,4 +104,53 @@ class Test {
         })
     }
     // http ========== END
+
+    // fs ========== START
+    testReadFile() {
+        return new Promise((res, rej) => {
+            var ret = ""
+            fs.readFile("./test.json")
+            .then((data) => {
+                try {
+                    let json = JSON.parse(data)
+                    console.debug("json.data: ", json.data)
+                    if (json.data && json.data == 200) {
+                        ret += 'fs.readFile("./test.json")\n'
+                        return fs.readFile("./test.json", "utf8")
+                        
+                    } else {
+                        return Promise.reject("Failed to parse json data.")
+                    }
+
+                } catch (error) {
+                    return Promise.reject(error)
+                }
+            })
+            .then((data) => {
+                console.log("data length: ", data.length)
+                if (typeof(data) != "string") {
+                    return Promise.reject("Not string.")
+                }
+
+                try {
+                    let json = JSON.parse(data)
+                    console.debug("json.data: ", json.data)
+                    if (json.data && json.data == 200 && json.unicode && json.unicode == "如是我聞。壹時佛在舍衛國。") {
+                        ret += 'fs.readFile("./test.json", "utf8")'
+                        res(ret)
+                        
+                    } else {
+                        return Promise.reject("Failed to parse json data.")
+                    }
+
+                } catch (error) {
+                    return Promise.reject(error)
+                }
+            })
+            .catch((error) => {
+                rej(error)
+            })
+        })
+    }
+    // fs ========== END
 }

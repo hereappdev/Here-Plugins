@@ -79,7 +79,17 @@ here.onLoad(() => {
     Promise.all(testNames)
     .then((results) => {
         console.info(_.map(results, (result) => {
-            return `✅${result}`
+            let str = ""
+            let arr = result.split("\n")
+            if (arr.length > 1) {
+                for (let index = 0; index < arr.length; index++) {
+                    const r = arr[index];
+                    str += `✅${r}\n`
+                }   
+            } else {
+                str += `✅${result}`
+            }
+            return str
         }).join("\n"))
         console.info("All done.")
     })
