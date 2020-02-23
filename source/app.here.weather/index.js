@@ -63,7 +63,9 @@ function updateData() {
             return {
                 title: moment(value["date"] * 1000).format("MMM DD, dddd") + " " + ( key == 0 ? "(Today)" : "" ),
                 accessory: {
-                    title: value["text"]
+                    title: value["text"],
+                    imageURL: "images/" + value["code"] + ".png",
+                    imageCornerRadius: 4
                 }
             }
         })
@@ -81,7 +83,8 @@ function updateData() {
             accessory: {
                 title: weatherText,
                 detail: weatherTemperature
-            }
+            },
+            onClick: updateData
         })
 
         // Dock
