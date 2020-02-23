@@ -1,0 +1,15 @@
+{
+   "name": "Google Trends",
+   "version": "1.0.2",
+   "description": "Show what's trending on Google",
+   "icon": "icon.png",
+   "identifier": "app.here.googletrends",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Google-Trends/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

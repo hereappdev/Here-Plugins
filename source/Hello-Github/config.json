@@ -1,0 +1,15 @@
+{
+   "name": "Hello GitHub",
+   "version": "1.0.1",
+   "description": "Show post feeds",
+   "icon": "icon.png",
+   "identifier": "app.here.hellogithub",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Hello-Github/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

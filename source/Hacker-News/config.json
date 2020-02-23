@@ -1,0 +1,15 @@
+{
+   "name": "Hacker News",
+   "version": "1.0.2",
+   "description": "Show hot posts",
+   "icon": "icon.png",
+   "identifier": "app.here.hackernews",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Hacker-News/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

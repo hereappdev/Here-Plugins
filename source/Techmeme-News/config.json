@@ -1,0 +1,15 @@
+{
+   "name": "Techmeme News",
+   "version": "1.0.1",
+   "description": "Show hot news",
+   "icon": "icon.png",
+   "identifier": "app.here.techmemenews",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Techmeme-News/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}
