@@ -1,0 +1,15 @@
+{
+   "name": "扇贝词典",
+   "version": "1.0.1",
+   "description": "翻译剪切板中的内容(via 扇贝词典)",
+   "icon": "icon.png",
+   "identifier": "app.here.shanbeidictionary",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/ShanBei-Dictionary/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

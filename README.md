@@ -9,16 +9,19 @@ This repo contains the source code and downloads of [Here] plugins.
 ## Resources
 
 * Homepage: https://here.app
-* [Plugin Developer Documentation]
-* [Create You Own Custom Plugins for Here]
-* [How to pack your plugins]
+* Document: https://doc.here.app
 * Telegram Group: [@HereApp]
-* 微信交流群: 请加 [@HereApp](https://res.here.app/img/wx.png) 好友进群
-* 内测反馈 & 功能需求：[Github Issues] / [用户社区]
+* WeChat Group: [@HereApp](https://res.here.app/img/wx.png)
+* Feedback：[Github Issues] / [BBS]
 
 ## Contributing
 
 Fork this repo and then submit your plugins with [Pull Request].
+
+* [Plugin Developer Documentation]
+* [Create You Own Custom Plugins for Here]
+* [Here Plugin Generator] *by @Lifesign*
+* [How to pack your plugins]
 
 ## Plugin Categories
 
@@ -38,12 +41,14 @@ Fork this repo and then submit your plugins with [Pull Request].
 <img width="24" src="https://plugins.herecdn.com/image/app.here.v2ex/icon.png"/> | [V2EX](https://plugins.herecdn.com/downloads/app.here.v2ex.hereplugin) | 显示最新热帖 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.v2ex.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.v2ex.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.cnbeta/icon.png"/> | [cnBeta](https://plugins.herecdn.com/downloads/app.here.cnbeta.hereplugin) | 显示实时热文 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.cnbeta.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.cnbeta.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.zhihu/icon.png"/> | [知乎热榜](https://plugins.herecdn.com/downloads/app.here.zhihu.hereplugin) | 显示热门话题 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.zhihu.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.zhihu.hereplugin">🔌</a> |
+<img width="24" src="https://plugins.herecdn.com/image/app.here.sspai/icon.png"/> | [少数派最新文章](https://plugins.herecdn.com/downloads/app.here.sspai.hereplugin) | 显示最新文章 | [@Lifesign](https://github.com/lifesign/here-plugin-sspai) | <a href="https://plugins.herecdn.com/downloads/app.here.sspai.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.sspai.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.juejin/icon.png"/> | [掘金开发者头条](https://plugins.herecdn.com/downloads/app.here.juejin.hereplugin) | 显示热门文章 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.juejin.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.juejin.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.qdaily/icon.png"/> | [好奇心日报](https://plugins.herecdn.com/downloads/app.here.qdaily.hereplugin) | 显示热门文章 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.qdaily.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.qdaily.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.wanqu/icon.png"/> | [湾区日报](https://plugins.herecdn.com/downloads/app.here.wanqu.hereplugin) | 显示每日文章 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.wanqu.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.wanqu.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.bilibilitimeline/icon.png"/> | [Bilibili新番时间表](https://plugins.herecdn.com/downloads/app.here.bilibilitimeline.hereplugin) | 显示新番剧目播放时间 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.bilibilitimeline.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.bilibilitimeline.hereplugin">🔌</a> |
+<img width="24" src="https://plugins.herecdn.com/image/app.here.cctv/icon.png"/> | [CCTV节目单](https://plugins.herecdn.com/downloads/app.here.cctv.hereplugin) | 显示频道节目单 | [@myluoluo](https://github.com/myluoluo) | <a href="https://plugins.herecdn.com/downloads/app.here.cctv.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.cctv.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.xueqiu/icon.png"/> | [雪球每日热帖](https://plugins.herecdn.com/downloads/app.here.xueqiu.hereplugin) | 显示热门文章 | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.xueqiu.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.xueqiu.hereplugin">🔌</a> |
-<img width="24" src="https://plugins.herecdn.com/image/app.here.sspai/icon.png"/> | [少数派最新文章](https://plugins.herecdn.com/downloads/app.here.sspai.hereplugin) | 显示最新文章 | [@Lifesign](https://github.com/lifesign/here-plugin-sspai) | <a href="https://plugins.herecdn.com/downloads/app.here.sspai.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.sspai.hereplugin">🔌</a> |
+<img width="24" src="https://plugins.herecdn.com/image/app.here.ostrichb.hsubmtor/icon.jpg"/> | [HorribleSubs Monitor](https://plugins.herecdn.com/downloads/app.here.ostrichb.hsubmtor.hereplugin) | Show the latest 50 animes on Horriblesubs | [@ostrichb](https://blog.ostrichbeta.me) | <a href="https://plugins.herecdn.com/downloads/app.here.ostrichb.hsubmtor.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.ostrichb.hsubmtor.hereplugin">🔌</a> |
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
 ### Trends & Ranking
@@ -88,6 +93,8 @@ Fork this repo and then submit your plugins with [Pull Request].
 <img width="24" src="https://plugins.herecdn.com/image/app.here.appcenteranalytics/icon.png"/> | [App Center Analytics](https://plugins.herecdn.com/downloads/app.here.appcenteranalytics.hereplugin) | Show analytics from Visual Studio App Center | @Here | <a href="https://plugins.herecdn.com/downloads/app.here.appcenteranalytics.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.appcenteranalytics.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.md5encode/icon.png"/> | [MD5 Encode](https://plugins.herecdn.com/downloads/app.here.md5encode.hereplugin) | Quick MD5 tools | @Here | <a href="https://plugins.herecdn.com/downloads/app.here.md5encode.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.md5encode.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.ipchecker/icon.png"/> | [IP Checker](https://plugins.herecdn.com/downloads/app.here.ipchecker.hereplugin) | Check IP address info | @Here | <a href="https://plugins.herecdn.com/downloads/app.here.ipchecker.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.ipchecker.hereplugin">🔌</a> |
+<img width="24" src="https://plugins.herecdn.com/image/app.here.ostrichb.mcservercheck/icon.png"/> | [Minecraft Server Checker](https://plugins.herecdn.com/downloads/app.here.ostrichb.mcservercheck.hereplugin) | Check a Minecraft server's status | [@ostrichb](https://blog.ostrichbeta.me) | <a href="https://plugins.herecdn.com/downloads/app.here.ostrichb.mcservercheck.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.ostrichb.mcservercheck.hereplugin">🔌</a> |
+<img width="24" src="https://plugins.herecdn.com/image/app.here.ostrichb.yandextranslator/icon.png"/> | [Yandex Translator](https://plugins.herecdn.com/downloads/app.here.ostrichb.yandextranslator.hereplugin) | Translate your texts | [@ostrichb](https://blog.ostrichbeta.me) | <a href="https://plugins.herecdn.com/downloads/app.here.ostrichb.yandextranslator.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.ostrichb.yandextranslator.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/app.here.shanbeidictionary/icon.png"/> | [扇贝词典](https://plugins.herecdn.com/downloads/app.here.shanbeidictionary.hereplugin) | 翻译剪切板中的内容(via 扇贝词典) | @HereCN | <a href="https://plugins.herecdn.com/downloads/app.here.shanbeidictionary.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/app.here.shanbeidictionary.hereplugin">🔌</a> |
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
@@ -100,14 +107,16 @@ Fork this repo and then submit your plugins with [Pull Request].
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
 ## License
-All plugins are published under the [MIT License](https://opensource.org/licenses/mit-license.php)
+All plugins are published under the [MIT License]
 
 [Here]: https://here.app/
-[App Homepage]: https://here.app/ 
+[App Homepage]: https://here.app/
+[MIT License]: https://github.com/hereappdev/Here-Plugins/blob/master/LICENSE.md
 [Plugin Developer Documentation]: https://doc.here.app/
 [Create You Own Custom Plugins for Here]: https://github.com/hereappdev/Here-Plugins/wiki/Create-You-Own-Custom-Plugins-for-Here
 [@HereApp]: https://t.me/hereapp
 [Github Issues]: https://github.com/hereappdev/Here-Plugins/issues
-[用户社区]: https://support.qq.com/products/110843
+[BBS]: https://support.qq.com/products/110843
 [Pull Request]: https://github.com/hereappdev/Here-Plugins/pulls
 [How to pack your plugins]: https://github.com/hereappdev/Here-Plugins/wiki/How-to-pack-your-plugins
+[Here Plugin Generator]: https://github.com/FriendsOfHere/plugin-generator

@@ -1,0 +1,17 @@
+{
+   "name": "Battery Status",
+   "version": "1.0.2",
+   "description": "Show battery status includes Bluetooth devices(Mouse & AirPods)",
+   "icon": "icon.png",
+   "identifier": "app.here.battery",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Battery/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "menuBar",
+      "mini",
+      "dock"
+   ]
+}

@@ -1,0 +1,15 @@
+{
+   "name": "微博热搜榜",
+   "version": "1.0.1",
+   "description": "显示微博热搜关键词",
+   "icon": "icon.png",
+   "identifier": "app.here.weibohotsearch",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Weibo-Hot-Search/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

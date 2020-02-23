@@ -1,0 +1,15 @@
+{
+   "name": "New File",
+   "version": "1.0.1",
+   "description": "Create a new, blank text file",
+   "icon": "icon.png",
+   "identifier": "app.here.newfile",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/New-File/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

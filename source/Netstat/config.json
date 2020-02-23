@@ -1,0 +1,17 @@
+{
+   "name": "Net Stat",
+   "version": "1.0.1",
+   "description": "Download/Upload network speed monitor",
+   "icon": "icon.png",
+   "identifier": "app.here.netstat",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Netstat/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "mini",
+      "menuBar",
+      "dock"
+   ]
+}

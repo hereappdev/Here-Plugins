@@ -1,0 +1,15 @@
+{
+   "name": "湾区日报",
+   "version": "1.0.1",
+   "description": "显示每日文章",
+   "icon": "icon.png",
+   "identifier": "app.here.wanqu",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/WanQu/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

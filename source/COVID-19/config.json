@@ -1,0 +1,17 @@
+{
+   "name": "新型冠状病毒疫情追踪",
+   "version": "1.0.0",
+   "description": "2019新型冠状病毒疫情追踪(腾讯新闻API)",
+   "icon": "icon.png",
+   "identifier": "app.here.2019ncovstatus",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/COVID-19/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini",
+      "menuBar",
+      "dock"
+   ]
+}
