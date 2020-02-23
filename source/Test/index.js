@@ -1,89 +1,89 @@
-// require('underscore')
-// require('http')
-// require('./Test.js')
+const _ = require("underscore")
 
-// function getAllFuncNames(module) {
-//     let funcs = []
-//     const names = Object.getOwnPropertyNames(module)
-//     console.verbose(names)
-//     for (let index = 0; index < names.length; index++) {
-//         const name = names[index]
-//         const obj = module[name]
-//         if (typeof(obj) == "function") {
-//             funcs.push(name)
-//         }
-//     }
-//     return funcs
-// }
+require('./Test.js')
 
-// function testRequire(module) {
-//     if (module == undefined) {
-//         return false
-//     }
-//     // 测试去重
-//     require(module)
-//     require(module)
+function getAllFuncNames(module) {
+    let funcs = []
+    const names = Object.getOwnPropertyNames(module)
+    console.verbose(names)
+    for (let index = 0; index < names.length; index++) {
+        const name = names[index]
+        const obj = module[name]
+        if (typeof(obj) == "function") {
+            funcs.push(name)
+        }
+    }
+    return funcs
+}
 
-//     // 测试引用
-//     if (_ == undefined) {
-//         console.error("Failed to import underscore.")
-//         return false
-//     }
-//     return true
-// }
+function testRequire(module) {
+    if (module == undefined) {
+        return false
+    }
+    // 测试去重
+    require(module)
+    require(module)
 
-// function coverage(module) {
-//     // Funcs to be tested
-//     let names = _.map(getAllFuncNames(module), (n) => { return n.toLowerCase() })
+    // 测试引用
+    if (_ == undefined) {
+        console.error("Failed to import underscore.")
+        return false
+    }
+    return true
+}
 
-//     // The unit test funcs
-//     let aTest = new Test()
-//     let testNames = _.map(getAllFuncNames(Object.getPrototypeOf(aTest)), (n) => { return n.toLowerCase() })
+function coverage(module) {
+    // Funcs to be tested
+    let names = _.map(getAllFuncNames(module), (n) => { return n.toLowerCase() })
 
-//     let count = 0
-//     _.each(names, (name) => {
-//         // Check if they had testFunc function
-//         const testName = "test" + name
-//         if (_.find(testNames, (tName) => { return tName == testName })) {
-//             count++
-//         }
-//     })
+    // The unit test funcs
+    let aTest = new Test()
+    let testNames = _.map(getAllFuncNames(Object.getPrototypeOf(aTest)), (n) => { return n.toLowerCase() })
 
-//     return { covered: count, total: names.length}
-// }
+    let count = 0
+    _.each(names, (name) => {
+        // Check if they had testFunc function
+        const testName = "test" + name
+        if (_.find(testNames, (tName) => { return tName == testName })) {
+            count++
+        }
+    })
 
-// here.onLoad(() => {
-//     here.setMiniWindow({ title: "Testing…" })
+    return { covered: count, total: names.length}
+}
+
+here.onLoad(() => {
+    here.setMiniWindow({ title: "Testing…" })
     
-//     let cv_global = coverage(global)
-//     console.info(`Coverage for global: ${cv_global.covered}/${cv_global.total}`)
+    let cv_global = coverage(global)
+    console.info(`Coverage for global: ${cv_global.covered}/${cv_global.total}`)
     
-//     // Here
-//     let cv_here = coverage(here)
-//     console.info(`Coverage for here: ${cv_here.covered}/${cv_here.total}`)
-//     // http
-//     let cv = coverage(http)
-//     console.info(`Coverage for http: ${cv.covered}/${cv.total}`)
+    // Here
+    let cv_here = coverage(here)
+    console.info(`Coverage for here: ${cv_here.covered}/${cv_here.total}`)
+    // http
+    let cv = coverage(http)
+    console.info(`Coverage for http: ${cv.covered}/${cv.total}`)
     
-//     // Start testing
-//     let aTest = new Test()
+    // Start testing
+    let aTest = new Test()
     
-//     // 所有 functions
-//     let testNames = getAllFuncNames(Object.getPrototypeOf(aTest))
-//     // 取 test 开头s
-//     testNames = _.filter(testNames, (n) => { return n.startsWith("test") })
-//     // 变成 Promise
-//     testNames = _.map(testNames, (n) => { return aTest[n].apply() })
+    // 所有 functions
+    let testNames = getAllFuncNames(Object.getPrototypeOf(aTest))
+    // 取 test 开头s
+    testNames = _.filter(testNames, (n) => { return n.startsWith("test") })
+    // 变成 Promise
+    testNames = _.map(testNames, (n) => { return aTest[n].apply() })
     
-//     // 取结果
-//     Promise.all(testNames)
-//     .then((results) => {
-//         console.info(_.map(results, (result) => {
-//             return `✅${result}`
-//         }).join("\n"))
-//         console.info("All done.")
-//     })
-//     .catch((err) => {
-//         console.error(err)
-//     })
-// })
+    // 取结果
+    Promise.all(testNames)
+    .then((results) => {
+        console.info(_.map(results, (result) => {
+            return `✅${result}`
+        }).join("\n"))
+        console.info("All done.")
+    })
+    .catch((err) => {
+        console.error(err)
+    })
+})
