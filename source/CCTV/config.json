@@ -3,7 +3,7 @@
    "version": "1.0.1",
    "description": "显示 CCTV 频道节目单",
    "icon": "icon.png",
-   "identifier": "app.here.cctv",
+   "identifier": "com.myluoluo.cctv",
    "createdBy": "myluoluo",
    "website": "https://github.com/myluoluo",
    "appcast": "https://plugins.herecdn.com/source/CCTV/appcast.xml",
