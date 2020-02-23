@@ -80,15 +80,14 @@ here.onLoad(() => {
     .then((results) => {
         console.info(_.map(results, (result) => {
             let str = ""
-            let arr = result.split("\n")
-            if (arr.length > 1) {
-                for (let index = 0; index < arr.length; index++) {
-                    const r = arr[index];
-                    str += `✅${r}\n`
-                }   
-            } else {
-                str += `✅${result}`
-            }
+            let arr = result.msg.split("\n")
+            _.each(arr, (item, i) => {
+                let sym = result.ret ? "✅" : "❌"
+                if (i > 0) {
+                    str += "\n"
+                }
+                str += `${sym}${item}`
+            })
             return str
         }).join("\n"))
         console.info("All done.")

@@ -8,7 +8,10 @@ class Test {
         module = "underscore"
         return new Promise((res, rej) => {
             if (module == undefined) {
-                rej("module undefined")
+                res({
+                    ret: false,
+                    msg: "require(): module undefined"
+                })
                 return
             }
             // 测试去重
@@ -16,12 +19,10 @@ class Test {
             require(module)
         
             // 测试引用
-            if (_ == undefined) {
-                rej("Failed to import")
-                return
-            }
-
-            res("require()")
+            res({
+                ret: (_ != undefined),
+                msg: "require()"
+            })
         })
     }
 
@@ -31,32 +32,62 @@ class Test {
             // callback
             let allPrefs = pref.all()
             if (allPrefs == undefined) {
-                rej("It's undefined.")
+                res({
+                    ret: false,
+                    msg: "pref.all(): allPrefs undefined"
+                })
                 return
             }
 
             if (typeof(allPrefs) != "object") {
-                rej("Not an object.")
+                res({
+                    ret: false,
+                    msg: "pref.all(): Not an object."
+                })
                 return
             }
-            res("pref.all()")
+            res({
+                ret: true,
+                msg: "pref.all()"
+            })
         })
     }
 
     testExec() {
         return new Promise((res, rej) => {
+            let ret = ""
             // callback
-            here.exec("ls", (err, obj) => {
-                if (err) {
-                    rej(err)
-                    return
-                }
+            here.exec("ls")
+            .then((stdOut) => {
+                console.debug("stdOut:", stdOut)
+                if (stdOut.includes("Test.js")) {
+                    ret += 'here.exec("ls")\n'
+                    return new Promise((aRes, aRej) => {
+                        here.exec('>&2 echo "test stdErr output"')
+                        .then((stdOut) => {
+                            aRes(false)
+                        })
+                        .catch((stdErr) => {
+                            aRes(true)
+                        })
+                    })
 
-                if (obj.includes("Test.js")) {
-                    res("here.exec()")
                 } else {
-                    rej("Can't find Test.js")
+                    return Promise.reject("Can't find Test.js")
                 }
+            })
+            .then(() => {
+                ret += ret += 'here.exec(">&2 echo "test stdErr output"")'
+                res({
+                    ret: true,
+                    msg: ret
+                })
+            })
+            .catch((err) => {
+                res({
+                    ret: false,
+                    msg: `here.exec: err: ${err}`
+                })
             })
         })
     }
@@ -65,7 +96,10 @@ class Test {
         return new Promise((res, rej) => {
             here.postNotification("system", "Test Title", "Test Content")
             here.postNotification("hud", "Test Title", "Test Content")
-            res("here.postNotification()")
+            res({
+                ret: true,
+                msg: "here.postNotification()"
+            })
         })
     }
 
@@ -74,13 +108,23 @@ class Test {
             here.parseRSSFeed("http://rss.cnn.com/rss/cnn_topstories.rss")
             .then((obj) => {
                 if (typeof(obj) != "object") {
-                    rej("Not an object.")
+                    res({
+                        ret: false,
+                        msg: "here.parseRSSFeed(): Not an object."
+                    })
                     return
                 }
-                res("here.parseRSSFeed()")    
+
+                res({
+                    ret: true,
+                    msg: "here.parseRSSFeed()"
+                })
             })
             .catch((err) => {
-                rej(err)
+                res({
+                    ret: false,
+                    msg: `here.parseRSSFeed(): ${err}`
+                })
             })
         })
     }
@@ -93,13 +137,22 @@ class Test {
             .then((response) => {
                 console.debug("response:", response.statusCode)
                 if (response.statusCode > 400) {
-                    rej(`Status code: ${response.statusCode}`)
+                    res({
+                        ret: false,
+                        msg: `http.get(): Status code: ${response.statusCode}`
+                    })
                 } else {
-                    res("http.get()")  
+                    res({
+                        ret: true,
+                        msg: `http.get()`
+                    })
                 }
             })
             .catch((err) => {
-                rej(err)
+                res({
+                    ret: false,
+                    msg: `http.get(): err: ${err}`
+                })
             })
         })
     }
@@ -137,7 +190,10 @@ class Test {
                     console.debug("json.data: ", json.data)
                     if (json.data && json.data == 200 && json.unicode && json.unicode == "如是我聞。壹時佛在舍衛國。") {
                         ret += 'fs.readFile("./test.json", "utf8")'
-                        res(ret)
+                        res({
+                            ret: true,
+                            msg: ret
+                        })
                         
                     } else {
                         return Promise.reject("Failed to parse json data.")
@@ -148,7 +204,10 @@ class Test {
                 }
             })
             .catch((error) => {
-                rej(error)
+                res({
+                    ret: false,
+                    msg: `fs.readFile(): err: ${error}`
+                })
             })
         })
     }
