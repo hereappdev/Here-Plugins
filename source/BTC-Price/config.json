@@ -1,0 +1,37 @@
+{
+   "name": "BTC Price",
+   "version": "1.1.1",
+   "description": "Show real-time price of BTC and other cryptocurrencies",
+   "icon": "icon.png",
+   "identifier": "app.here.btcprice",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/BTC-Price/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "fav",
+   "displayOn": [
+      "mini",
+      "menuBar",
+      "dock"
+   ],
+   "preferences": [
+       {
+            "title": "Coin Name",
+            "type": "text",
+            "key": "coinName",
+            "default": "BTC Price"
+        },
+        {
+            "title": "Coin Code",
+            "type": "text",
+            "key": "coinCode",
+            "default": "BTC"
+        },
+        {
+            "title": "Currency Unit",
+            "type": "text",
+            "key": "currencyUnit",
+            "default": "CNY"
+        }
+   ]
+}

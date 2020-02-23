@@ -1,0 +1,15 @@
+{
+   "name": "Product Hunt",
+   "version": "1.0.1",
+   "description": "Show hot posts",
+   "icon": "icon.png",
+   "identifier": "app.here.producthunt",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Product-Hunt/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ]
+}

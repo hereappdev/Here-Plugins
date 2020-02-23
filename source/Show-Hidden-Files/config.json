@@ -1,0 +1,14 @@
+{
+   "name": "Show Hidden Files",
+   "version": "1.0.1",
+   "description": "Show/Hide hidden system files",
+   "identifier": "app.here.showhiddenfiles",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Show-Hidden-Files/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

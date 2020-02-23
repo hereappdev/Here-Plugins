@@ -1,0 +1,17 @@
+{
+   "name": "人民币汇率",
+   "version": "1.0.1",
+   "description": "显示人民币兑其他货币汇率(中国人民银行)",
+   "icon": "icon.png",
+   "identifier": "app.here.exchangerate",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Exchange-Rate/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini",
+      "menuBar",
+      "dock"
+   ]
+}

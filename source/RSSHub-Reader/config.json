@@ -1,0 +1,41 @@
+{
+   "name": "RSSHub Reader",
+   "version": "1.0.1",
+   "description": "Show rss feeds from RSSHub APIs",
+   "icon": "icon.png",
+   "identifier": "app.here.rsshubreader",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/RSSHub-Reader/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini"
+   ],
+   "preferences": [
+        {
+            "title": "API Name",
+            "type": "input",
+            "key": "apiName",
+            "default": "爱范儿新闻"
+        },
+        {
+            "title": "API URL",
+            "type": "input",
+            "key": "apiUrl",
+            "default": "https://rsshub.app/ifanr/"
+        },
+        {
+            "title": "API Parameter",
+            "type": "inupt",
+            "key": "apiParameter",
+            "default": "app"
+        },
+        {
+            "title": "查看文档说明",
+            "type": "inupt",
+            "key": "apiLink",
+            "default": "docs.rsshub.app"
+        }
+   ]
+}

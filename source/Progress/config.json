@@ -1,0 +1,14 @@
+{
+   "name": "Progress of the Year",
+   "version": "1.0.2",
+   "description": "Progress of the Year",
+   "identifier": "app.here.progress",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Progress/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}
