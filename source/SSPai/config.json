@@ -6,7 +6,7 @@
    "createdBy": "Lifesign",
    "icon": "icon.png",
    "website": "https://github.com/FriendsOfHere/sspai",
-   "appcast": "https://raw.githubusercontent.com/FriendsOfHere/sspai/master/src/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/SSPai/appcast.xml",
    "script": "index.js",
    "defaultCategory": "News",
    "displayOn": [
