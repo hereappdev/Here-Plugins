@@ -1,16 +1,18 @@
 {
    "name": "SSPai",
-   "version": "1.0.1",
+   "version": "1.2.1",
    "description": "Show latest articles from sspai.com",
-   "identifier": "app.here.sspai",
+   "identifier": "foh.sspai",
    "createdBy": "Lifesign",
    "icon": "icon.png",
-   "website": "https://github.com/lifesign/here-plugin-sspai",
+   "website": "https://github.com/FriendsOfHere/sspai",
    "appcast": "https://plugins.herecdn.com/source/SSPai/appcast.xml",
    "script": "index.js",
    "defaultCategory": "News",
    "displayOn": [
       "mini",
+      "menuBar",
+      "dock"
    ],
    "preferences": [
       {
@@ -39,6 +41,22 @@
               "Matrix",
               "首页推荐(暂未支持)",
           ]
+      },
+      {
+          "title": "未读消息提醒",
+          "type": "popup",
+          "key": "unread-notify",
+          "default": 0,
+          "options": [
+              "关闭",
+              "开启",
+          ]
+      },
+      {
+          "title": "DEBUG 快捷键",
+          "type": "text",
+          "key": "debug-hotkey",
+          "default": "cmd+F1",
       }
    ]
 }
