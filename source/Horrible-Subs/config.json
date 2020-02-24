@@ -7,7 +7,7 @@
         "menubar"
     ],
     "website": "https://ostrichbeta.me/",
-    "icon": "icon.jpg",
+    "icon": "icon.png",
     "identifier": "app.here.ostrichb.hsubmtor",
     "script": "index.js",
     "preferences": [
