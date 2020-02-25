@@ -18,10 +18,10 @@ This repo contains the source code and downloads of [Here] plugins.
 
 Fork this repo and then submit your plugins with [Pull Request].
 
+* [Create Your Own Custom Plugins for Here]
 * [Plugin Developer Documentation]
-* [Create You Own Custom Plugins for Here]
 * [Here Plugin Generator] *by @Lifesign*
-* [How to pack your plugins]
+* [Submit Your Plugins into Offical Github Repo]
 
 ## Plugin Categories
 
@@ -113,10 +113,10 @@ All plugins are published under the [MIT License]
 [App Homepage]: https://here.app/
 [MIT License]: https://github.com/hereappdev/Here-Plugins/blob/master/LICENSE.md
 [Plugin Developer Documentation]: https://doc.here.app/
-[Create You Own Custom Plugins for Here]: https://github.com/hereappdev/Here-Plugins/wiki/Create-You-Own-Custom-Plugins-for-Here
+[Create Your Own Custom Plugins for Here]: https://github.com/hereappdev/Here-Plugins/wiki/Create-Your-Own-Custom-Plugins-for-Here
 [@HereApp]: https://t.me/HereApp
 [Github Issues]: https://github.com/hereappdev/Here-Plugins/issues
 [BBS]: https://support.qq.com/products/110843
 [Pull Request]: https://github.com/hereappdev/Here-Plugins/pulls
-[How to pack your plugins]: https://github.com/hereappdev/Here-Plugins/wiki/How-to-pack-your-plugins
+[Submit Your Plugins into Offical Github Repo]: https://github.com/hereappdev/Here-Plugins/wiki/Submit-Your-Plugins-into-Offical-Github-Repo
 [Here Plugin Generator]: https://github.com/FriendsOfHere/plugin-generator
