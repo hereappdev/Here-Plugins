@@ -1,5 +1,8 @@
 Plugins for [Here]
 ----
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE.md) [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/hereappdev/Here-Plugins/pulls) [![Here contributors](https://img.shields.io/github/contributors/hereappdev/Here-Plugins.svg)](https://github.com/hereappdev/Here-Plugins/graphs/contributors)
+
+English | [简体中文](./README_zh.md) | [Homepage]
 
 [Here] is a productivity App for macOS, It's in `Beta Testing` now.  
 This repo contains the source code and downloads of [Here] plugins.
@@ -9,11 +12,11 @@ This repo contains the source code and downloads of [Here] plugins.
 ## Resources
 
 * Homepage: https://here.app
-* Document: https://doc.here.app
-* Release Notes: https://here.app/release-notes.html
+* Documentation: https://doc.here.app
+* Release Notes: https://here.app/release-notes/
 * Telegram Group: [@HereApp]
 * WeChat Group: [@HereApp](https://res.here.app/img/wx.png)
-* Feedback：[Github Issues] / [BBS]
+* Feedback：[Github Issues]
 
 ## Contributing
 
@@ -37,7 +40,7 @@ Fork this repo and then submit your plugins with [Pull Request].
 <img width="24" src="https://plugins.herecdn.com/image/NYTimes-News/icon.png"/> | [New York Times](https://plugins.herecdn.com/downloads/NYTimes-News.hereplugin) | Show hot news | @Here | <a href="https://plugins.herecdn.com/downloads/NYTimes-News.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/NYTimes-News.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/NPR-News/icon.png"/> | [NPR News](https://plugins.herecdn.com/downloads/NPR-News.hereplugin) | Show hot news | @Here | <a href="https://plugins.herecdn.com/downloads/NPR-News.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/NPR-News.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Techmeme-News/icon.png"/> | [Techmeme](https://plugins.herecdn.com/downloads/Techmeme-News.hereplugin) | Show hot news | @Here | <a href="https://plugins.herecdn.com/downloads/Techmeme-News.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Techmeme-News.hereplugin">🔌</a> |
-<img width="24" src="https://plugins.herecdn.com/image/RSSHub-Reader/icon.png"/> | [RSSHub Reader](https://plugins.herecdn.com/downloads/RSSHub-Reader.hereplugin) | Show rss feeds from RSSHub APIs             | @HereCN | <a href="https://plugins.herecdn.com/downloads/RSSHub-Reader.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/RSSHub-Reader.hereplugin">🔌</a> |
+<img width="24" src="https://plugins.herecdn.com/image/RSSHub-Reader/icon.png"/> | [RSSHub Reader](https://plugins.herecdn.com/downloads/RSSHub-Reader.hereplugin) | Show RSS feeds from RSSHub APIs             | @HereCN | <a href="https://plugins.herecdn.com/downloads/RSSHub-Reader.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/RSSHub-Reader.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/Hello-Github/icon.png"/> |[Hello Github](https://plugins.herecdn.com/downloads/Hello-Github.hereplugin) | Show post feeds | @HereCN | <a href="https://plugins.herecdn.com/downloads/Hello-Github.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/Hello-Github.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/V2EX/icon.png"/> | [V2EX](https://plugins.herecdn.com/downloads/V2EX.hereplugin) | 显示最新热帖 | @HereCN | <a href="https://plugins.herecdn.com/downloads/V2EX.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/V2EX.hereplugin">🔌</a> |
 <img width="24" src="https://plugins.herecdn.com/image/cnBeta/icon.png"/> | [cnBeta](https://plugins.herecdn.com/downloads/cnBeta.hereplugin) | 显示实时热文 | @HereCN | <a href="https://plugins.herecdn.com/downloads/cnBeta.hereplugin">⬇️</a> <a href="https://jump.here.app/?installPlugin?title=&url=https://plugins.herecdn.com/downloads/cnBeta.hereplugin">🔌</a> |
@@ -108,11 +111,11 @@ Fork this repo and then submit your plugins with [Pull Request].
 ||ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤㅤ|ㅤㅤㅤㅤ|
 
 ## License
-All plugins are published under the [MIT License]
+All plugins are published under the [MIT License](./LICENSE.md)
 
 [Here]: https://here.app/
+[Homepage]: https://here.app/
 [App Homepage]: https://here.app/
-[MIT License]: https://github.com/hereappdev/Here-Plugins/blob/master/LICENSE.md
 [Plugin Developer Documentation]: https://doc.here.app/
 [Create Your Own Custom Plugins for Here]: https://github.com/hereappdev/Here-Plugins/wiki/Create-You-Own-Custom-Plugins-for-Here
 [@HereApp]: https://t.me/HereApp
