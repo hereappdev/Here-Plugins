@@ -268,7 +268,7 @@ function updateData() {
                 data: {
                     url: "https://www.coindesk.com/price/bitcoin",
                     width: 375,
-                    height: 400,
+                    height: 500,
                     backgroundColor: "#161f36",
                     foregroundColor: rgba(255, 255, 255, 0.5)
                 }
