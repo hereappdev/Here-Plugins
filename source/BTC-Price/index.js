@@ -263,7 +263,15 @@ function updateData() {
 
         // Popover
         if (typeof(here.setPopover) == "function") {
-            here.setPopover("https://www.coindesk.com/price/bitcoin")   
+            here.setPopover({
+                type: "webView",
+                data: {
+                    url: "https://www.coindesk.com/price/bitcoin",
+                    width: 375,
+                    height: 400,
+                    backgroundColor: "#161f36" 
+                }
+            })
         }
     })
     .catch((error) => {
