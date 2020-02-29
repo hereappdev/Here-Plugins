@@ -269,7 +269,8 @@ function updateData() {
                     url: "https://www.coindesk.com/price/bitcoin",
                     width: 375,
                     height: 400,
-                    backgroundColor: "#161f36" 
+                    backgroundColor: "#161f36",
+                    foregroundColor: rgba(255, 255, 255, 0.5)
                 }
             })
         }
