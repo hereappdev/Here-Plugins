@@ -260,6 +260,11 @@ function updateData() {
             title: curPrice,
             detail: percentage
         })
+
+        // Popover
+        if (typeof(here.setPopover) == "function") {
+            here.setPopover("https://www.coindesk.com/price/bitcoin")   
+        }
     })
     .catch((error) => {
         console.error("Error: " + JSON.stringify(error))

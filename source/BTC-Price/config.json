@@ -1,6 +1,6 @@
 {
    "name": "BTC Price",
-   "version": "1.1.1",
+   "version": "1.1.2",
    "description": "Show real-time price of BTC and other cryptocurrencies",
    "icon": "icon.png",
    "identifier": "app.here.btcprice",
