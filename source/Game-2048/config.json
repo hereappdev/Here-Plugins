@@ -8,7 +8,7 @@
    "website": "https://here.app",
    "appcast": "https://plugins.herecdn.com/source/Game-2048/appcast.xml",
    "script": "index.js",
-   "defaultCategory": "fav",
+   "defaultCategory": "quick",
    "displayOn": [
       "mini",
       "menuBar"
