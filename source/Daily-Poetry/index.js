@@ -32,17 +32,22 @@ function updateData() {
     
         // Menu Bar
         here.setMenuBar({ title: entryList.quote.replace(/\r\n/g,"，") })
-    
+        
         console.log(entryList.author.intro)
         // Mini Window
         here.setMiniWindow({
             onClick: () => { here.openURL("http://meirishici.com") },
             title: entryList.quote.replace(/\r\n/g,"，"),
-            detail: entryList.author.intro.replace(/\r\n/g,"，"),
-            popOvers: [
-                { title: entryList.poetry.content },
-                { title: entryList.author.intro }
-            ]
+            detail: entryList.author.intro.replace(/\r\n/g,"，")
+        })
+
+        here.setPopover({
+            type: "webView",
+            data: {
+                url: "http://meirishici.com/",
+                width: 375,
+                height: 440
+            }
         })
     })
     .catch(function(error) {
@@ -63,3 +68,4 @@ net.onChange((type) => {
         updateData()
     }
 })
+

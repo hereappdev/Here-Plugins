@@ -2,6 +2,9 @@ const _ = require("underscore")
 const http = require("http")
 const net = require("net")
     
+
+console.log(222)
+
 function strToVar(str) {
     var json = (new Function("return " + str))();
     return json;
@@ -27,7 +30,6 @@ function updateData() {
     
         // Mini Window
         here.setMiniWindow({
-            onClick: () => { here.openURL("https://finance.sina.com.cn/nmetal/") },
             title: "黄金价格",
             detail: goldDate,
             accessory: {
@@ -58,5 +60,14 @@ net.onChange((type) => {
     console.log("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
+    }
+})
+
+here.setPopover({
+    type: "webView",
+    data: {
+        url: "http://gu.sina.cn/m/?vt=4&cid=76613#/futures/month?symbol=AU0",
+        width: 375,
+        height: 500
     }
 })

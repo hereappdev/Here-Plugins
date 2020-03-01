@@ -1,6 +1,6 @@
 {
    "name": "实时金价",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "显示实时黄金价格",
    "icon": "icon.png",
    "identifier": "app.here.goldprice",
