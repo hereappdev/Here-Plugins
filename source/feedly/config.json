@@ -1,7 +1,7 @@
 {
-   "name": "Feedly",
+   "name": "feedly",
    "version": "1.0.0",
-   "description": "feedly",
+   "description": "Organize, read and share what matters to you",
    "icon": "icon.png",
    "identifier": "app.here.feedly",
    "createdBy": "Here",

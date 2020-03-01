@@ -1,3 +1,1 @@
-# Feedly
-
-Feedly: organize, read and share what matters to you.
+feedly: organize, read and share what matters to you.

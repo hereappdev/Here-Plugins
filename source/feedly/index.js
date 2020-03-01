@@ -1,5 +1,5 @@
 here.onLoad(() => {
-    here.setMiniWindow({ title: "Feedly", detail: "Keep up with the topics and trends you care about, without the overwhelm" })
+    here.setMiniWindow({ title: "feedly", detail: "Keep up with the topics and trends you care about, without the overwhelm" })
     here.setMenuBar({ title: "Feedly" })
 
     here.setPopover({
