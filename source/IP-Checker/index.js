@@ -96,3 +96,13 @@ net.onChange((type) => {
         updateData()
     }
 })
+
+here.setMenuBar({ title: "IP" })
+here.setPopover({
+    type: "webView",
+    data: {
+        url: "https://ip.sb/",
+        width: 375,
+        height: 500
+    }
+})

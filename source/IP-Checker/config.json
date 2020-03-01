@@ -1,6 +1,6 @@
 {
    "name": "IP Checker",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "Check IP address info",
    "icon": "icon.png",
    "identifier": "app.here.ipchecker",
@@ -10,6 +10,7 @@
    "script": "index.js",
    "defaultCategory": "quick",
    "displayOn": [
-      "mini"
+      "mini",
+      "menuBar"
    ]
 }
