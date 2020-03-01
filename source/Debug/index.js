@@ -44,12 +44,16 @@ function updateData() {
     here.setMiniWindow({
         title: "Debug Info",
         detail: process.version,
-        popOvers: popOvers,
         onClick: () => {
             pb.setText(JSON.stringify(process.versions))
             here.hudNotification("Debug info copied.")
         }
     })
+
+    // Popovers
+    if (typeof(here.setPopover) == "function") {
+        here.setPopover(popOvers)
+    }
 
     // Menu Bar
     here.setMenuBar({ title: process.version })

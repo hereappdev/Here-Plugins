@@ -1,0 +1,16 @@
+{
+   "name": "Feedly",
+   "version": "1.0.0",
+   "description": "feedly",
+   "icon": "icon.png",
+   "identifier": "app.here.feedly",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/feedly/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini",
+      "menuBar"
+   ]
+}

@@ -41,6 +41,11 @@ function updateData() {
                 }
             })
         })
+
+        // Menu Bar
+        here.setMenuBar({
+            title: topFeed.title
+        })
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

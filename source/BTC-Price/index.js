@@ -260,6 +260,20 @@ function updateData() {
             title: curPrice,
             detail: percentage
         })
+
+        // Popover
+        if (typeof(here.setPopover) == "function") {
+            here.setPopover({
+                type: "webView",
+                data: {
+                    url: "https://www.coindesk.com/price/bitcoin",
+                    width: 375,
+                    height: 500,
+                    backgroundColor: "#161f36",
+                    foregroundColor: rgba(255, 255, 255, 0.5)
+                }
+            })
+        }
     })
     .catch((error) => {
         console.error("Error: " + JSON.stringify(error))

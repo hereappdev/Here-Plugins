@@ -1,6 +1,6 @@
 {
    "name": "知乎热榜",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "显示热门话题",
    "icon": "icon.png",
    "identifier": "app.here.zhihu",
@@ -10,6 +10,7 @@
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [
-      "mini"
+      "mini",
+      "menuBar"
    ]
 }
