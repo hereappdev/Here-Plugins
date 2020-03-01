@@ -1,6 +1,7 @@
 const http = require("http")
 const pref = require("pref")
 const fs = require("fs")
+const pasteboard = require("pasteboard")
 
 class Test {
     // global
@@ -246,4 +247,50 @@ class Test {
         })
     }
     // fs ========== END
+
+    // pasteboard ========== START
+    testSetGetText() {
+        return new Promise((res, rej) => {
+            let num = Math.random() * 100000
+            pasteboard.setText(`${num}`)
+            let pNum = Number(pasteboard.getText())
+            if (num == pNum) {
+                res({
+                    ret: true,
+                    msg: `pasteboard.setText(${num})\npasteboard.getText(${pNum})`
+                })
+            } else {
+                res({
+                    ret: false,
+                    msg: "Failed to set/get text in pasteboard"
+                })
+            }
+        })
+    }
+    
+    testOnChage() {
+        return new Promise((res, rej) => {
+            let count = pasteboard.changeCount()
+            let timeout = setTimeout(() => {
+                res({
+                    ret: false,
+                    msg: `failed to listen on change event`
+                })
+            }, 2000)
+
+            pasteboard.on("change", () => {
+                let newCount = pasteboard.changeCount()
+                clearTimeout(timeout)
+
+                res({
+                    ret: true,
+                    msg: `pasteboard.on("change") newCount: ${newCount}`
+                })
+            })
+
+            let num = Math.random() * 100000
+            pasteboard.setText(`${num}`)
+        })
+    }
+    // pasteboard ========== END
 }
