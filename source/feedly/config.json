@@ -8,7 +8,7 @@
    "website": "https://here.app",
    "appcast": "https://plugins.herecdn.com/source/feedly/appcast.xml",
    "script": "index.js",
-   "defaultCategory": "news",
+   "defaultCategory": "quick",
    "displayOn": [
       "mini",
       "menuBar"
