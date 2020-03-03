@@ -27,8 +27,8 @@
             "key": "degreeUnits",
             "default": 0,
             "options": [
-                "�F - Fahrenheit",
-                "�C - Celsius"
+                "℉ - Fahrenheit",
+                "℃ - Celsius"
             ]
         }
    ]
