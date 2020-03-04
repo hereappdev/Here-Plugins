@@ -6,7 +6,7 @@ const mt = require("moment.min.js")
 
 function updateData() {
     var location = "newyork"
-    var degreeUnits = "°F"
+    var degreeUnits = "℉"
     var degreeUnitsCode = "f"
 
     here.setMiniWindow({ title: "Updating…" })
@@ -25,11 +25,11 @@ function updateData() {
 
     if (json["degreeUnits"] != undefined) {
         if(json["degreeUnits"] == 0) {
-            degreeUnits = "°F"
+            degreeUnits = "℉"
             degreeUnitsCode = "f"
         }
         else {
-            degreeUnits = "°C"
+            degreeUnits = "℃"
             degreeUnitsCode = "c"
         }
     }
