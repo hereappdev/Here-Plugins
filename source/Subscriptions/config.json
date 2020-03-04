@@ -10,8 +10,6 @@
    "script": "index.js",
    "defaultCategory": "quick",
    "displayOn": [
-      "menuBar",
-      "mini",
-      "dock"
+      "mini"
    ]
 }

@@ -46,7 +46,7 @@ function callHere(tvList) {
         });
     }
 
-    here.setMenuBar({ title: tvList['channelName'] + ": " + tvList['isLive'] })
+    here.setMenuBar({ title: tvList['channelName'] })
     // here.setDock({
     //     title: tvList['isLive'],
     //     detail: tvList['channelName']

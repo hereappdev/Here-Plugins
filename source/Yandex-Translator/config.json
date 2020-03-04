@@ -4,7 +4,7 @@
     "description": "Translate your texts from your pasteboard",
     "createdBy": "ostrichb",
     "displayOn": [
-        "menubar"
+        "mini"
     ],
     "website": "https://blog.ostrichbeta.me/",
     "icon": "icon.png",

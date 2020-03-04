@@ -59,7 +59,10 @@ function updateData() {
     here.setMenuBar({ title: process.version })
 
     // Dock
-    here.setDock({ title: "Here" })
+    here.setDock({ 
+        title: process.version,
+        detail: "Here"
+    })
 }
 
 here.onLoad(() => {

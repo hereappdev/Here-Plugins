@@ -73,7 +73,7 @@ function updateData() {
         // console.debug(JSON.stringify(popOvers))
 
         // Menu Bar
-        here.setMenuBar({ title: weatherText + " " + weatherTemperature })
+        here.setMenuBar({ title: weatherTemperature })
 
         // Mini Window
         here.setMiniWindow({

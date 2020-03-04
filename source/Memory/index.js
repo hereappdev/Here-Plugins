@@ -61,9 +61,14 @@ function updateMemoryInfo() {
 
         // Dock
         here.setDock({
-            title: used,
-            detail: mem_size
+            title: (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%",
+            detail: "MEM"
         })
+
+        // Menu Bar
+        console.log()
+        here.setMenuBar({ title: "MEM " + (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%" })
+
     })
     .catch((error) => {
         console.error(JSON.stringify(error))

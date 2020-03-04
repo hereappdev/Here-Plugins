@@ -39,8 +39,8 @@ function updateCPUInfo() {
 
         // Dock
         here.setDock({
-            title: percentage + "%",
-            detail: inuse
+            title: percentage + "% " + idle,
+            detail: "CPU"
         })
     })
     .catch((error) => {
