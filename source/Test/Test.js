@@ -2,6 +2,28 @@ const http = require("http")
 const pref = require("pref")
 const fs = require("fs")
 const pasteboard = require("pasteboard")
+const crypto = require("crypto")
+const cache = require("cache")
+
+function _hashInputOutput(hashFunc, name, input, output) {
+    return new Promise((res, rej) => {
+        const str = input
+        const hash = output
+        const result = hashFunc(str)
+        // console.log(`crypto.md5("here.app") result: ${result}`)
+        if (result == hash) {
+            return res({
+                ret: true,
+                msg: `${name}("here.app")`
+            })
+        } else {
+            return res({
+                ret: false,
+                msg: `${name}("here.app")`
+            })
+        }
+    })
+}
 
 class Test {
     // global
@@ -293,4 +315,55 @@ class Test {
         })
     }
     // pasteboard ========== END
+
+    // crypto ========== START
+    testMD5() { return _hashInputOutput(crypto.md5, "crypto.md5", "here.app", "f83eab4c3f29db33f6789e4270a26fdf") }
+    testSHA1() { return _hashInputOutput(crypto.sha1, "crypto.sha1", "here.app", "f4e076bd83e38ee45d25d4ff08e9611812bd3615") }
+    testSHA224() { return _hashInputOutput(crypto.sha224, "crypto.sha224", "here.app", "f0782fc5ebd7abcf52119514de5723e418c986cf9ea752f98bfee8e3") }
+    testSHA256() { return _hashInputOutput(crypto.sha256, "crypto.sha256", "here.app", "3d0ab8b8752d61af9d34ca51396c09686730a92b6a5ab44582d5b7feff0a7668") }
+    testSHA384() { return _hashInputOutput(crypto.sha384, "crypto.sha384", "here.app", "ebe05004d00ef2e28a38815cd822cb73da9d3dd91885fc812220fd0d0ea34b6dca7230c991e84b5809869d84b3020bf8") }
+    testSHA512() { return _hashInputOutput(crypto.sha512, "crypto.sha512", "here.app", "5ba597e54b1abd5d7fe56a4529218767dbeb0a05c54160c8d6251d5cc26c6b5cad652acf9f65603778334294720495679cb0ac244d47dca497a1180e9c12582b") }
+    testBase64Encode() { return _hashInputOutput(crypto.base64Encode, "crypto.base64Encode", "here.app", "aGVyZS5hcHA=") }
+    testBase64Decode() { return _hashInputOutput(crypto.base64Decode, "crypto.base64Decode", "aGVyZS5hcHA=", "here.app") }
+    // crypto ========== END
+
+    // cache ========== START
+    testCache() {
+        return new Promise((res, rej) => {
+            // removeAll()
+            cache.removeAll()
+
+            // set
+            let msg = ""
+            const num = Math.random() * 1000000
+            const aVal = `${num}`
+            if (cache.set("test-key", aVal) == false) {
+                return res({ ret: false, msg: `cache.set("test-key", ${aVal})` })
+            }
+
+            msg += `cache.set("test-key", ${aVal})\n`
+
+            // get
+            const aCachedVal = cache.get("test-key")
+            if (aCachedVal != aVal) {
+                return res({ ret: false, msg: `cache.get("test-key")` })
+            } 
+
+            msg += `cache.get("test-key")\n`
+
+            // all
+            const arr = cache.all()
+            console.log("arr: ", JSON.stringify(arr))
+            if (arr.length != 1) {
+                return res({ ret: false, msg: `cache.all()` })
+            }
+            if (arr[0].key != "test-key" || arr[0].value != aVal || arr[0].type != typeof(aVal)) {
+                return res({ ret: false, msg: `cache.all()` })
+            }
+
+            msg += `cache.all()\n`
+            return res({ ret: true, msg: msg })
+        })
+    }
+    // cache ========== END
 }
