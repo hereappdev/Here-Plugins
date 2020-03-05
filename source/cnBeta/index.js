@@ -4,6 +4,7 @@ const net = require("net")
 
 function updateData() {
     const LIMIT = 10
+    let indexNum = 0
 
     here.setMiniWindow({ title: "Updating…" })
     http.get("https://m.cnbeta.com/touch/default/timeline.json?page=1")
@@ -29,26 +30,36 @@ function updateData() {
             return entry
         })
 
-        const topFeed = entryList[0]
-        var adNum = 0
+        
+        let adNum = 0 // 计算广告条数
+        let popOvers = _.map(entryList, (entry, index) => {
+            if(entry.title.indexOf("<span") !=-1 ){
+                adNum++;
+            }else{
+                indexNum++;
+            }
+            console.log(adNum + "-" + indexNum)
+            return {
+                title: indexNum + ". " + entry.title,
+                accessory: {
+                    title: "",
+                    imageURL: entry.thumb,
+                    imageCornerRadius: 4
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        })
+
+        const topFeed = entryList[adNum]
+        let popOversNew = popOvers.splice(adNum, popOvers.length)
+
+        console.log(popOversNew)
+
         // Mini Window
         here.setMiniWindow({
-            onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
             detail: "cnBeta",
-            popOvers: _.map(entryList, (entry, index) => {
-                if(entry.title.indexOf("<span") !=-1 ) adNum++;
-                console.log(adNum)
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: "",
-                        imageURL: entry.thumb,
-                        imageCornerRadius: 4
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            popOvers: popOversNew
         })
     })
     .catch(function(error) {
