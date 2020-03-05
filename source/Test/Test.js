@@ -25,6 +25,16 @@ function _hashInputOutput(hashFunc, name, input, output) {
     })
 }
 
+function _someCallbackFunc(param, callback) {
+    if (callback) {
+        if (param == "error") {
+            callback(param, undefined)
+        } else {
+            callback(undefined, true)
+        }
+    }
+}
+
 class Test {
     // global
     testRequire(module) {
@@ -49,109 +59,6 @@ class Test {
         })
     }
 
-    // here ========== START
-    testGetPreferences() {
-        return new Promise((res, rej) => {
-            // callback
-            let allPrefs = pref.all()
-            if (allPrefs == undefined) {
-                res({
-                    ret: false,
-                    msg: "pref.all(): allPrefs undefined"
-                })
-                return
-            }
-
-            if (typeof(allPrefs) != "object") {
-                res({
-                    ret: false,
-                    msg: "pref.all(): Not an object."
-                })
-                return
-            }
-            res({
-                ret: true,
-                msg: "pref.all()"
-            })
-        })
-    }
-
-    testExec() {
-        return new Promise((res, rej) => {
-            let ret = ""
-            // callback
-            here.exec("ls")
-            .then((stdOut) => {
-                console.debug("stdOut:", stdOut)
-                if (stdOut.includes("Test.js")) {
-                    ret += 'here.exec("ls")\n'
-                    return new Promise((aRes, aRej) => {
-                        here.exec('>&2 echo "test stdErr output"')
-                        .then((stdOut) => {
-                            aRes(false)
-                        })
-                        .catch((stdErr) => {
-                            aRes(true)
-                        })
-                    })
-
-                } else {
-                    return Promise.reject("Can't find Test.js")
-                }
-            })
-            .then((result) => {
-                ret += ret += 'here.exec(">&2 echo "test stdErr output"")'
-                res({
-                    ret: result,
-                    msg: ret
-                })
-            })
-            .catch((err) => {
-                res({
-                    ret: false,
-                    msg: `here.exec: err: ${err}`
-                })
-            })
-        })
-    }
-
-    testPostNotification() {
-        return new Promise((res, rej) => {
-            here.postNotification("system", "Test Title", "Test Content")
-            here.postNotification("hud", "Test Title", "Test Content")
-            res({
-                ret: true,
-                msg: "here.postNotification()"
-            })
-        })
-    }
-
-    testParseRssFeed() {
-        return new Promise((res, rej) => {
-            here.parseRSSFeed("http://rss.cnn.com/rss/cnn_topstories.rss")
-            .then((obj) => {
-                if (typeof(obj) != "object") {
-                    res({
-                        ret: false,
-                        msg: "here.parseRSSFeed(): Not an object."
-                    })
-                    return
-                }
-
-                res({
-                    ret: true,
-                    msg: "here.parseRSSFeed()"
-                })
-            })
-            .catch((err) => {
-                res({
-                    ret: false,
-                    msg: `here.parseRSSFeed(): ${err}`
-                })
-            })
-        })
-    }
-    // here ========== END
 
     // http ========== START
     testGet() {
@@ -347,7 +254,7 @@ class Test {
             const aCachedVal = cache.get("test-key")
             if (aCachedVal != aVal) {
                 return res({ ret: false, msg: `cache.get("test-key")` })
-            } 
+            }
 
             msg += `cache.get("test-key")\n`
 
@@ -361,9 +268,200 @@ class Test {
                 return res({ ret: false, msg: `cache.all()` })
             }
 
-            msg += `cache.all()\n`
+            msg += `cache.all()`
             return res({ ret: true, msg: msg })
         })
     }
     // cache ========== END
+
+    // here ========== START
+    testHereFormatBytes() {
+        return new Promise((res, rej) => {
+            let fmt1 = here.formatBytes(1024) // 1 KB
+            console.log(fmt1)
+            return res({ ret: (fmt1 == "1 KB"), msg: "here.formatBytes(1024)" })
+        })
+    }
+    testHerePluginIdentifier() {
+        return new Promise((res, rej) => {
+            return res({ 
+                ret: (here.pluginIdentifier() == "app.here.test"),
+                msg: "here.pluginIdentifier()" 
+            })
+        })
+    }
+    // testHereOpenURL() {
+    //     return new Promise((res, rej) => {
+    //         return res({ 
+    //             ret: (here.openURL("http://baidu.com") == true),
+    //             msg: `here.openURL("http://baidu.com")`
+    //         })
+    //     })
+    // }
+    testRGB() {
+        return new Promise((res, rej) => {
+            console.log(rgb(255, 255, 255))
+            return res({ 
+                ret: (rgb(255, 255, 255) == "ffffff"),
+                msg: `rgb(255, 255, 255)`
+            })
+        })
+    }
+    testRGBA() {
+        return new Promise((res, rej) => {
+            const color = rgba(255, 255, 255, 0.1)
+            return res({ 
+                ret: (color.hex == "ffffff" && color.alpha == 0.1),
+                msg: `rgba(255, 255, 255, 0.1)`
+            })
+        })
+    }
+
+    testPromisify() {
+        return new Promise((res, rej) => {
+            let asyncFunc = here.promisify(_someCallbackFunc)
+            asyncFunc("error")
+            .catch((err) => {
+                return res({ 
+                    ret: true,
+                    msg: `here.promisify(_someCallbackFunc)`
+                })
+            })
+        })
+    }
+    testPostNotification() {
+        return new Promise((res, rej) => {
+            here.postNotification("system", "Test Title", "Test Content")
+            here.postNotification("hud", "Test Title", "Test Content")
+            res({
+                ret: true,
+                msg: "here.postNotification()"
+            })
+        })
+    }
+    testGetPreferences() {
+        return new Promise((res, rej) => {
+            // callback
+            let allPrefs = pref.all()
+            if (allPrefs == undefined) {
+                res({
+                    ret: false,
+                    msg: "pref.all(): allPrefs undefined"
+                })
+                return
+            }
+
+            if (typeof(allPrefs) != "object") {
+                res({
+                    ret: false,
+                    msg: "pref.all(): Not an object."
+                })
+                return
+            }
+            res({
+                ret: true,
+                msg: "pref.all()"
+            })
+        })
+    }
+    testExec() {
+        return new Promise((res, rej) => {
+            let ret = ""
+            // callback
+            here.exec("ls")
+            .then((stdOut) => {
+                console.debug("stdOut:", stdOut)
+                if (stdOut.includes("Test.js")) {
+                    ret += 'here.exec("ls")\n'
+                    return new Promise((aRes, aRej) => {
+                        here.exec('>&2 echo "test stdErr output"')
+                        .then((stdOut) => {
+                            aRes(false)
+                        })
+                        .catch((stdErr) => {
+                            aRes(true)
+                        })
+                    })
+
+                } else {
+                    return Promise.reject("Can't find Test.js")
+                }
+            })
+            .then((result) => {
+                ret += ret += 'here.exec(">&2 echo "test stdErr output"")'
+                res({
+                    ret: result,
+                    msg: ret
+                })
+            })
+            .catch((err) => {
+                res({
+                    ret: false,
+                    msg: `here.exec: err: ${err}`
+                })
+            })
+        })
+    }
+    testParseRssFeed() {
+        return new Promise((res, rej) => {
+            here.parseRSSFeed("http://rss.cnn.com/rss/cnn_topstories.rss")
+            .then((obj) => {
+                if (typeof(obj) != "object") {
+                    res({
+                        ret: false,
+                        msg: "here.parseRSSFeed(): Not an object."
+                    })
+                    return
+                }
+
+                res({
+                    ret: true,
+                    msg: "here.parseRSSFeed()"
+                })
+            })
+            .catch((err) => {
+                res({
+                    ret: false,
+                    msg: `here.parseRSSFeed(): ${err}`
+                })
+            })
+        })
+    }
+    testSetMiniWindow() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.setMiniWindow({ title: `${date}` })
+            .then(() => {
+                res({
+                    ret: true,
+                    msg: `here.setMiniWindow({ title: ${date} })`
+                })
+            })
+        })
+    }
+    testSetMenuBar() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.setMenuBar({ title: `${date}` })
+            .then(() => {
+                res({
+                    ret: true,
+                    msg: `here.setMenuBar({ title: ${date} })`
+                })
+            })
+        })
+    }
+    testSetDock() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.setDock({ title: `${date}` })
+            .then(() => {
+                res({
+                    ret: true,
+                    msg: `here.setDock({ title: ${date} })`
+                })
+            })
+        })
+    }
+    // here ========== END
 }
