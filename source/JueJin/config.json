@@ -1,6 +1,6 @@
 {
    "name": "掘金开发者头条",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "显示热门文章",
    "icon": "icon.png",
    "identifier": "app.here.juejin",

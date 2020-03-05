@@ -30,14 +30,22 @@ function updateData() {
         })
 
         const topFeed = entryList[0]
+        var adNum = 0
         // Mini Window
         here.setMiniWindow({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
             detail: "cnBeta",
             popOvers: _.map(entryList, (entry, index) => {
+                if(entry.title.indexOf("<span") !=-1 ) adNum++;
+                console.log(adNum)
                 return {
                     title: (index + 1) + ". " + entry.title,
+                    accessory: {
+                        title: "",
+                        imageURL: entry.thumb,
+                        imageCornerRadius: 4
+                    },
                     onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
                 }
             })

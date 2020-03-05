@@ -40,9 +40,11 @@ function updateData() {
                     },
             popOvers: _.map(entryList, (entry, index) => {
                 return {
-                    title: (index + 1) + ". " + entry.title,
+                    title: (index + 1) + ". " + entry.title + "️️️ / " + entry.rating.average + "⭐️",
                     accessory: {
-                        title: entry.rating.average + "️️️⭐️"
+                        title: "",
+                        imageURL: entry.images.small,
+                        imageCornerRadius: 4
                     },
                     onClick: () => { if (entry.alt != undefined)  { here.openURL(entry.alt) } },
                 }

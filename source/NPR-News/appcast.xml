@@ -3,7 +3,7 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <item>
-            <enclosure url="https://plugins.herecdn.com/downloads/NPR-News.hereplugin" sparkle:version="1.0.2"/>
+            <enclosure url="https://plugins.herecdn.com/downloads/NPR-News.hereplugin" sparkle:version="1.0.3"/>
         </item>
     </channel>
 </rss>

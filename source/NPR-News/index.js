@@ -1,5 +1,5 @@
 const _ = require("underscore")
-const net = require("net")
+const http = require("http")
 
 function updateData() {
     const LIMIT = 10
@@ -9,9 +9,12 @@ function updateData() {
     // API: https://www.npr.org/rss/rss.php
     // API Speedy: https://apispeedy.com/npr/
 
-    here.parseRSSFeed("https://apispeedy.com/npr/")
-    .then((feed) => {
-        if (feed.items.length <= 0) {
+    http.request("https://www.npr.org/feeds/1001/feed.json")
+    .then((response) => {
+        var feed = response.data
+        console.log(JSON.stringify(feed))
+
+        if (response.data.length <= 0) {
             return here.setMiniWindow({ title: "No item found." })
         }
 
@@ -30,6 +33,11 @@ function updateData() {
                 return {
                     title: `${index + 1}. ${item.title}`,
                     onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
+                    accessory: {
+                        title: "",
+                        imageURL: item.image,
+                        imageCornerRadius: 4
+                    }
                 }
             })
         })

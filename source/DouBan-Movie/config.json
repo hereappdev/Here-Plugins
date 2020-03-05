@@ -1,6 +1,6 @@
 {
    "name": "豆瓣电影(热映榜)",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "description": "显示豆瓣近期热映电影",
    "icon": "icon.png",
    "identifier": "app.here.doubanmovie",

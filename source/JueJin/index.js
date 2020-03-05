@@ -38,6 +38,11 @@ function updateData() {
                 return {
                     title: (index + 1) + ". " + entry.title,
                     onClick: () => { if (entry.originalUrl != undefined)  { here.openURL(entry.originalUrl) } },
+                    accessory: {
+                        title: "",
+                        imageURL: entry.screenshot,
+                        imageCornerRadius: 4
+                    }
                 }
             })
         })

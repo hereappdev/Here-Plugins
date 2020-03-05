@@ -29,6 +29,11 @@ function updateData() {
                 return {
                     title: `${index + 1}. ${item.title}`,
                     onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
+                    accessory: {
+                        title: "",
+                        imageURL: item.media.mediaContents[0].attributes.url,
+                        imageCornerRadius: 4
+                    }
                 }
             })
         })

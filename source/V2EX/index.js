@@ -8,7 +8,7 @@ function updateData() {
     here.setMiniWindow({ title: "Updating…" })
     http.get('https://www.v2ex.com/api/topics/hot.json')
     .then(function(response) {
-        console.verbose(`data: ${response.data}`)
+        // console.verbose(JSON.stringify(response.data))
         const entryList = response.data
         if (entryList == undefined) {
             return here.setMiniWindow({ title: "Invalid data." })
@@ -22,15 +22,21 @@ function updateData() {
             entryList = entryList.slice(0, LIMIT)
         }
     
-        const topFeed = entryList[0]
+        const topFeed = entryList
         // Mini Window
         here.setMiniWindow({
-            onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
-            title: topFeed.title,
+            onClick: () => { if (topFeed[0].url != undefined)  { here.openURL(topFeed[0].url) } },
+            title: topFeed[0].title,
             detail: "V2EX",
             popOvers: _.map(entryList, (entry, index) => {
+                console.log(JSON.stringify(entry.member.avatar_large))
                 return {
                     title: (index + 1) + ". " + entry.title,
+                    accessory: {
+                        title: "",
+                        imageURL: "http:" + entry.member.avatar_large,
+                        imageCornerRadius: 4
+                    },
                     onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
                 }
             })
