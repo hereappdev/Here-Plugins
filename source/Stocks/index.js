@@ -136,6 +136,10 @@ function updateData() {
         here.setDock({
             title: curPrice,
             detail: percentage
+        }, (err) => {
+            if (err) {
+                console.error(err)
+            }
         })
     })
     .catch((error) => {

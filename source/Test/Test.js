@@ -430,11 +430,22 @@ class Test {
     testSetMiniWindow() {
         return new Promise((res, rej) => {
             let date = new Date()
-            here.setMiniWindow({ title: `${date}` })
+            here.miniWindow.set({ title: `${date}` })
             .then(() => {
                 res({
                     ret: true,
-                    msg: `here.setMiniWindow({ title: ${date} })`
+                    msg: `promise: here.setMiniWindow({ title: ${date} }).then(() => {})`
+                })
+            })
+        })
+    }
+    testSetMiniWindowCB() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.miniWindow.set({ title: `${date}` }, () => {
+                res({
+                    ret: true,
+                    msg: `callback: here.setMiniWindow({ title: ${date} }, (err) => {})`
                 })
             })
         })
@@ -446,7 +457,18 @@ class Test {
             .then(() => {
                 res({
                     ret: true,
-                    msg: `here.setMenuBar({ title: ${date} })`
+                    msg: `promise: here.setMenuBar({ title: ${date} })`
+                })
+            })
+        })
+    }
+    testSetMenuBarCB() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.setMenuBar({ title: `${date}` }, (err) => {
+                res({
+                    ret: true,
+                    msg: `callback: here.setMenuBar({ title: ${date} })`
                 })
             })
         })
@@ -458,7 +480,41 @@ class Test {
             .then(() => {
                 res({
                     ret: true,
-                    msg: `here.setDock({ title: ${date} })`
+                    msg: `promise: here.setDock({ title: ${date} })`
+                })
+            })
+        })
+    }
+    testSetDockCB() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.setDock({ title: `${date}` }, (err) => {
+                res({
+                    ret: true,
+                    msg: `callback: here.setDock({ title: ${date} })`
+                })
+            })
+        })
+    }
+    testPopoverSet() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.popover.set([{ title: `${date}` }])
+            .then(() => {
+                res({
+                    ret: true,
+                    msg: `promise: here.popover.set([{ title: ${date} }])`
+                })
+            })
+        })
+    }
+    testPopoverSetCB() {
+        return new Promise((res, rej) => {
+            let date = new Date()
+            here.popover.set([{ title: `${date}` }], (err) => {
+                res({
+                    ret: true,
+                    msg: `callback: here.popover.set([{ title: ${date} }])`
                 })
             })
         })
