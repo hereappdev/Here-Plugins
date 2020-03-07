@@ -23,7 +23,10 @@ function updateData() {
         const topFeed = entryList[0]
     
         // Menu Bar
-        here.menuBar.set({ title: "￥/$" + topFeed.xh_buy })
+        here.menuBar.set({
+            title: topFeed.xh_buy,
+            detail: "CNY/USD"
+        })
     
         // Mini Window
         here.miniWindow.set({

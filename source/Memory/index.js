@@ -36,8 +36,12 @@ function updateMemoryInfo() {
         // Swap
         const swapUsed = usage["swap_used_string"].replace(/\s+/g, '')
 
+            console.log(used)
         // Menu Bar
-        here.menuBar.set({ title: "Mem:" + used })
+        here.menuBar.set({
+            title: (used.slice(0,-2)/mem_size.slice(0,-2)*100).toFixed(0) + "%",
+            detail: "MEM"
+        })
 
         // Mini Window
         here.miniWindow.set({
@@ -61,7 +65,7 @@ function updateMemoryInfo() {
 
         // Dock
         here.dock.set({
-            title: (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%",
+            title: (used/mem_size).toFixed(2) + "%",
             detail: "MEM"
         })
 

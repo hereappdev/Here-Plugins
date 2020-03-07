@@ -12,7 +12,10 @@ function netUsage() {
         const totalin = json["totalin_string"]
 
         // Menu Bar
-        here.menuBar.set({ title: `⇣${deltain} ⇡${deltaout}` })
+        here.menuBar.set({
+            title: "⇣" + deltain,
+            detail: "⇡" + deltaout
+        })
 
         // Mini Window
         here.miniWindow.set({

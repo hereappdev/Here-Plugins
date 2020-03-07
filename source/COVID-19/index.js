@@ -45,7 +45,10 @@ function updateData() {
         // console.debug(JSON.stringify(topFeed))
 
         // Menu Bar
-        here.menuBar.set({ title: "确诊：" + topFeed.confirm.toString() })
+        here.menuBar.set({
+            detail: "全国确诊",
+            title: topFeed.confirm.toString()
+        })
 
         // Dock
         here.dock.set({

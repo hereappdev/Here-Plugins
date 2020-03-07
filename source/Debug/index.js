@@ -40,6 +40,7 @@ function updateData() {
         }
     })
 
+    console.log(JSON.stringify(process.versions.shortVersion))
     // Mini Window
     here.miniWindow.set({
         title: "Debug Info",
@@ -56,12 +57,15 @@ function updateData() {
     }
 
     // Menu Bar
-    here.menuBar.set({ title: process.version })
+    here.menuBar.set({
+        title: "v" + process.versions.shortVersion,
+        detail: process.versions.buildNumber
+    })
 
     // Dock
-    here.dock.set({ 
-        title: process.version,
-        detail: "Here"
+    here.dock.set({
+        title: "v" + process.versions.shortVersion,
+        detail: process.versions.buildNumber
     })
 }
 

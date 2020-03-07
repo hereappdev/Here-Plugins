@@ -25,7 +25,10 @@ function updateCPUInfo() {
         }
 
         // Menu Bar
-        here.menuBar.set({ title: `CPU ${percentage}%` })
+        here.menuBar.set({
+            title: percentage + "%",
+            detail: "CPU"
+        })
 
         // Mini Window
         here.miniWindow.set({

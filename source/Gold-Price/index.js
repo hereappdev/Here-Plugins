@@ -26,7 +26,10 @@ function updateData() {
         // console.debug(goldPrice)
     
         // Menu Bar
-        here.menuBar.set({ title: "金价:" + goldPrice })
+        here.menuBar.set({
+            title: goldPrice,
+            detail: "金价:"
+        })
     
         // Mini Window
         here.here.miniWindow.set({

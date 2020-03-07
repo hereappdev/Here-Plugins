@@ -58,7 +58,10 @@ function updateBatteryInfo() {
         console.verbose(popOvers)
 
         // Menu Bar
-        here.menuBar.set({ title: `🔋${percentage}` })
+        here.menuBar.set({
+            title: percentage,
+            detail: "Battery"
+        })
 
         // Mini Window
         here.miniWindow.set({

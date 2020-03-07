@@ -119,7 +119,10 @@ function updateData() {
         )
 
         // Menu Bar
-        here.menuBar.set({ title: `${stockName} ${curPrice} (${percentage})` })
+        here.menuBar.set({
+            title: curPrice,
+            detail: percentage    
+        })
 
         // Mini Window
         here.miniWindow.set({

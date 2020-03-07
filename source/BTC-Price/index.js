@@ -243,7 +243,10 @@ function updateData() {
         // console.debug(percentage)
 
         // Menu Bar
-        here.menuBar.set({ title: `${coinCode}:${curPrice}(${percentage})` })
+        here.menuBar.set({
+            title: curPrice,
+            detail: percentage
+        })
 
         // Mini Window
         here.miniWindow.set({
