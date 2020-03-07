@@ -51,17 +51,17 @@ function updateMemoryInfo() {
             accessory: {
                 title: used,
                 detail: mem_size
-            },
-            popOvers: [
-                { title: `Physical Memory`, accessory: { title : mem_size } },
-                { title: `Memory Used`, accessory: { title : used } },
-                { title: `Physical Memory`, accessory: { title : cached } },
-                { title: `Cached`, accessory: { title : wired } },
-                { title: `compressed`, accessory: { title : compressed } },
-                { title: `free`, accessory: { title : free } },
-                { title: `active`, accessory: { title : active } }
-            ]
+            }
         })
+        here.popover.set([
+            { title: `Physical Memory`, accessory: { title : mem_size } },
+            { title: `Memory Used`, accessory: { title : used } },
+            { title: `Physical Memory`, accessory: { title : cached } },
+            { title: `Cached`, accessory: { title : wired } },
+            { title: `compressed`, accessory: { title : compressed } },
+            { title: `free`, accessory: { title : free } },
+            { title: `active`, accessory: { title : active } }
+        ])
 
         // Dock
         here.dock.set({

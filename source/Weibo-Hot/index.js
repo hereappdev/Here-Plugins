@@ -43,17 +43,17 @@ function updateData() {
             detail: "微博热搜榜",
             accessory: {
                 title: (topFeed.desc_extr == null) ? '置顶🔝' : '🔥' + ((parseInt(topFeed.desc_extr/10000)) + '万') 
-            },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: (entry["desc_extr"] == null) ? '置顶🔝' : '🔥' + ((parseInt(entry["desc_extr"])/10000) + '万')
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                accessory: {
+                    title: (entry["desc_extr"] == null) ? '置顶🔝' : '🔥' + ((parseInt(entry["desc_extr"])/10000) + '万')
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

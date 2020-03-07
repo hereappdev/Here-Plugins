@@ -52,16 +52,16 @@ function updateData() {
                 detail: currencySymbols + "⇌" + displaySymbols + ": " + (entryList[displaySymbols] / currencyValue).toFixed(3).toString(),
                 accessory: {
                     title: (currencyValue / entryList[displaySymbols]).toFixed(3).toString()
-                },
-                popOvers: _.map(entryList, (entry, key) => {
-                    return {
-                        title: key.toString(),
-                        accessory: {
-                            title: (currencyValue/entry).toFixed(3).toString()
-                        },
-                    }
-                })
-        })
+                }
+            })
+            here.popover.set(_.map(entryList, (entry, key) => {
+                return {
+                    title: key.toString(),
+                    accessory: {
+                        title: (currencyValue/entry).toFixed(3).toString()
+                    },
+                }
+            }))
         })
 }
 

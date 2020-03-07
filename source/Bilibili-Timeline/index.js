@@ -51,21 +51,18 @@ function updateData() {
             onClick: () => { here.openURL("https://www.bilibili.com/anime/timeline/") },
             title: "bilibili每日新番时间表",
             detail: feedYear + "-" + feedMon + "-" + feedDate + "日" + "(" + feedWeek + ")",
-            accessory: {
-                        badge: entryList.seasons.length + "部"
-                    },
-                    // delTraditionalChinese(entryList.seasons)
-            popOvers: _.map(entryList.seasons, (entry, index) => {
-                
-                return {
-                    title: entry.title + " · " + entry.pub_index,
-                    accessory: {
-                        title: '🕓' + entry.pub_time
-                    },
-                    onClick: () => { here.openURL("https://www.bilibili.com/bangumi/play/ss" + entry.season_id) },
-                }
-            })
+            accessory: { badge: entryList.seasons.length + "部" }
         })
+        here.popover.set(_.map(entryList.seasons, (entry, index) => {
+                
+            return {
+                title: entry.title + " · " + entry.pub_index,
+                accessory: {
+                    title: '🕓' + entry.pub_time
+                },
+                onClick: () => { here.openURL("https://www.bilibili.com/bangumi/play/ss" + entry.season_id) },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

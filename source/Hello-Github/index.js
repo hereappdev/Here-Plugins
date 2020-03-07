@@ -20,14 +20,14 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed.link != undefined)  { here.openURL(topFeed.link) } },
             title: topFeed.title,
-            detail: "Hello GitHub",
-            popOvers: _.map(feed.items, (item, index) => {
-                return {
-                    title: `${index + 1}. ${item.title}`,
-                    onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
-                }
-            })
+            detail: "Hello GitHub"
         })
+        here.popover.set(_.map(feed.items, (item, index) => {
+            return {
+                title: `${index + 1}. ${item.title}`,
+                onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
+            }
+        }))
     })
     .catch((error) => {
         console.error(`Error: ${JSON.stringify(error)}`)

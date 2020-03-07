@@ -42,19 +42,19 @@ function updateData() {
             detail: "App Store Top Grossing(CN)",
             accessory: {
                 badge: topFeed.rank 
-            },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: entry.rank,
-                        imageURL: entry.appIcon,
-                        imageCornerRadius: 4
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                accessory: {
+                    title: entry.rank,
+                    imageURL: entry.appIcon,
+                    imageCornerRadius: 4
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

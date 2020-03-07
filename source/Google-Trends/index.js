@@ -47,17 +47,17 @@ function updateData() {
             detail: "Google Trends",
             accessory: {
                 title: '🔥' + topFeed.formattedTraffic 
-            },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: '🔥' + entry.formattedTraffic
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                accessory: {
+                    title: '🔥' + entry.formattedTraffic
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

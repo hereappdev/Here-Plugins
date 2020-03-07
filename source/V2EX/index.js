@@ -27,20 +27,14 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed[0].url != undefined)  { here.openURL(topFeed[0].url) } },
             title: topFeed[0].title,
-            detail: "V2EX",
-            popOvers: _.map(entryList, (entry, index) => {
-                console.log(JSON.stringify(entry.member.avatar_large))
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: "",
-                        imageURL: "http:" + entry.member.avatar_large,
-                        imageCornerRadius: 4
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            detail: "V2EX"
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

@@ -59,9 +59,14 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
-            detail: "cnBeta",
-            popOvers: popOversNew
+            detail: "cnBeta"
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

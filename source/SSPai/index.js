@@ -62,7 +62,7 @@ function updateData() {
                 accessory: {
                     badge: unreadFeeds.length + ""
                 },
-                popOvers: _.map(unreadFeeds,(item, index) => {
+                popovers: _.map(unreadFeeds,(item, index) => {
                     return {
                         title: isDebugMode() ? `${index + 1}. ${item.title} PID:${getPostId(item.link)}` : `${index + 1}. ${item.title}`,
                         onClick: () => {

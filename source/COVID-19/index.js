@@ -64,16 +64,16 @@ function updateData() {
             accessory: {
                         title: "确诊" + topFeed.confirm,
                         detail: lastUpdateTime
-                    },
-            popOvers: _.map(areaTree, (entry, index) => {
-                return {
-                    title: entry.name,
-                    accessory: {
-                        title: entry.total.confirm.toString()
-                    },
-                }
-            })
+                    }
         })
+        here.popover.set(_.map(areaTree, (entry, index) => {
+            return {
+                title: entry.name,
+                accessory: {
+                    title: entry.total.confirm.toString()
+                },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

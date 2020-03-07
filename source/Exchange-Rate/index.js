@@ -35,16 +35,16 @@ function updateData() {
             detail: "中国人民银行",
             accessory: {
                         title: topFeed.xh_buy
-                    },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: entry.name,
-                    accessory: {
-                        title: entry.xh_buy
-                    },
-                }
-            })
+                    }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: entry.name,
+                accessory: {
+                    title: entry.xh_buy
+                },
+            }
+        }))
     
         // Dock
         here.dock.set({

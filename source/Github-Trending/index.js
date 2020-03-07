@@ -18,7 +18,7 @@ function updateData() {
 
         const topFeed = feeds[0]
 
-        let popOvers = _.map(feeds, (feed, index) => {
+        let popovers = _.map(feeds, (feed, index) => {
             return {
                 title: (index + 1) + ". " + feed.author + "/" + feed.name,
                 // detail: feed.description,
@@ -28,7 +28,7 @@ function updateData() {
                 onClick: () => { here.openURL(feed.url) }
             }
         })
-        popOvers.push({
+        popovers.push({
             title: "View All…",
             onClick: () => { _.each(feeds, (feed) => { here.openURL(feed.url) }) }
         })
@@ -36,12 +36,10 @@ function updateData() {
         here.miniWindow.set({
             title: topFeed.author + "/" + topFeed.name,
             detail: "Github Trending Weekly",
-            accessory: {
-                    title: (Number(topFeed.stars) / 1000).toFixed(1) + "k⭐️"
-                },
-            popOvers: popOvers,
+            accessory: { title: (Number(topFeed.stars) / 1000).toFixed(1) + "k⭐️" },
             onClick: () => { here.openURL(topFeed.url) }
         })
+        here.popover.set(popovers)
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

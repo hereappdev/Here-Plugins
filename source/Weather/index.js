@@ -58,7 +58,7 @@ function updateData() {
         const weatherForecasts = json["forecasts"]
         const keys = _.allKeys(weatherForecasts)
 
-        let popOvers = _.map(keys, (key) => {
+        let popovers = _.map(keys, (key) => {
             let value = weatherForecasts[key]
             return {
                 title: moment(value["date"] * 1000).format("MMM DD, dddd") + " " + ( key == 0 ? "(Today)" : "" ),
@@ -70,7 +70,7 @@ function updateData() {
             }
         })
 
-        // console.debug(JSON.stringify(popOvers))
+        // console.debug(JSON.stringify(popovers))
 
         // Menu Bar
         here.menuBar.set({
@@ -82,13 +82,13 @@ function updateData() {
         here.miniWindow.set({
             title: weatherCity,
             detail: "↑" + weatherHigh + degreeUnits + " · ↓" + weatherLow + degreeUnits + " (" + moment(weatherToday).format("dddd") + ")",
-            popOvers: popOvers,
             accessory: {
                 title: weatherText,
                 detail: weatherTemperature
             },
             onClick: updateData
         })
+        here.popover.set(popovers)
 
         // Dock
         here.dock.set({

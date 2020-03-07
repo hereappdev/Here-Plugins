@@ -67,9 +67,9 @@ function callHere(tvList) {
         accessory: {
             title: liveSt,
             detail: "开始时间"
-        },
-        popOvers: popList
+        }
     })
+    here.popover.set(popList)
 }
 
 function updateData() {

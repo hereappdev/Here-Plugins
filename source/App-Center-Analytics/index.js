@@ -64,16 +64,16 @@ function updateData() {
             detail: "MS App Center",
             accessory: {
                 title: entryList.device_count.toString()
-            },
-            popOvers: _.map(entryList, (entry, key) => {
-                return {
-                    title: key.toString(),
-                    accessory: {
-                        title: entry.toString()
-                    },
-                }
-            })
+            }
         })
+        here.popover.set(_.map(entryList, (entry, key) => {
+            return {
+                title: key.toString(),
+                accessory: {
+                    title: entry.toString()
+                },
+            }
+        }))
     })
 }
 

@@ -33,14 +33,14 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
-            detail: "知乎热榜",
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            detail: "知乎热榜"
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
 
         // Menu Bar
         here.menuBar.set({

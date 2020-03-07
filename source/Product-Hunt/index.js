@@ -38,17 +38,17 @@ function updateData() {
             detail: "ProductHunt Hot",
             accessory: {
                 title: '▲' + topFeed.votes_count 
-            },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: '▲' + entry.votes_count 
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                accessory: {
+                    title: '▲' + entry.votes_count 
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

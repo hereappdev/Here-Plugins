@@ -24,19 +24,14 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed.link != undefined)  { here.openURL(topFeed.link) } },
             title: topFeed.title,
-            detail: "The New York Times",
-            popOvers: _.map(feed.items, (item, index) => {
-                return {
-                    title: `${index + 1}. ${item.title}`,
-                    onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
-                    accessory: {
-                        title: "",
-                        imageURL: item.media.mediaContents[0].attributes.url,
-                        imageCornerRadius: 4
-                    }
-                }
-            })
+            detail: "The New York Times"
         })
+        here.popover.set(_.map(feed.items, (item, index) => {
+            return {
+                title: `${index + 1}. ${item.title}`,
+                onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
+            }
+        }))
     })
     .catch((error) => {
         console.error(`Error: ${JSON.stringify(error)}`)

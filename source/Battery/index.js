@@ -42,7 +42,7 @@ function updateBatteryInfo() {
             detailText = "Not charging"
         }
 
-        let popOvers = _.map(otherInfo, (aInfo, index) => {
+        let popovers = _.map(otherInfo, (aInfo, index) => {
             return {
                 title: aInfo["name"],
                 accessory: {
@@ -50,12 +50,12 @@ function updateBatteryInfo() {
                 }
             }
         })
-        popOvers = popOvers.concat(_.map(airPodsInfo, (aInfo, index) => {
+        popovers = popovers.concat(_.map(airPodsInfo, (aInfo, index) => {
             return {
                 title: `${aInfo["name"]} L: ${aInfo["batteryPercentLeft"]} R: ${aInfo["batteryPercentRight"]} Case: ${aInfo["batteryPercentCase"]}`
             }
         }))
-        console.verbose(popOvers)
+        console.verbose(popovers)
 
         // Menu Bar
         here.menuBar.set({
@@ -70,9 +70,10 @@ function updateBatteryInfo() {
             accessory: {
                 title: percentage,
                 detail: title
-            },
-            popOvers: popOvers
+            }
         })
+
+        here.popover.set(popovers)
 
         // Dock
         here.dock.set({

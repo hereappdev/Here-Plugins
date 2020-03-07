@@ -40,15 +40,10 @@ function updateData() {
             title: entryList.quote.replace(/\r\n/g,"，"),
             detail: entryList.author.intro.replace(/\r\n/g,"，")
         })
-
-        here.setPopover({
-            type: "webView",
-            data: {
-                url: "http://meirishici.com/",
-                width: 375,
-                height: 440
-            }
-        })
+        here.popover.set([
+            { title: entryList.poetry.content },
+            { title: entryList.author.intro }
+        ])
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

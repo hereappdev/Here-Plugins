@@ -37,12 +37,12 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { here.openURL("http://m.iciba.com/daily.html?daily=1&sid=%EF%BF%BC") },
             title: entryList.content,
-            detail: entryList.note,
-            popOvers: [
-                { title: entryList.content },
-                { title: entryList.note }
-            ]
+            detail: entryList.note
         })
+        here.popover.set([
+            { title: entryList.content },
+            { title: entryList.note }
+        ])
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

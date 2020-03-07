@@ -77,9 +77,9 @@ function updateData() {
         const previousClose = Number(arr[arrIndex[4]]).toFixed(2)
         const date = arr[arrIndex[5]]
 
-        let popOvers = []
+        let popovers = []
 
-        popOvers.push(
+        popovers.push(
             {
             title: "Current Price",
             accessory: {
@@ -128,12 +128,12 @@ function updateData() {
         here.miniWindow.set({
             title: stockName,
             detail: diff,
-            popOvers: popOvers,
             accessory: {
                 title: curPrice,
                 detail: percentage
             }
         })
+        here.popover.set(popovers)
 
         // Dock
         here.dock.set({

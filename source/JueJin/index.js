@@ -33,19 +33,14 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed.originalUrl != undefined)  { here.openURL(topFeed.originalUrl) } },
             title: topFeed.title,
-            detail: "掘金热文",
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    onClick: () => { if (entry.originalUrl != undefined)  { here.openURL(entry.originalUrl) } },
-                    accessory: {
-                        title: "",
-                        imageURL: entry.screenshot,
-                        imageCornerRadius: 4
-                    }
-                }
-            })
+            detail: "掘金热文"
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                onClick: () => { if (entry.originalUrl != undefined)  { here.openURL(entry.originalUrl) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

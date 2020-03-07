@@ -33,14 +33,14 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { here.openURL("https://news.sogou.com/news?query=" + topFeed.word) },
             title: topFeed.word,
-            detail: "微信热搜",
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.word,
-                    onClick: () => { here.openURL("https://news.sogou.com/news?query=" + entry.word) },
-                }
-            })
+            detail: "微信热搜"
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.word,
+                onClick: () => { here.openURL("https://news.sogou.com/news?query=" + entry.word) },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

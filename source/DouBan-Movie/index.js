@@ -35,21 +35,17 @@ function updateData() {
             onClick: () => { if (topFeed.alt != undefined)  { here.openURL(topFeed.alt) } },
             title: "🎬《" + topFeed.title + "》",
             detail: "上映" + topFeed["mainland_pubdate"],
-            accessory: {
-                        badge: topFeed["rating"]["average"].toString()
-                    },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title + "️️️ / " + entry.rating.average + "⭐️",
-                    accessory: {
-                        title: "",
-                        imageURL: entry.images.small,
-                        imageCornerRadius: 4
-                    },
-                    onClick: () => { if (entry.alt != undefined)  { here.openURL(entry.alt) } },
-                }
-            })
+            accessory: { badge: topFeed["rating"]["average"].toString() }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                accessory: {
+                    title: entry.rating.average + "️️️⭐️"
+                },
+                onClick: () => { if (entry.alt != undefined)  { here.openURL(entry.alt) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
