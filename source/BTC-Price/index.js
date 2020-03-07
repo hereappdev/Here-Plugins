@@ -273,7 +273,8 @@ function updateData() {
                     width: 375,
                     height: 500,
                     backgroundColor: "#161f36",
-                    foregroundColor: rgba(255, 255, 255, 0.5)
+                    foregroundColor: rgba(255, 255, 255, 0.5),
+                    hideStatusBar: true
                 }
             })
         }
