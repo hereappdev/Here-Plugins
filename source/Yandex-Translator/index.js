@@ -44,7 +44,7 @@ function loadGUI() {
     
     let popup = [];
     original = getText();
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: String(original['translate']['loading'])
     });
 
@@ -60,7 +60,7 @@ function loadGUI() {
                 here.openURL("https://blog.csdn.net/chuzhou8495/article/details/100776788");
             }
         })
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: String(original['translate']['title']),
             detail: String(original['translate']['detail']),
             popOvers: popup
@@ -106,7 +106,7 @@ function loadGUI() {
         }
     });
     
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: String(original['translate']['title']),
         detail: String(original['translate']['detail']),
         popOvers: popup

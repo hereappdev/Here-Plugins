@@ -1,6 +1,6 @@
 here.onLoad(() => {
 
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Show Hidden Files",
         detail: "Click to switch.",
         onClick: () => {
@@ -16,7 +16,7 @@ function switchHiddenFiles() {
     here.exec("defaults read com.apple.finder AppleShowAllFiles")
     .then((stdOut) => {
         if(stdOut == 0){
-            here.setMiniWindow({
+            here.miniWindow.set({
                 title: "Show Hidden Files",
                 detail: "Click to switch.",
                 accessory: {
@@ -26,7 +26,7 @@ function switchHiddenFiles() {
             status = 0
             here.exec("defaults write com.apple.finder AppleShowAllFiles -boolean true;killall Finder")
         }else if(stdOut == 1) {
-            here.setMiniWindow({
+            here.miniWindow.set({
                 title: "Show Hidden Files",
                 detail: "Click to switch.",
                 accessory: {

@@ -3,7 +3,7 @@ const http = require("http")
 const net = require("net")
 
 function updateData() {
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     
     http.get("https://stock.finance.sina.com.cn/forex/api/openapi.php/ForexService.getAllBankForex?ft=part")
     .then(function(response) {
@@ -13,20 +13,20 @@ function updateData() {
         const entryList = json.result.data.boc
     
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
     
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
     
         const topFeed = entryList[0]
     
         // Menu Bar
-        here.setMenuBar({ title: "￥/$" + topFeed.xh_buy })
+        here.menuBar.set({ title: "￥/$" + topFeed.xh_buy })
     
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { here.openURL("https://finance.sina.com.cn/forex/") },
             title: "人民币牌价 (" + topFeed.name + ")",
             detail: "中国人民银行",
@@ -44,14 +44,14 @@ function updateData() {
         })
     
         // Dock
-        here.setDock({
+        here.dock.set({
             title: topFeed.xh_buy,
             detail: "￥/$"
         })
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

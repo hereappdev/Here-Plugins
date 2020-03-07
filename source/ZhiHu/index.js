@@ -5,17 +5,17 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     http.get(`https://www.zhihu.com/api/v3/explore/guest/feeds?limit=${LIMIT}`)
     .then(function(response) {
         const json = response.data
         let entryList = json.data
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
     
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -30,7 +30,7 @@ function updateData() {
     
         const topFeed = entryList[0]
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
             detail: "知乎热榜",
@@ -43,13 +43,13 @@ function updateData() {
         })
 
         // Menu Bar
-        here.setMenuBar({
+        here.menuBar.set({
             title: topFeed.title
         })
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

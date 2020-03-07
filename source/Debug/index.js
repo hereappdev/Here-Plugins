@@ -41,7 +41,7 @@ function updateData() {
     })
 
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Debug Info",
         detail: process.version,
         onClick: () => {
@@ -51,15 +51,15 @@ function updateData() {
     })
 
     // Popovers
-    if (typeof(here.setPopover) == "function") {
-        here.setPopover(popOvers)
+    if (typeof(here.popover.set) == "function") {
+        here.popover.set(popOvers)
     }
 
     // Menu Bar
-    here.setMenuBar({ title: process.version })
+    here.menuBar.set({ title: process.version })
 
     // Dock
-    here.setDock({ 
+    here.dock.set({ 
         title: process.version,
         detail: "Here"
     })

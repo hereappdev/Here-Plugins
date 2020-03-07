@@ -122,9 +122,9 @@ function displayData() {
 
 here.onLoad(() => {
     if (hasData()) {
-        here.setMiniWindow(displayData())
+        here.miniWindow.set(displayData())
     } else {
-        here.setMiniWindow({ 
+        here.miniWindow.set({ 
             title: "No save.json found.", 
             detail: "Please rename [example.json] to [save.json]. Click here.",
             onClick: () => {

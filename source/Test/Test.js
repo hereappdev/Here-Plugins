@@ -434,7 +434,7 @@ class Test {
             .then(() => {
                 res({
                     ret: true,
-                    msg: `promise: here.setMiniWindow({ title: ${date} }).then(() => {})`
+                    msg: `promise: here.miniWindow.set({ title: ${date} }).then(() => {})`
                 })
             })
         })
@@ -445,7 +445,7 @@ class Test {
             here.miniWindow.set({ title: `${date}` }, () => {
                 res({
                     ret: true,
-                    msg: `callback: here.setMiniWindow({ title: ${date} }, (err) => {})`
+                    msg: `callback: here.miniWindow.set({ title: ${date} }, (err) => {})`
                 })
             })
         })
@@ -453,11 +453,11 @@ class Test {
     testSetMenuBar() {
         return new Promise((res, rej) => {
             let date = new Date()
-            here.setMenuBar({ title: `${date}` })
+            here.menuBar.set({ title: `${date}` })
             .then(() => {
                 res({
                     ret: true,
-                    msg: `promise: here.setMenuBar({ title: ${date} })`
+                    msg: `promise: here.menuBar.set({ title: ${date} })`
                 })
             })
         })
@@ -465,10 +465,10 @@ class Test {
     testSetMenuBarCB() {
         return new Promise((res, rej) => {
             let date = new Date()
-            here.setMenuBar({ title: `${date}` }, (err) => {
+            here.menuBar.set({ title: `${date}` }, (err) => {
                 res({
                     ret: true,
-                    msg: `callback: here.setMenuBar({ title: ${date} })`
+                    msg: `callback: here.menuBar.set({ title: ${date} })`
                 })
             })
         })
@@ -476,11 +476,11 @@ class Test {
     testSetDock() {
         return new Promise((res, rej) => {
             let date = new Date()
-            here.setDock({ title: `${date}` })
+            here.dock.set({ title: `${date}` })
             .then(() => {
                 res({
                     ret: true,
-                    msg: `promise: here.setDock({ title: ${date} })`
+                    msg: `promise: here.dock.set({ title: ${date} })`
                 })
             })
         })
@@ -488,10 +488,10 @@ class Test {
     testSetDockCB() {
         return new Promise((res, rej) => {
             let date = new Date()
-            here.setDock({ title: `${date}` }, (err) => {
+            here.dock.set({ title: `${date}` }, (err) => {
                 res({
                     ret: true,
-                    msg: `callback: here.setDock({ title: ${date} })`
+                    msg: `callback: here.dock.set({ title: ${date} })`
                 })
             })
         })

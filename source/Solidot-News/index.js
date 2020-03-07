@@ -4,18 +4,18 @@ const net = require("net")
 function updateData() {
     var apiUrl = "https://www.solidot.org/index.rss"
     
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     console.debug("api: " + apiUrl)
     
     here.parseRSSFeed(apiUrl)
     .then((feed) => {
         if (feed.items.length <= 0) {
-            return here.setMiniWindow({ title: "No item found." })
+            return here.miniWindow.set({ title: "No item found." })
         }
     
         const topFeed = feed.items[0]
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.link != undefined)  { here.openURL(topFeed.link) } },
             title: topFeed.title,
             detail: "Solidot: 奇客的资讯，重要的东西",

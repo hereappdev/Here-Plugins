@@ -69,7 +69,7 @@ function updateData() {
     ]
 
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Progress of the Year",
         detail: year.bar,
         accessory: {

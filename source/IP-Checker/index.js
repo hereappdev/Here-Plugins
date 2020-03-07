@@ -35,7 +35,7 @@ function clipboardQuery() {
 }
 
 function showIP(ip) {
-    here.setMiniWindow({ title: "Loading...", detail: "Request " + ip + " info." })
+    here.miniWindow.set({ title: "Loading...", detail: "Request " + ip + " info." })
 
     http.get({
         url: "http://ip.taobao.com/service/getIpInfo.php?ip=" + ip,
@@ -43,7 +43,7 @@ function showIP(ip) {
     }).then((response) => {
         // console.debug("getIP---" + data)
         if(response.statusCode != 200) {
-            here.setMiniWindow({
+            here.miniWindow.set({
                 title: "Bad HTTP response.",
                 detail: "HTTP " + response.statusCode + " (Click to check IP from clipboard)",
                 onClick: () => {
@@ -57,7 +57,7 @@ function showIP(ip) {
         const ipInfo = json.data
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "IP Address: " + ip,
             detail: ipInfo.country + "/" + ipInfo.city + "/" + ipInfo.isp + " (Click to check IP from clipboard)",
             onClick: () => {
@@ -81,7 +81,7 @@ function updateData() {
     })
     .catch((error) => {
         console.error(JSON.stringify(error))
-        here.setMiniWindow({ title: "Failed to get IP address.", detail: "Copy IP firstly" })
+        here.miniWindow.set({ title: "Failed to get IP address.", detail: "Copy IP firstly" })
         setTimeout(updateData, 3000)
     })
 }

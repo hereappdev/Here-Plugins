@@ -6,7 +6,7 @@ function updateData() {
     // 最多显示 20 列
     const LIMIT = 20
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     http.get("https://bangumi.bilibili.com/web_api/timeline_global")
     .then(function(response) {
@@ -16,11 +16,11 @@ function updateData() {
         // console.verbose(entryList[6])
 
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
 
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
 
         // 日期显示星期
@@ -47,7 +47,7 @@ function updateData() {
         console.verbose(entryList)
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { here.openURL("https://www.bilibili.com/anime/timeline/") },
             title: "bilibili每日新番时间表",
             detail: feedYear + "-" + feedMon + "-" + feedDate + "日" + "(" + feedWeek + ")",
@@ -69,7 +69,7 @@ function updateData() {
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

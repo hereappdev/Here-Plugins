@@ -65,7 +65,7 @@ function coverage(module) {
 }
 
 here.onLoad(() => {
-    here.setMiniWindow({ title: "Testing…" })
+    here.miniWindow.set({ title: "Testing…" })
     
     let cv_global = coverage(global)
     console.info(`Coverage for global: ${cv_global.covered}/${cv_global.total}`)

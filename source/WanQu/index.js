@@ -4,12 +4,12 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
     
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     here.parseRSSFeed("https://wanqu.co/feed")
     .then((feed) => {
     	console.log(JSON.stringify(feed.items[0]))
         if (feed.items.length <= 0) {
-            return here.setMiniWindow({ title: "No item found." })
+            return here.miniWindow.set({ title: "No item found." })
         }
     
         if (feed.items.length > LIMIT) {
@@ -18,7 +18,7 @@ function updateData() {
     
         const topFeed = feed.items[0]
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.link != undefined)  { here.openURL(topFeed.link) } },
             title: topFeed.title,
             detail: "湾区日报",

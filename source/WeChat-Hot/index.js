@@ -5,18 +5,18 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
     
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     http.get('https://weixin.sogou.com/pcindex/pc/web/web.js')
     .then(function(response) {
         const json = response.data
         if (json == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
     
         let entryList = json.topwords
         if (entryList.length <= 1) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -30,7 +30,7 @@ function updateData() {
     
         const topFeed = entryList[0]
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { here.openURL("https://news.sogou.com/news?query=" + topFeed.word) },
             title: topFeed.word,
             detail: "微信热搜",
@@ -44,7 +44,7 @@ function updateData() {
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

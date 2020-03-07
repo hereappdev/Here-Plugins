@@ -9,7 +9,7 @@ function updateData() {
     var degreeUnits = "℉"
     var degreeUnitsCode = "f"
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     const json = pref.all()
 
@@ -73,10 +73,10 @@ function updateData() {
         // console.debug(JSON.stringify(popOvers))
 
         // Menu Bar
-        here.setMenuBar({ title: weatherTemperature })
+        here.menuBar.set({ title: weatherTemperature })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: weatherCity,
             detail: "↑" + weatherHigh + degreeUnits + " · ↓" + weatherLow + degreeUnits + " (" + moment(weatherToday).format("dddd") + ")",
             popOvers: popOvers,
@@ -88,7 +88,7 @@ function updateData() {
         })
 
         // Dock
-        here.setDock({
+        here.dock.set({
             title: weatherTemperature,
             detail: weatherText
         })

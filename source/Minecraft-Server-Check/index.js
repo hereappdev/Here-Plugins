@@ -21,31 +21,31 @@ let version;
 
 function updateSite() {
     playerPopup = []
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Checking..."
     })
-    here.setMenuBar({
+    here.menuBar.set({
         title: "Checking..."
     })
     if (URL == queryApi) {
         // 沒有地址
         console.log("No address, stop.")
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "Minecraft Server Check - No Address",
             detail: "Please check your input."
         })
-        here.setMenuBar({
+        here.menuBar.set({
             title: "No Connection"
         })
         return 0;
     }
     if (!net.isReachable) {
         console.log("Network connection is currently offline, stop.")
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "Minecraft Server Check - No Connection",
             detail: "Please check your Internet connection and wait for reload."
         })
-        here.setMenuBar({
+        here.menuBar.set({
             title: "🌍❌"
         })
     } else {
@@ -68,7 +68,7 @@ function updateSite() {
                     if (playerList != undefined) {
                         //玩家列表可被檢測到
                         playerList.forEach(addPlayerList)
-                        here.setMiniWindow({
+                        here.miniWindow.set({
                             title: "Minecraft Server Check",
                             detail: String(motd),
                             accessory: {
@@ -79,7 +79,7 @@ function updateSite() {
                         })
                     } else {
                         if (!pingTest) {
-                            here.setMiniWindow({
+                            here.miniWindow.set({
                                 title: "Minecraft Server Check",
                                 detail: "Server is offline",
                                 accessory: {
@@ -99,7 +99,7 @@ function updateSite() {
                                     title: "we cannot get them from the API now."
                                 })
                             }
-                            here.setMiniWindow({
+                            here.miniWindow.set({
                                 title: "Minecraft Server Check",
                                 detail: String(motd),
                                 accessory: {
@@ -110,19 +110,19 @@ function updateSite() {
                             })
                         }
                     }
-                    here.setMenuBar({
+                    here.menuBar.set({
                         title: "🌍✅ " + String(onlinePlayerQuantity) + "/" + String(maxinumPlayers)
                     })
                 } else {
                     console.log("Ping Test returns false, maybe the server is not online now.")
-                    here.setMiniWindow({
+                    here.miniWindow.set({
                         title: "Minecraft Server Check",
                         detail: "Server is offline",
                         accessory: {
                             title: "OFFLINE"
                         }
                     })
-                    here.setMenuBar({
+                    here.menuBar.set({
                         title: "🌍❌??"
                     })
                 }

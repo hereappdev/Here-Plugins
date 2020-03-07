@@ -12,10 +12,10 @@ function netUsage() {
         const totalin = json["totalin_string"]
 
         // Menu Bar
-        here.setMenuBar({ title: `⇣${deltain} ⇡${deltaout}` })
+        here.menuBar.set({ title: `⇣${deltain} ⇡${deltaout}` })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "Network Speed",
             detail: "Total Download: " + totalin,
             accessory: {
@@ -25,14 +25,14 @@ function netUsage() {
         })
 
         // Dock
-        here.setDock({
+        here.dock.set({
             title: "⇣" + deltain,
             detail: "⇡" + deltaout
         })
     })
     .catch((error) => {
         console.error(JSON.stringify(error))
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

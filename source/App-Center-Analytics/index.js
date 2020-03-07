@@ -25,11 +25,11 @@ function updateData() {
         apiToken = json.apiToken
 
     } else {
-        here.setMiniWindow({ title: "No API token found", detail: "MS App Center"})
-        return here.setMiniWindow({ title: "invalid apiToken."})
+        here.miniWindow.set({ title: "No API token found", detail: "MS App Center"})
+        return here.miniWindow.set({ title: "invalid apiToken."})
     }
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     http.request({
         url: `${apiUrl}${todayIso}`,
         method: "GET",
@@ -45,12 +45,12 @@ function updateData() {
         const entryList = json.events[0]
 
         if (entryList == undefined) {
-            here.setMiniWindow({ title: "Invalid data.", detail: "MS App Center" })
+            here.miniWindow.set({ title: "Invalid data.", detail: "MS App Center" })
             return
         }
 
         if (entryList.length <= 0) {
-            here.setMiniWindow({ title: "Entrylist is empty.", detail: "MS App Center" })
+            here.miniWindow.set({ title: "Entrylist is empty.", detail: "MS App Center" })
             return
         }
 
@@ -58,7 +58,7 @@ function updateData() {
             entryList = entryList.slice(0, LIMIT)
         }
 
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { here.openURL("https://appcenter.ms/") },
             title: "Device Count(" + todayIso + ")",
             detail: "MS App Center",

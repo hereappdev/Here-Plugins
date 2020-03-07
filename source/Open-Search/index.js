@@ -2,7 +2,7 @@ const pasteboard = require('pasteboard')
 
 here.onLoad(() => {
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Search on Google…",
         detail: "from Clipboard",
         onClick: () => {

@@ -58,10 +58,10 @@ function updateBatteryInfo() {
         console.verbose(popOvers)
 
         // Menu Bar
-        here.setMenuBar({ title: `🔋${percentage}` })
+        here.menuBar.set({ title: `🔋${percentage}` })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "Battery Status",
             detail: detailText,
             accessory: {
@@ -72,14 +72,14 @@ function updateBatteryInfo() {
         })
 
         // Dock
-        here.setDock({
+        here.dock.set({
             title: percentage,
             detail: title
         })
     })
     .catch((err) => {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: err })
+        here.miniWindow.set({ title: err })
     })
 }
 

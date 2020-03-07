@@ -22,7 +22,7 @@ function updateData() {
     var stockCode = "gb_aapl"
     var stockName = "Apple Inc."
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     const json = pref.all()
     if (json == undefined) {
@@ -119,10 +119,10 @@ function updateData() {
         )
 
         // Menu Bar
-        here.setMenuBar({ title: `${stockName} ${curPrice} (${percentage})` })
+        here.menuBar.set({ title: `${stockName} ${curPrice} (${percentage})` })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: stockName,
             detail: diff,
             popOvers: popOvers,
@@ -133,7 +133,7 @@ function updateData() {
         })
 
         // Dock
-        here.setDock({
+        here.dock.set({
             title: curPrice,
             detail: percentage
         }, (err) => {

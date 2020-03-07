@@ -5,18 +5,18 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     http.get(`https://api.producthunt.com/v1/posts?access_token=ebae349f8b26bb6a695e0aeda41075952142bb869db7c8a89fa7c48630d46988`)
     .then(function(response) {
         const json = response.data
         let entryList = json.posts
         console.debug(Object.entries(entryList))
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
 
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
 
         if (entryList.length > LIMIT) {
@@ -32,7 +32,7 @@ function updateData() {
 
         const topFeed = entryList[0]
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
             detail: "ProductHunt Hot",
@@ -52,7 +52,7 @@ function updateData() {
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

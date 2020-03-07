@@ -180,7 +180,7 @@ function updateData() {
     var currencyUnit = "CNY"
     var rate = 1
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     const json = pref.all()
 
@@ -222,7 +222,7 @@ function updateData() {
 
         if (!json.hasOwnProperty("data")) {
             console.error("JSON result undefined")
-            here.setMiniWindow({
+            here.miniWindow.set({
                 onClick: () => { updateData() },
                 title: "Please check options."
             })
@@ -243,10 +243,10 @@ function updateData() {
         // console.debug(percentage)
 
         // Menu Bar
-        here.setMenuBar({ title: `${coinCode}:${curPrice}(${percentage})` })
+        here.menuBar.set({ title: `${coinCode}:${curPrice}(${percentage})` })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: coinName,
             detail: "↓" + lowPrice + " · ↑" + hightPrice,
             accessory: {
@@ -256,14 +256,14 @@ function updateData() {
         })
 
         // Dock
-        here.setDock({
+        here.dock.set({
             title: curPrice,
             detail: percentage
         })
 
         // Popover
-        if (typeof(here.setPopover) == "function") {
-            here.setPopover({
+        if (typeof(here.popover.set) == "function") {
+            here.popover.set({
                 type: "webView",
                 data: {
                     url: "https://www.coindesk.com/price/bitcoin",
@@ -277,7 +277,7 @@ function updateData() {
     })
     .catch((error) => {
         console.error("Error: " + JSON.stringify(error))
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { updateData() },
             title: "Click to refresh."
         })

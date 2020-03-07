@@ -5,7 +5,7 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
     
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     
     http.request({
         url: "http://meirishici.com/getQuote",
@@ -19,11 +19,11 @@ function updateData() {
         console.verbose(JSON.stringify(entryList))
     
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
     
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -31,11 +31,11 @@ function updateData() {
         }
     
         // Menu Bar
-        here.setMenuBar({ title: entryList.quote.replace(/\r\n/g,"，") })
+        here.menuBar.set({ title: entryList.quote.replace(/\r\n/g,"，") })
         
         console.log(entryList.author.intro)
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { here.openURL("http://meirishici.com") },
             title: entryList.quote.replace(/\r\n/g,"，"),
             detail: entryList.author.intro.replace(/\r\n/g,"，")
@@ -52,7 +52,7 @@ function updateData() {
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

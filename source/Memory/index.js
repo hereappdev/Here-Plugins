@@ -37,10 +37,10 @@ function updateMemoryInfo() {
         const swapUsed = usage["swap_used_string"].replace(/\s+/g, '')
 
         // Menu Bar
-        here.setMenuBar({ title: "Mem:" + used })
+        here.menuBar.set({ title: "Mem:" + used })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: `Memory Usage`,
             // detail: `wired: ${wired} active: ${active} compressed: ${compressed} free: ${free}`,
             detail: `wire`,
@@ -60,7 +60,7 @@ function updateMemoryInfo() {
         })
 
         // Dock
-        here.setDock({
+        here.dock.set({
             title: (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%",
             detail: "MEM"
         })
@@ -72,7 +72,7 @@ function updateMemoryInfo() {
     })
     .catch((error) => {
         console.error(JSON.stringify(error))
-        here.setMiniWindow({ title: error })
+        here.miniWindow.set({ title: error })
     })
 }
 

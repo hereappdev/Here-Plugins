@@ -5,18 +5,18 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     http.request("https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&start=0&count=10&client=&udid=")
     .then(function(response) {
         const json = response.data
         const entryList = json.subjects
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
 
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
 
         if (entryList.length > LIMIT) {
@@ -28,10 +28,10 @@ function updateData() {
         // console.debug(JSON.stringify(topFeed))
 
         // Menu Bar
-        here.setMenuBar({ title: topFeed.title })
+        here.menuBar.set({ title: topFeed.title })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.alt != undefined)  { here.openURL(topFeed.alt) } },
             title: "🎬《" + topFeed.title + "》",
             detail: "上映" + topFeed["mainland_pubdate"],
@@ -53,7 +53,7 @@ function updateData() {
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 
