@@ -402,6 +402,20 @@ class Test {
             })
         })
     }
+    testAppleScript() {
+        return new Promise((res, rej) => {
+            let ret = ""
+            // callback
+            here.appleScript('beep')
+            .then(() => {
+                res({ ret: true, msg: `here.appleScript('beep').then(() => {})` })
+            })
+            .catch((err) => {
+                console.error(`here.appleScript('beep'): ${err}`)
+                res({ ret: false, msg: `here.appleScript('beep').then(() => {})` })
+            })
+        })
+    }
     testParseRssFeed() {
         return new Promise((res, rej) => {
             here.parseRSSFeed("http://rss.cnn.com/rss/cnn_topstories.rss")
