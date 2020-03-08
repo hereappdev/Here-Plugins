@@ -38,13 +38,13 @@ function updateRSS(){
             splitNum = 12;
             break;
     }
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "HorribleSubs",
         detail: "Checking....."
     })
     if(!net.isReachable()){
         console.log("No Connection, Stop");
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "HorribleSubs",
             detail: "No Connection.",
             onClick: () => {
@@ -89,7 +89,7 @@ function updateRSS(){
                     })
                 })
             });
-            here.setMiniWindow({
+            here.miniWindow.set({
                 title: "HorribleSubs",
                 detail: "So bad yet so good!",
                 popOvers: popup

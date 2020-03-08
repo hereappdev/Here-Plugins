@@ -6,7 +6,7 @@ function updateData() {
     const LIMIT = 100
 
     console.log("Featching app store data…")
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     // API https://rss.itunes.apple.com/en-us
     http.get("https://rss.itunes.apple.com/api/v1/cn/ios-apps/top-free/all/100/explicit.json")
     .then(function(response) {
@@ -14,12 +14,12 @@ function updateData() {
         let entryList = json.feed.results
         // console.debug(JSON.stringify(entryList));
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
 
         console.log("Updated. Entrylist count: ", entryList.length)
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
 
         if (entryList.length > LIMIT) {
@@ -36,29 +36,29 @@ function updateData() {
 
         const topFeed = entryList[0]
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: "No.1 " + topFeed.title,
             detail: "App Store Top Grossing(CN)",
             accessory: {
                 badge: topFeed.rank 
-            },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: entry.rank,
-                        imageURL: entry.appIcon,
-                        imageCornerRadius: 4
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                accessory: {
+                    title: entry.rank,
+                    imageURL: entry.appIcon,
+                    imageCornerRadius: 4
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

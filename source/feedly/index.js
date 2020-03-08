@@ -1,8 +1,8 @@
 here.onLoad(() => {
-    here.setMiniWindow({ title: "feedly", detail: "Keep up with the topics and trends you care about, without the overwhelm" })
-    here.setMenuBar({ title: "Feedly" })
+    here.miniWindow.set({ title: "Feedly", detail: "Keep up with the topics and trends you care about, without the overwhelm" })
+    here.menuBar.set({ title: "Feedly" })
 
-    here.setPopover({
+    here.popover.set({
         type: "webView",
         data: {
             url: "https://feedly.com/",

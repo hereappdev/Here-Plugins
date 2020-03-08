@@ -13,12 +13,12 @@ function updateData() {
     const LIMIT = getFetchArticleNum()
     debug(`[Read PREF] 更新文章数:${LIMIT}`)
 
-    here.setMiniWindow({ title: "Fetching…" })
+    here.miniWindow.set({ title: "Fetching…" })
     here.parseRSSFeed('https://rsshub.app/sspai/matrix')
     .then((feed) => {
         //basic check
         if (feed.items.length <= 0) {
-            return here.setMiniWindow({ title: "No item found." })
+            return here.miniWindow.set({ title: "No item found." })
         }
         if (feed.items.length > LIMIT) {
             feed.items = feed.items.slice(0, LIMIT)
@@ -53,7 +53,7 @@ function updateData() {
 
             debug(`topFeed: ${topFeed != undefined ? topFeed.title : ""}`)
 
-            here.setMiniWindow({
+            here.miniWindow.set({
                 onClick: () => {
                     if (topFeed != undefined && topFeed.link != undefined)  { here.openURL(topFeed.link) }
                 },
@@ -62,7 +62,7 @@ function updateData() {
                 accessory: {
                     badge: unreadFeeds.length + ""
                 },
-                popOvers: _.map(unreadFeeds,(item, index) => {
+                popovers: _.map(unreadFeeds,(item, index) => {
                     return {
                         title: isDebugMode() ? `${index + 1}. ${item.title} PID:${getPostId(item.link)}` : `${index + 1}. ${item.title}`,
                         onClick: () => {
@@ -88,12 +88,12 @@ function updateData() {
             })
 
             // menu bar component display
-            here.setMenuBar({
+            here.menuBar.set({
               title: `SSPAI 未读数(${unreadFeeds.length})`
             })
 
             //dock component display
-            here.setDock({
+            here.dock.set({
                 title: unreadFeeds.length.toString(),
                 detail: "少数派更新"
             })
@@ -112,7 +112,7 @@ function updateData() {
     .catch((error) => {
         console.error(`Error: ${JSON.stringify(error)}`)
         //TODO interrupt retry ，api not supported
-        here.setMiniWindow({ title: "Fetching Failed..." })
+        here.miniWindow.set({ title: "Fetching Failed..." })
     })
 }
 

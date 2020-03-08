@@ -1,8 +1,8 @@
 here.onLoad(() => {
-    here.setMiniWindow({ title: "🕹2048", detail: "Get to the 2048 Tile! (Keyboard: ↑↓← →)" })
-    here.setMenuBar({ title: "🕹" })
+    here.miniWindow.set({ title: "🕹2048", detail: "Get to the 2048 Tile! (Keyboard: ↑↓← →)" })
+    here.menuBar.set({ title: "🕹" })
 
-    here.setPopover({
+    here.popover.set({
         type: "webView",
         data: {
             url: "./game/index.html",

@@ -62,21 +62,21 @@ function updateData() {
     const month = progressOfMonth()
     const today = progressOfToday()
 
-    let popOvers = [
+    let popovers = [
         { title: `${year.bar} Year Progress ${year.current}/${year.total}`, accessory: { title: year.percent + "%" }},
         { title: `${month.bar} Month Progress ${month.current}/${month.total}`, accessory: { title: month.percent + "%" }},
         { title: `${today.bar} Day Progress ${moment().format("HH:mm:ss")}`, accessory: { title: today.percent + "%" }},
     ]
 
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Progress of the Year",
         detail: year.bar,
         accessory: {
             badge: `${year.percent}%`
-        },
-        popOvers: popOvers
+        }
     })
+    here.popover.set(popovers)
 }
 
 here.onLoad(() => {

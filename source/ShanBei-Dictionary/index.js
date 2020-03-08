@@ -17,11 +17,11 @@ function onClick() {
         console.debug(entryList.definition)
 
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
 
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
 
         if (entryList.length > LIMIT) {
@@ -29,7 +29,7 @@ function onClick() {
         }
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: onClick,
             title: (entryList.definition == undefined) ? '没有查到内容' : entryList.definition,
             detail: (entryList.definition == undefined) ? "" : ("[英]: " + entryList.pronunciations.uk) + ((entryList.definition == undefined) ? "" : ("   [美]: " + entryList.pronunciations.us))
@@ -37,7 +37,7 @@ function onClick() {
     })
     .catch(function(error) {
         // console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 
@@ -46,7 +46,7 @@ function updateData(){
     wordCurrent = pasteboard.getText()
     if(wordIn != wordCurrent){
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "扇贝词典查询",
             detail: "点击立即查询剪切板中的单词",
             onClick: onClick

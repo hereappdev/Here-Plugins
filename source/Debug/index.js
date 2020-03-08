@@ -8,7 +8,7 @@ function updateData() {
     if (keys.includes("uuid")) {
         keys.splice(keys.indexOf("uuid"), 1)
     }
-    let popOvers = _.map(keys, (key) => {
+    let popovers = _.map(keys, (key) => {
         let val = versions[key]
         return {
             title: key,
@@ -17,22 +17,22 @@ function updateData() {
             }
         }
     })
-    popOvers.push({ 
+    popovers.push({ 
         title: "Reveal Logs in Finder…",
         onClick: () => { process.openLogsFolder() }
     })
-    popOvers.push({ 
+    popovers.push({ 
         title: "Reveal Plugins in Finder…",
         onClick: () => { process.openPluginsFolder() }
     })
     if (typeof(process.checkForUpdates) === "function") { 
         // checkForUpdates function exists
-        popOvers.push({
+        popovers.push({
             title: "Check for Updates…",
             onClick: () => { process.checkForUpdates() }
         })
     }
-    popOvers.push({ 
+    popovers.push({ 
         title: `Toggle auto install preloaded plugins: ${process.installPreloadPluginsAtLaunch()}`,
         onClick: () => { 
             process.toggleInstallPreloadPluginsAtLaunch() 
@@ -40,8 +40,9 @@ function updateData() {
         }
     })
 
+    console.log(JSON.stringify(process.versions.shortVersion))
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Debug Info",
         detail: process.version,
         onClick: () => {
@@ -51,17 +52,20 @@ function updateData() {
     })
 
     // Popovers
-    if (typeof(here.setPopover) == "function") {
-        here.setPopover(popOvers)
+    if (typeof(here.popover.set) == "function") {
+        here.popover.set(popovers)
     }
 
     // Menu Bar
-    here.setMenuBar({ title: process.version })
+    here.menuBar.set({
+        title: "v" + process.versions.shortVersion,
+        detail: process.versions.buildNumber
+    })
 
     // Dock
-    here.setDock({ 
-        title: process.version,
-        detail: "Here"
+    here.dock.set({
+        title: "v" + process.versions.shortVersion,
+        detail: process.versions.buildNumber
     })
 }
 

@@ -1,6 +1,6 @@
 here.onLoad(() => {
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Empty Trash",
         detail: "Clean up trash can.",
         onClick: () => {

@@ -75,7 +75,7 @@ function hasData() {
 
 function displayData() {
     const data = require(dataFilePath)
-    let popOvers = []
+    let popovers = []
     let priceDaily = 0
     let priceMonthly = 0
     let priceAnnual = 0
@@ -95,17 +95,17 @@ function displayData() {
         })
 
         _.each(items, (item) => { priceDaily += item.priceDailyInDefault })
-        popOvers.push({ title: `Daily costs`, accessory: { title: `￥${priceDaily.toFixed(2)}` } })
+        popovers.push({ title: `Daily costs`, accessory: { title: `￥${priceDaily.toFixed(2)}` } })
 
         _.each(items, (item) => { priceMonthly += item.priceMonthlyInDefault })
-        popOvers.push({ title: `Monthly costs`, accessory: { title: `￥${priceMonthly.toFixed(2)}` } })
+        popovers.push({ title: `Monthly costs`, accessory: { title: `￥${priceMonthly.toFixed(2)}` } })
 
         _.each(items, (item) => { priceAnnual += item.priceAnnualInDefault })
-        popOvers.push({ title: `Annual costs`, accessory: { title: `￥${priceAnnual.toFixed(2)}` } })
+        popovers.push({ title: `Annual costs`, accessory: { title: `￥${priceAnnual.toFixed(2)}` } })
 
-        popOvers.push({ title: "------------------------------------------------------" })
+        popovers.push({ title: "------------------------------------------------------" })
 
-        popOvers = popOvers.concat(_.map(items, (item) => {
+        popovers = popovers.concat(_.map(items, (item) => {
             let title = `￥${item.priceMonthlyInDefault.toFixed(2)}/mo`
             if (item.currency != defaultCurrency) {
                 title += ` (${item.currency} ${item.symbol}${item.priceMonthly.toFixed(2)}/mo)`
@@ -113,18 +113,18 @@ function displayData() {
             return { title: `${item.title}`, accessory: { title: title } }
         }))
     }
-    return { 
+    here.miniWindow.set({ 
         title: "Subscriptions", 
-        detail: `Monthly costs ￥${priceMonthly.toFixed(2)}`,
-        popOvers: popOvers 
-    }
+        detail: `Monthly costs ￥${priceMonthly.toFixed(2)}`
+    })
+    here.popover.set(popovers)
 }
 
 here.onLoad(() => {
     if (hasData()) {
-        here.setMiniWindow(displayData())
+        displayData()
     } else {
-        here.setMiniWindow({ 
+        here.miniWindow.set({ 
             title: "No save.json found.", 
             detail: "Please rename [example.json] to [save.json]. Click here.",
             onClick: () => {

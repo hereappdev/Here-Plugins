@@ -11,7 +11,7 @@ function strToVar(str) {
 }
 
 function updateData() {
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     http.get("https://hq.sinajs.cn/?list=gds_AUTD")
     .then(function(response) {
         let goldPrice
@@ -26,10 +26,13 @@ function updateData() {
         // console.debug(goldPrice)
     
         // Menu Bar
-        here.setMenuBar({ title: "金价:" + goldPrice })
+        here.menuBar.set({
+            title: goldPrice,
+            detail: "金价:"
+        })
     
         // Mini Window
-        here.setMiniWindow({
+        here.here.miniWindow.set({
             title: "黄金价格",
             detail: goldDate,
             accessory: {
@@ -38,14 +41,14 @@ function updateData() {
         })
     
         // Dock
-        here.setDock({
+        here.dock.set({
             title: goldPrice,
             detail: "金价"
         })
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

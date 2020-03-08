@@ -3,7 +3,7 @@ const pasteboard = require('pasteboard')
 
 here.onLoad(() => {
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "MD5 Encode",
         detail: "Encode clipboard",
         onClick: () => {

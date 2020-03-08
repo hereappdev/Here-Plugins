@@ -25,10 +25,13 @@ function updateCPUInfo() {
         }
 
         // Menu Bar
-        here.setMenuBar({ title: `CPU ${percentage}%` })
+        here.menuBar.set({
+            title: percentage + "%",
+            detail: "CPU"
+        })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: `CPU Usage`,
             detail: "Use:" + inuse,
             accessory: {
@@ -38,14 +41,14 @@ function updateCPUInfo() {
         })
 
         // Dock
-        here.setDock({
+        here.dock.set({
             title: percentage + "% " + idle,
             detail: "CPU"
         })
     })
     .catch((error) => {
         console.error(JSON.stringify(error))
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

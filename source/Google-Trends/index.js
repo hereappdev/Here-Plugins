@@ -4,7 +4,7 @@ const http = require("http")
 function updateData() {
     const LIMIT = 10
     
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     // API: https://trends.google.com/trends/api/topdailytrends?tz=-480&geo=US
     // API Speedy: https://apispeedy.com/googletrends/
@@ -19,13 +19,13 @@ function updateData() {
         // console.debug(`json: ${json}`)
     
         if (json == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
     
         let entryList = json.default.trendingSearches
         // console.debug(entryList)
         if (entryList.length <= 1) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -41,27 +41,27 @@ function updateData() {
     
         const topFeed = entryList[1]
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
             detail: "Google Trends",
             accessory: {
                 title: '🔥' + topFeed.formattedTraffic 
-            },
-            popOvers: _.map(entryList, (entry, index) => {
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: '🔥' + entry.formattedTraffic
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            }
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                accessory: {
+                    title: '🔥' + entry.formattedTraffic
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

@@ -46,7 +46,7 @@ function callHere(tvList) {
         });
     }
 
-    here.setMenuBar({ title: tvList['channelName'] })
+    here.menuBar.set({ title: tvList['channelName'] })
     // here.setDock({
     //     title: tvList['isLive'],
     //     detail: tvList['channelName']
@@ -61,39 +61,39 @@ function callHere(tvList) {
     }
 
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: tvList['isLive'],
         detail: tvList['channelName'],
         accessory: {
             title: liveSt,
             detail: "开始时间"
-        },
-        popOvers: popList
+        }
     })
+    here.popover.set(popList)
 }
 
 function updateData() {
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     let currentDate = new Date().Format("yyyyMMdd");
 
     http.get(`https://api.cntv.cn/epg/getEpgInfoByChannelNew?c=${selectTv}&serviceId=tvcctv&d=${currentDate}&t=json`)
     .then(function(response) {
         if (response.data == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
 
         let tvList = response.data['data'][selectTv];
         // console.log(JSON.stringify(tvList))
 
         if (tvList['list'].length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
 
         callHere(tvList)
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        return here.setMiniWindow({ title: JSON.stringify(error) })
+        return here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

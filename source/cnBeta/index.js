@@ -6,18 +6,18 @@ function updateData() {
     const LIMIT = 10
     let indexNum = 0
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     http.get("https://m.cnbeta.com/touch/default/timeline.json?page=1")
     .then(function(response) {
         const json = response.data
         let entryList = json.result.list
         console.debug(entryList);
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
 
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
 
         if (entryList.length > LIMIT) {
@@ -56,15 +56,21 @@ function updateData() {
         console.log(popOversNew)
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
+            onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
             title: topFeed.title,
-            detail: "cnBeta",
-            popOvers: popOversNew
+            detail: "cnBeta"
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

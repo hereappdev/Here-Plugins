@@ -4,7 +4,7 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     // API: https://feeds.bbci.co.uk/news/world/rss.xml
     // API Speedy: https://apispeedy.com/bbc/
@@ -12,7 +12,7 @@ function updateData() {
     here.parseRSSFeed("https://apispeedy.com/bbc/")
     .then((feed) => {
         if (feed.items.length <= 0) {
-            return here.setMiniWindow({ title: "No item found." })
+            return here.miniWindow.set({ title: "No item found." })
         }
 
         if (feed.items.length > LIMIT) {
@@ -22,17 +22,17 @@ function updateData() {
         const topFeed = feed.items[0]
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.link != undefined) { here.openURL(topFeed.link) } },
             title: topFeed.title,
-            detail: "BBC News",
-            popOvers: _.map(feed.items, (item, index) => {
-                return {
-                    title: `${index + 1}. ${item.title}`,
-                    onClick: () => { if (item.link != undefined) { here.openURL(item.link) } }
-                }
-            })
+            detail: "BBC News"
         })
+        here.popover.set(_.map(feed.items, (item, index) => {
+            return {
+                title: `${index + 1}. ${item.title}`,
+                onClick: () => { if (item.link != undefined) { here.openURL(item.link) } }
+            }
+        }))
     })
     .catch((error) => {
         console.error(`Error: ${JSON.stringify(error)}`)

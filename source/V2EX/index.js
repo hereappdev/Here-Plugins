@@ -5,17 +5,17 @@ const net = require("net")
 function updateData() {
     const LIMIT = 10
     
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
     http.get('https://www.v2ex.com/api/topics/hot.json')
     .then(function(response) {
         // console.verbose(JSON.stringify(response.data))
         const entryList = response.data
         if (entryList == undefined) {
-            return here.setMiniWindow({ title: "Invalid data." })
+            return here.miniWindow.set({ title: "Invalid data." })
         }
     
         if (entryList.length <= 0) {
-            return here.setMiniWindow({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ title: "Entrylist is empty." })
         }
     
         if (entryList.length > LIMIT) {
@@ -24,27 +24,21 @@ function updateData() {
     
         const topFeed = entryList
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed[0].url != undefined)  { here.openURL(topFeed[0].url) } },
             title: topFeed[0].title,
-            detail: "V2EX",
-            popOvers: _.map(entryList, (entry, index) => {
-                console.log(JSON.stringify(entry.member.avatar_large))
-                return {
-                    title: (index + 1) + ". " + entry.title,
-                    accessory: {
-                        title: "",
-                        imageURL: "http:" + entry.member.avatar_large,
-                        imageCornerRadius: 4
-                    },
-                    onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-                }
-            })
+            detail: "V2EX"
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: (index + 1) + ". " + entry.title,
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+            }
+        }))
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: JSON.stringify(error) })
+        here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
 

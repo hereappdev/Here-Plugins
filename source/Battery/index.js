@@ -42,7 +42,7 @@ function updateBatteryInfo() {
             detailText = "Not charging"
         }
 
-        let popOvers = _.map(otherInfo, (aInfo, index) => {
+        let popovers = _.map(otherInfo, (aInfo, index) => {
             return {
                 title: aInfo["name"],
                 accessory: {
@@ -50,36 +50,40 @@ function updateBatteryInfo() {
                 }
             }
         })
-        popOvers = popOvers.concat(_.map(airPodsInfo, (aInfo, index) => {
+        popovers = popovers.concat(_.map(airPodsInfo, (aInfo, index) => {
             return {
                 title: `${aInfo["name"]} L: ${aInfo["batteryPercentLeft"]} R: ${aInfo["batteryPercentRight"]} Case: ${aInfo["batteryPercentCase"]}`
             }
         }))
-        console.verbose(popOvers)
+        console.verbose(popovers)
 
         // Menu Bar
-        here.setMenuBar({ title: `🔋${percentage}` })
+        here.menuBar.set({
+            title: percentage,
+            detail: "Battery"
+        })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: "Battery Status",
             detail: detailText,
             accessory: {
                 title: percentage,
                 detail: title
-            },
-            popOvers: popOvers
+            }
         })
 
+        here.popover.set(popovers)
+
         // Dock
-        here.setDock({
+        here.dock.set({
             title: percentage,
             detail: title
         })
     })
     .catch((err) => {
         console.error(`Error: ${JSON.stringify(error)}`)
-        here.setMiniWindow({ title: err })
+        here.miniWindow.set({ title: err })
     })
 }
 

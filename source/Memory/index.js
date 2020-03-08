@@ -36,32 +36,36 @@ function updateMemoryInfo() {
         // Swap
         const swapUsed = usage["swap_used_string"].replace(/\s+/g, '')
 
+            console.log(used)
         // Menu Bar
-        here.setMenuBar({ title: "Mem:" + used })
+        here.menuBar.set({
+            title: (used.slice(0,-2)/mem_size.slice(0,-2)*100).toFixed(0) + "%",
+            detail: "MEM"
+        })
 
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             title: `Memory Usage`,
             // detail: `wired: ${wired} active: ${active} compressed: ${compressed} free: ${free}`,
             detail: `wire`,
             accessory: {
                 title: used,
                 detail: mem_size
-            },
-            popOvers: [
-                { title: `Physical Memory`, accessory: { title : mem_size } },
-                { title: `Memory Used`, accessory: { title : used } },
-                { title: `Physical Memory`, accessory: { title : cached } },
-                { title: `Cached`, accessory: { title : wired } },
-                { title: `compressed`, accessory: { title : compressed } },
-                { title: `free`, accessory: { title : free } },
-                { title: `active`, accessory: { title : active } }
-            ]
+            }
         })
+        here.popover.set([
+            { title: `Physical Memory`, accessory: { title : mem_size } },
+            { title: `Memory Used`, accessory: { title : used } },
+            { title: `Physical Memory`, accessory: { title : cached } },
+            { title: `Cached`, accessory: { title : wired } },
+            { title: `compressed`, accessory: { title : compressed } },
+            { title: `free`, accessory: { title : free } },
+            { title: `active`, accessory: { title : active } }
+        ])
 
         // Dock
-        here.setDock({
-            title: (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%",
+        here.dock.set({
+            title: (used/mem_size).toFixed(2) + "%",
             detail: "MEM"
         })
 
@@ -72,7 +76,7 @@ function updateMemoryInfo() {
     })
     .catch((error) => {
         console.error(JSON.stringify(error))
-        here.setMiniWindow({ title: error })
+        here.miniWindow.set({ title: error })
     })
 }
 

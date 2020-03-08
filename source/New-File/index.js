@@ -4,7 +4,7 @@ here.onLoad(() => {
     const filePath = `~/Desktop/${fileName}`
 
     // Mini Window
-    here.setMiniWindow({
+    here.miniWindow.set({
         title: "Create a New File",
         detail: filePath,
         onClick: () => {

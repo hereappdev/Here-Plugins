@@ -4,7 +4,7 @@ const http = require("http")
 function updateData() {
     const LIMIT = 10
 
-    here.setMiniWindow({ title: "Updating…" })
+    here.miniWindow.set({ title: "Updating…" })
 
     // API: https://www.npr.org/rss/rss.php
     // API Speedy: https://apispeedy.com/npr/
@@ -15,7 +15,7 @@ function updateData() {
         console.log(JSON.stringify(feed))
 
         if (response.data.length <= 0) {
-            return here.setMiniWindow({ title: "No item found." })
+            return here.here.miniWindow.set({ title: "No item found." })
         }
 
         if (feed.items.length > LIMIT) {
@@ -25,22 +25,17 @@ function updateData() {
         const topFeed = feed.items[0]
         
         // Mini Window
-        here.setMiniWindow({
+        here.miniWindow.set({
             onClick: () => { if (topFeed.link != undefined)  { here.openURL(topFeed.link) } },
             title: topFeed.title,
-            detail: "NPR News",
-            popOvers: _.map(feed.items, (item, index) => {
-                return {
-                    title: `${index + 1}. ${item.title}`,
-                    onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
-                    accessory: {
-                        title: "",
-                        imageURL: item.image,
-                        imageCornerRadius: 4
-                    }
-                }
-            })
+            detail: "NPR News"
         })
+        here.popover.set(_.map(feed.items, (item, index) => {
+            return {
+                title: `${index + 1}. ${item.title}`,
+                onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } },
+            }
+        }))
     })
     .catch((error) => {
         console.error(`Error: ${JSON.stringify(error)}`)
