@@ -59,7 +59,7 @@ here.on('load', () => {
     setInterval(updateData, 2*3600*1000)
 })
 
-net.onChange((type) => {
+net.on('change', (type) => {
     console.log("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
