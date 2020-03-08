@@ -81,7 +81,7 @@ function updateMemoryInfo() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateMemoryInfo()
     // Update every 3sec
     setInterval(updateMemoryInfo, 3000);

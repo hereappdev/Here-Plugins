@@ -97,7 +97,7 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     setInterval(updateData, 5*60*1000);
 })

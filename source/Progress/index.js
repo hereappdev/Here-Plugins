@@ -79,7 +79,7 @@ function updateData() {
     here.popover.set(popovers)
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
 })
 

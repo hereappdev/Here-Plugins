@@ -98,7 +98,7 @@ function updateRSS(){
     }
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateRSS();
     setInterval(updateRSS, 30 * 60 * 1000);
 })

@@ -131,7 +131,7 @@ function updateSite() {
     }
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     serverLocat = pr.get("srvLocat")
     URL = queryApi + serverLocat
     //console.log(serverLocat)

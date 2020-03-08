@@ -1,4 +1,4 @@
-here.onLoad(() => {
+here.on('load', () => {
     here.miniWindow.set({ title: "🕹2048", detail: "Get to the 2048 Tile! (Keyboard: ↑↓← →)" })
 
     here.popover.set({

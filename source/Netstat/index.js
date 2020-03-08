@@ -68,7 +68,7 @@ function netUsage() {
 }
 
 
-here.onLoad(() => {
+here.on('load', () => {
     netUsage()
     setInterval(netUsage, 3000)
 })

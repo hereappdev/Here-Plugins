@@ -1,6 +1,6 @@
 const hotkey = require('hotkey')
 
-here.onLoad(() => {
+here.on('load', () => {
     // Mini Window
     here.miniWindow.set({
         title: "Screen Saver",

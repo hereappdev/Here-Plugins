@@ -1,4 +1,4 @@
-here.onLoad(() => {
+here.on('load', () => {
 
     here.miniWindow.set({
         title: "Show Hidden Files",

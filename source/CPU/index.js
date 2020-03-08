@@ -52,7 +52,7 @@ function updateCPUInfo() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     // Update every 3 seconds
     setInterval(updateCPUInfo, 3000);
 })

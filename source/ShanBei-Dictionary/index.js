@@ -57,7 +57,7 @@ function updateData(){
     wordIn = wordCurrent
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
 
     // // Update every 2 hours

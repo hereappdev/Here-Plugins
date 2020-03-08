@@ -1,4 +1,4 @@
-here.onLoad(() => {
+here.on('load', () => {
     // Mini Window
     here.miniWindow.set({
         title: "Empty Trash",

@@ -1,4 +1,4 @@
-here.onLoad(() => {
+here.on('load', () => {
     here.setMiniWindow({ title: "Apple Service Coverage", detail: "Check the Status of your Apple Devices" })
     // Menu Bar
     here.menuBar.set({

@@ -64,7 +64,7 @@ function coverage(module) {
     return { covered: count, total: names.length}
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     here.miniWindow.set({ title: "Testing…" })
     
     let cv_global = coverage(global)

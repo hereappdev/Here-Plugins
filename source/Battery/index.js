@@ -92,6 +92,6 @@ pm.watchPowerChange(() => {
     updateBatteryInfo()
 })
 
-here.onLoad(() => {
+here.on('load', () => {
     updateBatteryInfo()
 })

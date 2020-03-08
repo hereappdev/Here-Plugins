@@ -62,7 +62,7 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 12 hours
     setInterval(updateData, 12*3600*1000);
