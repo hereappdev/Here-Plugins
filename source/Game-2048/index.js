@@ -7,9 +7,10 @@ here.onLoad(() => {
         data: {
             url: "./game/index.html",
             width: 300,
-            height: 462,
+            height: 432,
             backgroundColor: "#FAF8EF",
-            foregroundColor: rgba(133, 109, 0, 1)
+            foregroundColor: rgba(133, 109, 0, 1),
+            hideStatusBar: true
         }
     })
 })
