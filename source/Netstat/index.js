@@ -13,27 +13,34 @@ function formatBytes(bytes, decimals = 1) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + '' + sizes[i];
 }
 
+function updateMenuBar(deltain, deltaout) {
+    const inStr = formatBytes(deltain) + '/s'
+    const outStr = formatBytes(deltaout) + '/s'
+
+    here.menuBar.set({
+        title: {
+            text: outStr.padStart(6, " ") + "⇡",
+            useMonospaceFont: true
+        },
+        detail: {
+            text: inStr.padStart(6, " ") + "⇣",
+            useMonospaceFont: true
+        }
+    })
+}
+
 function netUsage() {
     // console.debug("netUsage")
     os.netStat()
     .then((json) => {
         console.verbose(json)
 
-        const deltain = formatBytes(Number(json["deltain"])) + '/s'
-        const deltaout = formatBytes(Number(json["deltaout"])) + '/s'
         const totalin = json["totalin_string"]
 
         // Menu Bar
-        here.menuBar.set({
-            title: {
-                text: deltaout.padStart(6, " ") + "⇡",
-                useMonospaceFont: true
-            },
-            detail: {
-                text: deltain.padStart(6, " ") + "⇣",
-                useMonospaceFont: true
-            }
-        })
+        const deltain = Number(json["deltain"])
+        const deltaout = Number(json["deltaout"])
+        updateMenuBar(deltain, deltaout)
 
         // Mini Window
         here.miniWindow.set({
@@ -52,7 +59,8 @@ function netUsage() {
         })
     })
     .catch((error) => {
-        console.error(JSON.stringify(error))
+        console.error(`err: ${JSON.stringify(error)}`)
+        updateMenuBar(0,0)
         here.miniWindow.set({ title: JSON.stringify(error) })
     })
 }
