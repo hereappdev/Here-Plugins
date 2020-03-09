@@ -1,16 +1,16 @@
 const os = require("os")
 const _ = require("underscore")
 
-function formatBytes(bytes, decimals = 2) {
-    if (bytes === 0) return '0 KB';
+function formatBytes(bytes, decimals = 1) {
+    if (bytes === 0) return '0K';
 
     const k = 1024;
     const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    const sizes = ['B', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];
 
     const i = Math.floor(Math.log(bytes) / Math.log(k));
 
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + '' + sizes[i];
 }
 
 function netUsage() {
@@ -26,11 +26,11 @@ function netUsage() {
         // Menu Bar
         here.menuBar.set({
             title: {
-                text: "⇡" + deltaout.padStart(10, " "),
+                text: deltaout.padStart(6, " ") + "⇡",
                 useMonospaceFont: true
             },
             detail: {
-                text: "⇣" + deltain.padStart(10, " "),
+                text: deltain.padStart(6, " ") + "⇣",
                 useMonospaceFont: true
             }
         })
