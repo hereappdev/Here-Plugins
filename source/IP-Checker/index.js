@@ -97,7 +97,6 @@ net.onChange((type) => {
     }
 })
 
-here.setMenuBar({ title: "IP" })
 here.setPopover({
     type: "webView",
     data: {

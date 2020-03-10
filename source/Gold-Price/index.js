@@ -28,7 +28,7 @@ function updateData() {
         // Menu Bar
         here.menuBar.set({
             title: goldPrice,
-            detail: "金价:"
+            detail: "金价"
         })
     
         // Mini Window
