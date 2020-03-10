@@ -1,16 +1,18 @@
 const os = require("os")
 const _ = require("underscore")
 
-function formatBytes(bytes, decimals = 1) {
-    if (bytes === 0) return '0K';
+function formatBytes(bytes) {
+    if (bytes === 0) return '0.0K';
 
-    const k = 1024;
-    const dm = decimals < 0 ? 0 : decimals;
+    const k = 1000;
+    
     const sizes = ['B', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'];
 
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + '' + sizes[i];
+    const n = bytes / Math.pow(k, i)
+    console.log(n)
+    const dm = n > 10 ? 0 : 1
+    return (Math.floor(n * Math.pow(10,dm)) / Math.pow(10,dm)).toFixed(dm) + sizes[i];
 }
 
 function updateMenuBar(deltain, deltaout) {
@@ -19,11 +21,11 @@ function updateMenuBar(deltain, deltaout) {
 
     here.menuBar.set({
         title: {
-            text: outStr.padStart(6, " ") + "⇡",
+            text: outStr.padStart(6, " "),
             useMonospaceFont: true
         },
         detail: {
-            text: inStr.padStart(6, " ") + "⇣",
+            text: inStr.padStart(6, " "),
             useMonospaceFont: true
         }
     })
@@ -47,15 +49,15 @@ function netUsage() {
             title: "Network Speed",
             detail: "Total Download: " + totalin,
             accessory: {
-                title: "⇣" + deltain,
-                detail: "⇡" + deltaout
+                title: "⇣" + formatBytes(deltain),
+                detail: "⇡" + formatBytes(deltaout)
             }
         })
 
         // Dock
         here.dock.set({
-            title: "⇣" + deltain,
-            detail: "⇡" + deltaout
+            title: "⇣" + formatBytes(deltain),
+            detail: "⇡" + formatBytes(deltaout)
         })
     })
     .catch((error) => {
