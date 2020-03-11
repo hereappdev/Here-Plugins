@@ -1,6 +1,10 @@
 here.onLoad(() => {
     here.setMiniWindow({ title: "Apple Service Coverage", detail: "Check the Status of your Apple Devices" })
-
+    // Menu Bar
+    here.menuBar.set({
+        title: ""
+    })
+    
     here.setPopover({
         type: "webView",
         data: {

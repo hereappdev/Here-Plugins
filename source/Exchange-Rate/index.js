@@ -24,7 +24,7 @@ function updateData() {
     
         // Menu Bar
         here.menuBar.set({
-            title: topFeed.xh_buy,
+            title: Number(topFeed.xh_buy).toFixed(2),
             detail: "CNY/USD"
         })
     
@@ -48,7 +48,7 @@ function updateData() {
     
         // Dock
         here.dock.set({
-            title: topFeed.xh_buy,
+            title: Number(topFeed.xh_buy).toFixed(2),
             detail: "￥/$"
         })
     })

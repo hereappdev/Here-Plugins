@@ -64,12 +64,15 @@ function updateMemoryInfo() {
 
         // Dock
         here.dock.set({
-            title: (used/mem_size).toFixed(2) + "%",
+            title: (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%",
             detail: "MEM"
         })
 
         // Menu Bar
-        here.setMenuBar({ title: "MEM " + (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%" })
+        here.setMenuBar({
+            title: (Number(used.slice(0,-2)/mem_size.slice(0,-2))*100).toFixed(0) + "%",
+            detail: "MEM"
+        })
 
     })
     .catch((error) => {

@@ -46,7 +46,7 @@ function updateData() {
 
         // Menu Bar
         here.menuBar.set({
-            detail: "全国确诊",
+            detail: "China",
             title: topFeed.confirm.toString()
         })
 

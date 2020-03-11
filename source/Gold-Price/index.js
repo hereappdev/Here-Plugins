@@ -28,11 +28,11 @@ function updateData() {
         // Menu Bar
         here.menuBar.set({
             title: goldPrice,
-            detail: "金价"
+            detail: "Gold"
         })
     
         // Mini Window
-        here.here.miniWindow.set({
+        here.miniWindow.set({
             title: "黄金价格",
             detail: goldDate,
             accessory: {

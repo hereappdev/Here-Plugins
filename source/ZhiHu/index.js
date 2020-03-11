@@ -44,7 +44,7 @@ function updateData() {
 
         // Menu Bar
         here.menuBar.set({
-            title: topFeed.title
+            title: topFeed.title.substring(0,24) + "..."
         })
     })
     .catch(function(error) {

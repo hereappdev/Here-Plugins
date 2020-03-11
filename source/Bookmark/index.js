@@ -6,7 +6,12 @@ if (json == undefined) {
     console.log("No prefs found.")
 }
 
+here.menuBar.set({
+    title: ""
+})
+
 here.onLoad(() => {
+
     here.setMiniWindow({ 
         title: json["websiteName"],
         detail: json["websiteURL"]
