@@ -32,7 +32,7 @@ function updateMenuBar(deltain, deltaout) {
 }
 
 function netUsage() {
-    // console.debug("netUsage")
+    // console.log("netUsage")
     os.netStat()
     .then((json) => {
         console.verbose(json)

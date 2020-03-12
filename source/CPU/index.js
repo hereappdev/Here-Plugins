@@ -14,11 +14,11 @@ function updateCPUInfo() {
 
         if (usage.overAll.total > 0) {
             console.verbose(`in use: ${usage.overAll.inUse}`)
-            // console.debug(`total: ${usage.overAll.total}`)
+            // console.log(`total: ${usage.overAll.total}`)
             inuse = usage.overAll.inUse + ""
             percentage = Math.round(usage.overAll.inUse / usage.overAll.total * 100)
             idle = Math.round(usage.overAll.idle / usage.overAll.total * 100)
-            // console.debug(`percentage: ${percentage}`)
+            // console.log(`percentage: ${percentage}`)
             if (percentage < 10) {
                 percentage = "" + percentage
             }

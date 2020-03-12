@@ -67,7 +67,7 @@ class Test {
 
             http.get("https://www.baidu.com/")
             .then((response) => {
-                console.debug("response:", response.statusCode)
+                console.log("response:", response.statusCode)
                 if (response.statusCode > 400) {
                     return Promise.reject(`http.get("https://www.baidu.com/"): status code - ${response.statusCode}`)
 
@@ -88,7 +88,7 @@ class Test {
                 }
             })
             .then((result) => {
-                console.debug("result:", result)
+                console.log("result:", result)
                 if (result) {
                     str += 'http.get("http://www.baidu.com") not allowed\n'
 
@@ -130,7 +130,7 @@ class Test {
             .then((data) => {
                 try {
                     let json = JSON.parse(data)
-                    console.debug("json.data: ", json.data)
+                    console.log("json.data: ", json.data)
                     if (json.data && json.data == 200) {
                         ret += 'fs.readFile("./test.json")\n'
                         return fs.readFile("./test.json", "utf8")
@@ -151,7 +151,7 @@ class Test {
 
                 try {
                     let json = JSON.parse(data)
-                    console.debug("json.data: ", json.data)
+                    console.log("json.data: ", json.data)
                     if (json.data && json.data == 200 && json.unicode && json.unicode == "如是我聞。壹時佛在舍衛國。") {
                         ret += 'fs.readFile("./test.json", "utf8")'
                         res({
@@ -370,7 +370,7 @@ class Test {
             // callback
             here.exec("ls")
             .then((stdOut) => {
-                console.debug("stdOut:", stdOut)
+                console.log("stdOut:", stdOut)
                 if (stdOut.includes("Test.js")) {
                     ret += 'here.exec("ls")\n'
                     return new Promise((aRes, aRej) => {

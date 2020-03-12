@@ -240,7 +240,7 @@ function updateData() {
         const curRate = usdPrice["change24Hr"]["percent"].toFixed(2)
         const percentage = ((curRate < 0) ? curRate : "+" + curRate) + "%"
 
-        // console.debug(percentage)
+        // console.log(percentage)
 
         // Menu Bar
         here.menuBar.set({

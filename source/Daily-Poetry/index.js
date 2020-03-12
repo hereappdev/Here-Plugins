@@ -33,7 +33,7 @@ function updateData() {
         // Menu Bar
         here.menuBar.set({ title: entryList.quote.replace(/\r\n/g,"，") })
         
-        console.log(entryList.author.intro)
+        // console.log(entryList.author.intro)
         // Mini Window
         here.miniWindow.set({
             onClick: () => { here.openURL("http://meirishici.com") },

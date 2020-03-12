@@ -2,9 +2,6 @@ const _ = require("underscore")
 const http = require("http")
 const net = require("net")
     
-
-console.log(222)
-
 function strToVar(str) {
     var json = (new Function("return " + str))();
     return json;
@@ -23,7 +20,7 @@ function updateData() {
             goldDate = data.toString().split("=\"")[1].split(",")[12] + " " + data.toString().split("=\"")[1].split(",")[6]
         }
     
-        // console.debug(goldPrice)
+        // console.log(goldPrice)
     
         // Menu Bar
         here.menuBar.set({

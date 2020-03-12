@@ -25,7 +25,7 @@ function updateData() {
 
         const topFeed = entryList[0]
 
-        // console.debug(JSON.stringify(topFeed))
+        // console.log(JSON.stringify(topFeed))
 
         // Menu Bar
         here.menuBar.set({ title: topFeed.title })

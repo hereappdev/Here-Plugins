@@ -12,7 +12,7 @@ function updateData() {
     http.request("https://www.npr.org/feeds/1001/feed.json")
     .then((response) => {
         var feed = response.data
-        console.log(JSON.stringify(feed))
+        // console.log(JSON.stringify(feed))
 
         if (response.data.length <= 0) {
             return here.here.miniWindow.set({ title: "No item found." })

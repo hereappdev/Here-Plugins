@@ -16,7 +16,7 @@ function updateRSS(){
     let resolutionText;
     let splitNum;
 
-    console.log("Got reso;ution code: " + pr.get("resolution"));
+    // console.log("Got reso;ution code: " + pr.get("resolution"));
     switch ( parseInt(pr.get("resolution"))) {
         case 0:
             resolutionText = "sd"
@@ -55,9 +55,9 @@ function updateRSS(){
     } else {
         let rssURL = queryAPI + resolutionText;
         here.parseRSSFeed(rssURL).then((feed) => {
-            console.log("feed: " + feed);
+            // console.log("feed: " + feed);
             feedResult = feed.items;
-            console.log(feed.items.length);
+            // console.log(feed.items.length);
             let rank = 0;
 
             feedResult.forEach(item => {

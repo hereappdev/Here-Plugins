@@ -14,7 +14,7 @@ function onClick() {
         const json = response.data
         const entryList = json.data
 
-        console.debug(entryList.definition)
+        // console.log(entryList.definition)
 
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
@@ -53,7 +53,7 @@ function updateData(){
         })
     }
     
-    // console.debug(wordIn + wordCurrent)
+    // console.log(wordIn + wordCurrent)
     wordIn = wordCurrent
 }
 

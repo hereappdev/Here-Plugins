@@ -40,7 +40,7 @@ function updateData() {
         }
     })
 
-    console.log(JSON.stringify(process.versions.shortVersion))
+    // console.log(JSON.stringify(process.versions.shortVersion))
     // Mini Window
     here.miniWindow.set({
         title: "Debug Info",

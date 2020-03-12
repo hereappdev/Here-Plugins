@@ -12,12 +12,12 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.feed.results
-        // console.debug(JSON.stringify(entryList));
+        // console.log(JSON.stringify(entryList));
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
 
-        console.log("Updated. Entrylist count: ", entryList.length)
+        // console.log("Updated. Entrylist count: ", entryList.length)
         if (entryList.length <= 0) {
             return here.miniWindow.set({ title: "Entrylist is empty." })
         }

@@ -42,7 +42,7 @@ function updateData() {
 
         const topFeed = chinaTotal
 
-        // console.debug(JSON.stringify(topFeed))
+        // console.log(JSON.stringify(topFeed))
 
         // Menu Bar
         here.menuBar.set({

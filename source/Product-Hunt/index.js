@@ -10,7 +10,7 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.posts
-        console.debug(Object.entries(entryList))
+        console.log(Object.entries(entryList))
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }

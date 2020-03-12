@@ -9,7 +9,7 @@ here.on('load', () => {
         onClick: () => {
             const text = pasteboard.getText()
             const encoded = crypto.md5(text)
-            console.debug(`encoded: ${encoded}`)
+            // console.log(`encoded: ${encoded}`)
             pasteboard.setText(encoded)
             here.postNotification("HUD", `String encoded: ${encoded}`)
         }

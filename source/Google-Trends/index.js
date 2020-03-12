@@ -12,18 +12,18 @@ function updateData() {
     http.request('https://apispeedy.com/googletrends/')
     .then(function(response) {
     
-        // console.debug(`data: ${data}`)
+        // console.log(`data: ${data}`)
         let data = response.data
         data = data.replace(")]}',\n", "")
         const json = JSON.parse(data)
-        // console.debug(`json: ${json}`)
+        // console.log(`json: ${json}`)
     
         if (json == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
     
         let entryList = json.default.trendingSearches
-        // console.debug(entryList)
+        // console.log(entryList)
         if (entryList.length <= 1) {
             return here.miniWindow.set({ title: "Entrylist is empty." })
         }

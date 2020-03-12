@@ -41,7 +41,7 @@ function showIP(ip) {
         url: "http://ip.taobao.com/service/getIpInfo.php?ip=" + ip,
         allowHTTPRequest: true
     }).then((response) => {
-        // console.debug("getIP---" + data)
+        // console.log("getIP---" + data)
         if(response.statusCode != 200) {
             here.miniWindow.set({
                 title: "Bad HTTP response.",
@@ -73,7 +73,7 @@ function updateData() {
     http.get("https://api.ip.sb/jsonip")
     .then((response) => {
         if (response.data && response.data.ip) {
-            console.log(response.data.ip)
+            // console.log(response.data.ip)
             aIP = response.data.ip
             return showIP(aIP)
         }

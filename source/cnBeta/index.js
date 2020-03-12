@@ -11,7 +11,7 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.result.list
-        console.debug(entryList);
+        // console.log(entryList);
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
@@ -38,7 +38,7 @@ function updateData() {
             }else{
                 indexNum++;
             }
-            console.log(adNum + "-" + indexNum)
+            // console.log(adNum + "-" + indexNum)
             return {
                 title: indexNum + ". " + entry.title,
                 accessory: {
@@ -53,7 +53,7 @@ function updateData() {
         const topFeed = entryList[adNum]
         let popOversNew = popOvers.splice(adNum, popOvers.length)
 
-        console.log(popOversNew)
+        // console.log(popOversNew)
 
         // Mini Window
         here.miniWindow.set({

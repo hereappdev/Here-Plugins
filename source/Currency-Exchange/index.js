@@ -15,10 +15,10 @@ function updateData() {
 
     const json = pref.all()
     if (json == undefined) {
-        console.Debug("No prefs found.")
+        console.log("No prefs found.")
     }
 
-    // console.debug(`prefs: ${JSON.stringify(json)}`)
+    // console.log(`prefs: ${JSON.stringify(json)}`)
 
     currencySymbols = json.currencySymbols.toUpperCase()
     displaySymbols = json.displaySymbols.toUpperCase()

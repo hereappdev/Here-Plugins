@@ -88,7 +88,7 @@ function updateBatteryInfo() {
 }
 
 pm.watchPowerChange(() => {
-    console.debug("Power Changed")
+    console.log("Power Changed")
     updateBatteryInfo()
 })
 

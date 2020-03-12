@@ -35,7 +35,7 @@ function updateData() {
     
         const topFeed = entryList[1]
 
-        console.debug(JSON.stringify(topFeed.desc_extr))
+        // console.log(JSON.stringify(topFeed.desc_extr))
         // Mini Window
         here.miniWindow.set({
             onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
