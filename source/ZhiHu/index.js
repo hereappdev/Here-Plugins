@@ -35,6 +35,9 @@ function updateData() {
             title: topFeed.title,
             detail: "知乎热榜"
         })
+        here.menuBar.set({
+            title: topFeed.title
+        })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
                 title: entry.title,
