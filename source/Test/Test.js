@@ -533,5 +533,26 @@ class Test {
             })
         })
     }
+    testPreferencesConfig() {
+        return new Promise((res, rej) => {
+            let prefs = pref.all()
+            let msg = ''
+            let ret = true
+            console.log("prefs: ", prefs["textType"])
+            if (typeof(prefs["textType"]) == 'string',
+                prefs["textType"] == "textType") {
+                msg += `prefs["textType"]\n`
+            }
+            if (typeof(prefs["checkboxType"]) == 'boolean',
+                prefs["checkboxType"] == false) {
+                msg += `prefs["checkboxType"]\n`
+
+            } else {
+                msg = `prefs["checkboxType"]`
+                ret = false
+            }
+            res({ ret: ret, msg: msg })
+        })
+    }
     // here ========== END
 }

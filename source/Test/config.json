@@ -12,11 +12,27 @@
       "mini"
    ],
    "preferences": [
-    {
-        "title": "Test text type",
-        "type": "text",
-        "key": "testType",
-        "default": "testType"
-    }
+       {
+           "title": "Text type",
+           "type": "text",
+           "key": "textType",
+           "default": "textType"
+        },
+        {
+            "title": "Checkbox type",
+            "type": "checkbox",
+            "key": "checkboxType",
+            "default": "false"
+        },
+        {
+            "title": "Popup type",
+            "type": "popup",
+            "key": "popupType",
+            "default": 1,
+            "options": [
+                "option 0",
+                "option 1"
+            ]
+        }
    ]
 }

@@ -108,3 +108,16 @@ here.on('load', () => {
         console.error(err)
     })
 })
+
+here.popover.on('willShow', () => {
+    console.info("✅here.popoer.on('willShow')")
+})
+here.popover.on('show', () => {
+    console.info("✅here.popoer.on('show')")
+})
+here.popover.on('close', () => {
+    console.info("✅here.popoer.on('close')")
+})
+here.popover.on('willClose', () => {
+    console.info("✅here.popoer.on('willClose')")
+})
