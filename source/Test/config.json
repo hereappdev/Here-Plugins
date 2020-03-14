@@ -22,7 +22,7 @@
             "title": "Checkbox type",
             "type": "checkbox",
             "key": "checkboxType",
-            "default": true
+            "default": false
         },
         {
             "title": "Popup type",

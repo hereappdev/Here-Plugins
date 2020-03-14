@@ -543,12 +543,11 @@ class Test {
                 prefs["textType"] == "textType") {
                 msg += `prefs["textType"]\n`
             }
-            if (typeof(prefs["checkboxType"]) == 'Boolean',
-                prefs["checkboxType"] == false) {
+            if (typeof(prefs["checkboxType"]) == 'boolean') {
                 msg += `prefs["checkboxType"]\n`
 
             } else {
-                msg = `prefs["checkboxType"]`
+                msg = `prefs["checkboxType"] ${typeof(prefs["checkboxType"])}`
                 ret = false
             }
             res({ ret: ret, msg: msg })
