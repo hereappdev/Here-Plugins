@@ -52,7 +52,7 @@ function updateSite() {
         console.verbose(URL)
         http.get(URL, (err, response) => {
             //console.log(JSON.stringify(response.data))
-            if (response.data != undefined) {
+            if (response && response.data) {
                 reqBody = response.data
                 pingTest = reqBody['debug']['ping']
                 if (pingTest) {

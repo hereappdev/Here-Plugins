@@ -19,9 +19,12 @@ function updateData() {
     }
 
     // console.log(`prefs: ${JSON.stringify(json)}`)
-
-    currencySymbols = json.currencySymbols.toUpperCase()
-    displaySymbols = json.displaySymbols.toUpperCase()
+    if (typeof(json.currencySymbols) == 'string') {
+        currencySymbols = json.currencySymbols.toUpperCase()   
+    }
+    if (typeof(json.displaySymbols) == 'string') {
+        displaySymbols = json.displaySymbols.toUpperCase()
+    }
 
     here.miniWindow.set({ title: "Updating…" })
 
