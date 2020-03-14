@@ -40,6 +40,10 @@ function updateData() {
             onClick: () => { here.openURL(topFeed.url) }
         })
         here.popover.set(popovers)
+
+        here.menuBar.set({
+            title: topFeed.author + "/" + topFeed.name
+        })
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
