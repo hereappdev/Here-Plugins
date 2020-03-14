@@ -538,16 +538,29 @@ class Test {
             let prefs = pref.all()
             let msg = ''
             let ret = true
+
             console.log("prefs: ", prefs["textType"])
             if (typeof(prefs["textType"]) == 'string',
                 prefs["textType"] == "textType") {
-                msg += `prefs["textType"]\n`
+                msg += `prefs["textType"]: ${prefs["textType"]}\n`
+            } else {
+                msg = `prefs["textType"] ${prefs["textType"]}`
+                ret = false
             }
+
             if (typeof(prefs["checkboxType"]) == 'boolean') {
-                msg += `prefs["checkboxType"]\n`
+                msg += `prefs["checkboxType"]: ${prefs["checkboxType"]}\n`
 
             } else {
-                msg = `prefs["checkboxType"] ${typeof(prefs["checkboxType"])}`
+                msg = `prefs["checkboxType"] ${prefs["checkboxType"]}`
+                ret = false
+            }
+
+            if (typeof(prefs["popupType"]) == 'number') {
+                msg += `prefs["popupType"]: ${prefs["popupType"]}\n`
+
+            } else {
+                msg = `prefs["popupType"] ${prefs["popupType"]}`
                 ret = false
             }
             res({ ret: ret, msg: msg })
