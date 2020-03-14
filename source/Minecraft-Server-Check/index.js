@@ -40,7 +40,7 @@ function updateSite() {
         return 0;
     }
     if (!net.isReachable) {
-        console.log("Network connection is currently offline, stop.")
+        console.verbose("Network connection is currently offline, stop.")
         here.miniWindow.set({
             title: "Minecraft Server Check - No Connection",
             detail: "Please check your Internet connection and wait for reload."
@@ -49,7 +49,7 @@ function updateSite() {
             title: "🌍❌"
         })
     } else {
-        console.log(URL)
+        console.verbose(URL)
         http.get(URL, (err, response) => {
             //console.log(JSON.stringify(response.data))
             if (response.data != undefined) {

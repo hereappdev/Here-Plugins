@@ -10,7 +10,6 @@ function formatBytes(bytes) {
 
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     const n = bytes / Math.pow(k, i)
-    console.log(n)
     const dm = n > 10 ? 0 : 1
     return (Math.floor(n * Math.pow(10,dm)) / Math.pow(10,dm)).toFixed(dm) + sizes[i];
 }

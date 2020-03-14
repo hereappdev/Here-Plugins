@@ -70,10 +70,10 @@ function updateRSS(){
                 rank += 1;
                 title = String(item['title']);
                 link = String(item['link'])
-                console.log("Got " + title + " on " + link);
+                // console.log("Got " + title + " on " + link);
                 let d = "r3r3r3";
                 title = title.substring(15, title.length - splitNum);
-                console.log(title);
+                // console.log(title);
                 titleArray = title.split(" - ");
                 titleName = titleArray.slice(0, titleArray.length - 1).join(" ")
                 episode = parseInt(titleArray[titleArray.length - 1]);

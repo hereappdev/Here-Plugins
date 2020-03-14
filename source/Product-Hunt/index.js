@@ -10,7 +10,7 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.posts
-        console.log(Object.entries(entryList))
+        // console.log(Object.entries(entryList))
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
@@ -63,7 +63,7 @@ here.on('load', () => {
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }
