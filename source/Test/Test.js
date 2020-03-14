@@ -543,7 +543,7 @@ class Test {
                 prefs["textType"] == "textType") {
                 msg += `prefs["textType"]\n`
             }
-            if (typeof(prefs["checkboxType"]) == 'boolean',
+            if (typeof(prefs["checkboxType"]) == 'Boolean',
                 prefs["checkboxType"] == false) {
                 msg += `prefs["checkboxType"]\n`
 
