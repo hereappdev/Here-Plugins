@@ -97,6 +97,8 @@ net.onChange((type) => {
     }
 })
 
+here.menuBar.set({ title: "" })
+
 here.setPopover({
     type: "webView",
     data: {
