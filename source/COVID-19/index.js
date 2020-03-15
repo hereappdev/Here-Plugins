@@ -66,14 +66,29 @@ function updateData() {
                         detail: lastUpdateTime
                     }
         })
-        here.popover.set(_.map(areaTree, (entry, index) => {
-            return {
-                title: entry.name,
-                accessory: {
-                    title: entry.total.confirm.toString()
-                },
+
+        // 直接调用 Webview
+        here.setPopover({
+            type: "webView",
+            data: {
+                url: "https://news.qq.com/zt2020/page/feiyan.htm",
+                width: 375,
+                height: 550,
+                backgroundColor: "#ffffff",
+                foregroundColor: rgba(0, 0, 0, 0.5),
+                hideStatusBar: false
             }
-        }))
+        })
+
+        // here.popover.set(_.map(areaTree, (entry, index) => {
+        //     return {
+        //         title: entry.name,
+        //         accessory: {
+        //             title: entry.total.confirm.toString()
+        //         },
+        //     }
+        // }))
+
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)

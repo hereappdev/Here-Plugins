@@ -30,7 +30,7 @@ function updateData() {
             detail: "V2EX Hot"
         })
         here.popover.set(_.map(entryList, (entry, index) => {
-            console.log(JSON.stringify(entry.member.avatar_large))
+            // console.log(JSON.stringify(entry.member.avatar_large))
             return {
                 title: entry.title,
                 accessory: {
