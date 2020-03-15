@@ -52,7 +52,7 @@ function updateData() {
                     imageURL: entry.appIcon,
                     imageCornerRadius: 4
                 },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })

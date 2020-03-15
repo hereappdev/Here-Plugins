@@ -46,7 +46,7 @@ function updateData() {
                     imageURL: entry.thumb,
                     imageCornerRadius: 4
                 },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         })
 
@@ -63,8 +63,13 @@ function updateData() {
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                title: entry.title,
+                accessory: {
+                    title: "",
+                    imageURL: entry.thumb,
+                    imageCornerRadius: 4
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })

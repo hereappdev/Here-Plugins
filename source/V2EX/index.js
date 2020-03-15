@@ -27,12 +27,18 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed[0].url != undefined)  { here.openURL(topFeed[0].url) } },
             title: topFeed[0].title,
-            detail: "V2EX"
+            detail: "V2EX Hot"
         })
         here.popover.set(_.map(entryList, (entry, index) => {
+            console.log(JSON.stringify(entry.member.avatar_large))
             return {
-                title: (index + 1) + ". " + entry.title,
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                title: entry.title,
+                accessory: {
+                    title: "",
+                    imageURL: "https:" + entry.member.avatar_large,
+                    imageCornerRadius: 4
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })
