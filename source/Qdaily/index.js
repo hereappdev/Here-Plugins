@@ -1,38 +1,36 @@
 const _ = require("underscore")
 const net = require("net")
+const http = require("http")
 
 function updateData() {
     const LIMIT = 10
+    const nowTime = new Date()
     
     here.miniWindow.set({ title: "Updating…" })
-    here.parseRSSFeed('https://www.qdaily.com/feed.xml')
-    .then((feed) => {
-        if (feed.items.length <= 0) {
+    http.get("https://www.qdaily.com/homes/articlemore/" + Math.round(new Date().getTime()/1000) + ".json")
+    .then(function(response) {
+
+        let feed = response.data.data.feeds
+
+        if (feed.length <= 0) {
             return here.miniWindow.set({ title: "No item found." })
         }
     
-        if (feed.items.length > LIMIT) {
-            feed.items = feed.items.slice(0, LIMIT)
+        if (feed.length > LIMIT) {
+            feed = feed.slice(10)
         }
-    
-        feed.items = _.map(feed.items, (item) => { 
-            item.title = item.title.trim()
-            item.link = item.link.trim()
-            return item
-        })
-    
-        
-        const topFeed = feed.items[0]
+
+        const topFeed = feed[0]
         // Mini Window
         here.miniWindow.set({
-            onClick: () => { if (topFeed.link != undefined)  { here.openURL(topFeed.link) } },
-            title: topFeed.title,
+            onClick: () => { if (topFeed.post.id != undefined)  { here.openURL("http://www.qdaily.com/articles/" + topFeed.post.id + ".html") } },
+            title: topFeed.post.title,
             detail: "好奇心日报"
         })
-        here.popover.set(_.map(feed.items, (item, index) => {
+        here.popover.set(_.map(feed, (item, index) => {
             return {
-                title: `${index + 1}. ${item.title}`,
-                onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } }
+                title: `${index + 1}. ${item.post.title}`,
+                onClick: () => { if (item.post.id != undefined)  { here.openURL("http://www.qdaily.com/articles/" + item.post.id + ".html") } }
             }
         }))
     })
