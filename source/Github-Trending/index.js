@@ -20,7 +20,7 @@ function updateData() {
 
         let popovers = _.map(feeds, (feed, index) => {
             return {
-                title: (index + 1) + ". " + feed.author + "/" + feed.name,
+                title: feed.author + "/" + feed.name,
                 // detail: feed.description,
                 accessory: {
                     title: (Number(feed.stars) / 1000).toFixed(1) + "k⭐️"

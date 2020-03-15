@@ -39,7 +39,7 @@ function callHere(tvList) {
         popIndex++
 
         popList.push({
-            title: popIndex + ". " + entry.title,
+            title: entry.title,
             accessory: {
                 title: entry.title == tvList['isLive'] ? "正在播放" : entry.showTime,
             }

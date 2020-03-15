@@ -37,8 +37,13 @@ function updateData() {
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
+                title: entry.title,
                 onClick: () => { if (entry.originalUrl != undefined)  { here.openURL(entry.originalUrl) } },
+                accessory: {
+                    title: "",
+                    imageURL: entry.screenshot,
+                    imageCornerRadius: 4
+                }
             }
         }))
     })

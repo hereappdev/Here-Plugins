@@ -29,7 +29,7 @@ function updateData() {
         })
         here.popover.set(_.map(feed, (item, index) => {
             return {
-                title: `${index + 1}. ${item.post.title}`,
+                title: item.post.title,
                 onClick: () => { if (item.post.id != undefined)  { here.openURL("http://www.qdaily.com/articles/" + item.post.id + ".html") } }
             }
         }))

@@ -59,7 +59,7 @@ function updateData() {
         })
         here.popover.set(_.map(feed.items, (item, index) => {
             return {
-                title: `${index + 1}. ${item.title}`,
+                title: item.title,
                 onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } }
             }
         }))

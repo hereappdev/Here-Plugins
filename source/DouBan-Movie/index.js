@@ -33,15 +33,15 @@ function updateData() {
         // Mini Window
         here.miniWindow.set({
             onClick: () => { if (topFeed.alt != undefined)  { here.openURL(topFeed.alt) } },
-            title: "🎬《" + topFeed.title + "》",
+            title: "🎬《" + topFeed.title + "》 ★" + topFeed.rating.average,
             detail: "上映" + topFeed["mainland_pubdate"],
             accessory: { badge: topFeed["rating"]["average"].toString() }
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
+                title: "《" + entry.title + "️️️》 ★" + entry.rating.average + "",
                 accessory: {
-                    title: entry.rating.average + "️️️⭐️"
+                    title: entry["mainland_pubdate"],
                 },
                 onClick: () => { if (entry.alt != undefined)  { here.openURL(entry.alt) } },
             }

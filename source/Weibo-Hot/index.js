@@ -47,11 +47,11 @@ function updateData() {
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
+                title: entry.title,
                 accessory: {
                     title: (entry["desc_extr"] == null) ? '置顶🔝' : '🔥' + ((parseInt(entry["desc_extr"])/10000) + '万')
                 },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })
