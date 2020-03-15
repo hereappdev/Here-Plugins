@@ -31,7 +31,7 @@ function updateData() {
         }
 
         // Menu Bar
-        here.menuBar.set({ title: entryList.content })
+        here.menuBar.set({ title: entryList.content.substring(0,50) + "..." })
 
         // Mini Window
         here.miniWindow.set({
