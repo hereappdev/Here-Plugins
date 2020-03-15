@@ -4,7 +4,8 @@
     "description": "So bad yet so good~",
     "createdBy": "ostrichb",
     "displayOn": [
-        "menubar"
+        "menubar",
+        "mini"
     ],
     "website": "https://ostrichbeta.me/",
     "icon": "icon.png",
