@@ -26,9 +26,9 @@ var isIp = function (){
 
 function clipboardQuery() {
     var getIP = pasteboard.getText()
-    console.log(getIP);
+    console.log("getIP");
     if (isIp(getIP)) {
-        showIP(getIP)
+        showIP(getIP)        
     } else {
         here.hudNotification("Not a valid IP address in the clipboard.")
     }
@@ -38,10 +38,8 @@ function showIP(ip) {
     here.miniWindow.set({ title: "Loading...", detail: "Request " + ip + " info." })
 
     http.get({
-        url: "http://ip.taobao.com/service/getIpInfo.php?ip=" + ip,
-        allowHTTPRequest: true
+        url: "https://api.ip.sb/geoip/" + ip
     }).then((response) => {
-        // console.log("getIP---" + data)
         if(response.statusCode != 200) {
             here.miniWindow.set({
                 title: "Bad HTTP response.",
@@ -53,17 +51,17 @@ function showIP(ip) {
             return
         }
 
-        const json = response.data
-        const ipInfo = json.data
+        const ipInfo = response.data
 
         // Mini Window
         here.miniWindow.set({
-            title: "IP Address: " + ip,
-            detail: ipInfo.country + "/" + ipInfo.city + "/" + ipInfo.isp + " (Click to check IP from clipboard)",
+            title: "IP: " + ip + " (Click to check)",
+            detail: ipInfo.isp + " / " + ipInfo.city + " / " + ipInfo.country,
             onClick: () => {
                 clipboardQuery();
             }
         })
+
     })
 }
 
@@ -102,7 +100,7 @@ here.menuBar.set({ title: "" })
 here.setPopover({
     type: "webView",
     data: {
-        url: "https://ip.sb/",
+        url: "https://ip.sb/ip/",
         width: 375,
         height: 500
     }
