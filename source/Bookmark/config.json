@@ -18,13 +18,13 @@
          "title": "Website Name",
          "type": "text",
          "key": "websiteName",
-         "default": "Apple Website"
+         "default": "Bookmark your favorite website."
       },
       {
            "title": "Website URL",
            "type": "text",
            "key": "websiteURL",
-           "default": "http://apple.com"
+           "default": "http://example.com"
       },
       {
          "title": "Window Width",
