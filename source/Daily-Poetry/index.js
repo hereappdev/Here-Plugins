@@ -36,13 +36,19 @@ function updateData() {
         // console.log(entryList.author.intro)
         // Mini Window
         here.miniWindow.set({
-            onClick: () => { here.openURL("http://meirishici.com") },
+            onClick: () => { here.openURL("http://meirishici.com/poetry/" + entryList.poetry.uuid) },
             title: entryList.quote.replace(/\r\n/g,"，"),
             detail: entryList.author.intro.replace(/\r\n/g,"，")
         })
         here.popover.set([
-            { title: entryList.poetry.content },
-            { title: entryList.author.intro }
+            { 
+                onClick: () => { here.openURL("http://meirishici.com/poetry/" + entryList.poetry.uuid) },
+                title: entryList.author.intro.replace(/\r\n/g,"，")
+            },
+            { 
+                onClick: () => { here.openURL( entryList.author.wiki) },
+                title: entryList.quote.replace(/\r\n/g,"，")
+            }
         ])
     })
     .catch(function(error) {

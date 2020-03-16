@@ -35,14 +35,22 @@ function updateData() {
 
         // Mini Window
         here.miniWindow.set({
-            onClick: () => { here.openURL("http://m.iciba.com/daily.html?daily=1&sid=%EF%BF%BC") },
+            onClick: () => { here.openURL("http://m.iciba.com/daily.html") },
             title: entryList.content,
             detail: entryList.note
         })
-        here.popover.set([
-            { title: entryList.content },
-            { title: entryList.note }
-        ])
+
+        here.setPopover({
+        type: "webView",
+        data: {
+            url: "http://m.iciba.com/daily.html",
+            width: 375,
+            height: 400,
+            backgroundColor: "#ffffff",
+            foregroundColor: rgba(0, 0, 0, 0.5),
+            hideStatusBar: true
+        }
+    })
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
