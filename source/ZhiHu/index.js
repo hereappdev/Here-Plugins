@@ -35,17 +35,16 @@ function updateData() {
             title: topFeed.title,
             detail: "知乎热榜"
         })
-        here.popover.set(_.map(entryList, (entry, index) => {
-            return {
-                title: (index + 1) + ". " + entry.title,
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
-            }
-        }))
-
-        // Menu Bar
         here.menuBar.set({
             title: topFeed.title
         })
+        here.popover.set(_.map(entryList, (entry, index) => {
+            return {
+                title: entry.title,
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
+            }
+        }))
+
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
@@ -53,13 +52,13 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000)
 })
 
-net.onChange((type) => {
+net.on('change', (type) => {
     console.log("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()

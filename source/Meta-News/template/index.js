@@ -36,14 +36,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

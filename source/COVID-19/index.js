@@ -42,11 +42,11 @@ function updateData() {
 
         const topFeed = chinaTotal
 
-        // console.debug(JSON.stringify(topFeed))
+        // console.log(JSON.stringify(topFeed))
 
         // Menu Bar
         here.menuBar.set({
-            detail: "全国确诊",
+            detail: "China",
             title: topFeed.confirm.toString()
         })
 
@@ -66,14 +66,29 @@ function updateData() {
                         detail: lastUpdateTime
                     }
         })
-        here.popover.set(_.map(areaTree, (entry, index) => {
-            return {
-                title: entry.name,
-                accessory: {
-                    title: entry.total.confirm.toString()
-                },
+
+        // 直接调用 Webview
+        here.setPopover({
+            type: "webView",
+            data: {
+                url: "https://news.qq.com/zt2020/page/feiyan.htm",
+                width: 375,
+                height: 550,
+                backgroundColor: "#ffffff",
+                foregroundColor: rgba(0, 0, 0, 0.5),
+                hideStatusBar: false
             }
-        }))
+        })
+
+        // here.popover.set(_.map(areaTree, (entry, index) => {
+        //     return {
+        //         title: entry.name,
+        //         accessory: {
+        //             title: entry.total.confirm.toString()
+        //         },
+        //     }
+        // }))
+
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
@@ -81,14 +96,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

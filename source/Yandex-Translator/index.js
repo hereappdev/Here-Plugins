@@ -170,7 +170,7 @@ pb.on("change" , () => {
 
 })
 
-here.onLoad(() => {
+here.on('load', () => {
     console.log("Yandex Translate Loaded.");
     loadGUI();
     console.log("GUI Loaded.");

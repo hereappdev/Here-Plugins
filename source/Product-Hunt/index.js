@@ -10,7 +10,7 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.posts
-        console.debug(Object.entries(entryList))
+        // console.log(Object.entries(entryList))
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
@@ -42,11 +42,11 @@ function updateData() {
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
+                title: entry.title,
                 accessory: {
                     title: '▲' + entry.votes_count 
                 },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })
@@ -56,14 +56,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

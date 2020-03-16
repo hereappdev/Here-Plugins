@@ -20,7 +20,7 @@ function updateData() {
 
         let popovers = _.map(feeds, (feed, index) => {
             return {
-                title: (index + 1) + ". " + feed.author + "/" + feed.name,
+                title: feed.author + "/" + feed.name,
                 // detail: feed.description,
                 accessory: {
                     title: (Number(feed.stars) / 1000).toFixed(1) + "k⭐️"
@@ -40,6 +40,10 @@ function updateData() {
             onClick: () => { here.openURL(topFeed.url) }
         })
         here.popover.set(popovers)
+
+        here.menuBar.set({
+            title: topFeed.author + "/" + topFeed.name
+        })
     })
     .catch(function(error) {
         console.error(`Error: ${JSON.stringify(error)}`)
@@ -47,14 +51,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

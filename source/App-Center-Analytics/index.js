@@ -13,11 +13,10 @@ function updateData() {
 
     const json = pref.all()
     if (json == undefined) {
-        console.Debug("No prefs found.")
+        console.log("No prefs found.")
     }
     
-    // console.debug(`prefs: ${JSON.stringify(prefs)}`)
-    console.log(`json: ${JSON.stringify(json)}`)
+    // console.log(`json: ${JSON.stringify(json)}`)
 
     apiUrl = json.apiUrl
 
@@ -41,7 +40,7 @@ function updateData() {
         // console.log(`data: ${response.data}`)
 
         const json = response.data
-        console.log(`JSON: ${JSON.stringify(json)}`)
+        // console.log(`JSON: ${JSON.stringify(json)}`)
         const entryList = json.events[0]
 
         if (entryList == undefined) {
@@ -77,14 +76,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

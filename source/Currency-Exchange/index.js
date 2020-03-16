@@ -15,13 +15,16 @@ function updateData() {
 
     const json = pref.all()
     if (json == undefined) {
-        console.Debug("No prefs found.")
+        console.log("No prefs found.")
     }
 
-    // console.debug(`prefs: ${JSON.stringify(json)}`)
-
-    currencySymbols = json.currencySymbols.toUpperCase()
-    displaySymbols = json.displaySymbols.toUpperCase()
+    // console.log(`prefs: ${JSON.stringify(json)}`)
+    if (typeof(json.currencySymbols) == 'string') {
+        currencySymbols = json.currencySymbols.toUpperCase()   
+    }
+    if (typeof(json.displaySymbols) == 'string') {
+        displaySymbols = json.displaySymbols.toUpperCase()
+    }
 
     here.miniWindow.set({ title: "Updating…" })
 
@@ -65,12 +68,12 @@ function updateData() {
         })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
 if (net.isReachable()) {
     updateData()
 }

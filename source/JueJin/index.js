@@ -37,8 +37,13 @@ function updateData() {
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
+                title: entry.title,
                 onClick: () => { if (entry.originalUrl != undefined)  { here.openURL(entry.originalUrl) } },
+                accessory: {
+                    title: "",
+                    imageURL: entry.screenshot,
+                    imageCornerRadius: 4
+                }
             }
         }))
     })
@@ -48,14 +53,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

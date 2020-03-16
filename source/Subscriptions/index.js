@@ -120,7 +120,7 @@ function displayData() {
     here.popover.set(popovers)
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     if (hasData()) {
         displayData()
     } else {

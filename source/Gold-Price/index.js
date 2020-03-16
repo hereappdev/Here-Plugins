@@ -2,9 +2,6 @@ const _ = require("underscore")
 const http = require("http")
 const net = require("net")
     
-
-console.log(222)
-
 function strToVar(str) {
     var json = (new Function("return " + str))();
     return json;
@@ -23,16 +20,16 @@ function updateData() {
             goldDate = data.toString().split("=\"")[1].split(",")[12] + " " + data.toString().split("=\"")[1].split(",")[6]
         }
     
-        // console.debug(goldPrice)
+        // console.log(goldPrice)
     
         // Menu Bar
         here.menuBar.set({
             title: goldPrice,
-            detail: "金价:"
+            detail: "Gold"
         })
     
         // Mini Window
-        here.here.miniWindow.set({
+        here.miniWindow.set({
             title: "黄金价格",
             detail: goldDate,
             accessory: {
@@ -52,7 +49,7 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
@@ -60,7 +57,7 @@ here.onLoad(() => {
 
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

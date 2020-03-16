@@ -1,6 +1,6 @@
 const pasteboard = require('pasteboard')
 
-here.onLoad(() => {
+here.on('load', () => {
     // Mini Window
     here.miniWindow.set({
         title: "Search on Google…",

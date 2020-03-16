@@ -240,7 +240,7 @@ function updateData() {
         const curRate = usdPrice["change24Hr"]["percent"].toFixed(2)
         const percentage = ((curRate < 0) ? curRate : "+" + curRate) + "%"
 
-        // console.debug(percentage)
+        // console.log(percentage)
 
         // Menu Bar
         here.menuBar.set({
@@ -288,14 +288,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

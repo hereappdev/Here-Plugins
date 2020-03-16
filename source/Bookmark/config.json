@@ -1,0 +1,60 @@
+{
+   "name": "Bookmark",
+   "version": "1.0.0",
+   "description": "Bookmark your favorite website.",
+   "icon": "icon.png",
+   "identifier": "app.here.bookmark",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/feedly/Bookmark.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini",
+      "menuBar"
+   ],
+   "preferences": [
+      {
+         "title": "Website Name",
+         "type": "text",
+         "key": "websiteName",
+         "default": "Bookmark your favorite website."
+      },
+      {
+           "title": "Website URL",
+           "type": "text",
+           "key": "websiteURL",
+           "default": "http://example.com"
+      },
+      {
+         "title": "Window Width",
+         "type": "text",
+         "key": "windowWidth",
+         "default": "375"
+      },
+      {
+         "title": "Window Height",
+         "type": "text",
+         "key": "windowHeight",
+         "default": "667"
+      },
+      {
+         "title": "Background Color",
+         "type": "text",
+         "key": "backgroundColor",
+         "default": "#FFFFFF"
+      },
+      {
+         "title": "Foreground Color",
+         "type": "text",
+         "key": "foregroundColor",
+         "default": "rgba(0,0,0,0.5)"
+      },
+      {
+         "title": "Hide Status Bar",
+         "type": "checkbox",
+         "key": "hideStatusBar",
+         "default": true
+      }
+  ]
+}

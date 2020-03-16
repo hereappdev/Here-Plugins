@@ -14,14 +14,14 @@ function onClick() {
         const json = response.data
         const entryList = json.data
 
-        console.debug(entryList.definition)
+        // console.log(entryList.definition)
 
         if (entryList == undefined) {
-            return here.miniWindow.set({ title: "Invalid data." })
+            return here.miniWindow.set({ onClick: onClick, title: "Invalid data.", detail: "点击查询剪切板中的单词"})
         }
 
         if (entryList.length <= 0) {
-            return here.miniWindow.set({ title: "Entrylist is empty." })
+            return here.miniWindow.set({ onClick: onClick, title: "Entrylist is empty.", detail: "点击查询剪切板中的单词" })
         }
 
         if (entryList.length > LIMIT) {
@@ -32,12 +32,12 @@ function onClick() {
         here.miniWindow.set({
             onClick: onClick,
             title: (entryList.definition == undefined) ? '没有查到内容' : entryList.definition,
-            detail: (entryList.definition == undefined) ? "" : ("[英]: " + entryList.pronunciations.uk) + ((entryList.definition == undefined) ? "" : ("   [美]: " + entryList.pronunciations.us))
+            detail: (entryList.definition == undefined) ? "点击查询剪切板中的单词" : ("[英]: " + entryList.pronunciations.uk) + ((entryList.definition == undefined) ? "" : ("   [美]: " + entryList.pronunciations.us))
         })
     })
     .catch(function(error) {
         // console.error(`Error: ${JSON.stringify(error)}`)
-        here.miniWindow.set({ title: JSON.stringify(error) })
+        here.miniWindow.set({ onClick: onClick, title: JSON.stringify(error), detail: "点击查询剪切板中的单词" })
     })
 }
 
@@ -48,16 +48,16 @@ function updateData(){
         // Mini Window
         here.miniWindow.set({
             title: "扇贝词典查询",
-            detail: "点击立即查询剪切板中的单词",
+            detail: "点击查询剪切板中的单词",
             onClick: onClick
         })
     }
     
-    // console.debug(wordIn + wordCurrent)
+    // console.log(wordIn + wordCurrent)
     wordIn = wordCurrent
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
 
     // // Update every 2 hours

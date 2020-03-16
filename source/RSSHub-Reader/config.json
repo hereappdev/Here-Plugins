@@ -10,7 +10,8 @@
    "script": "index.js",
    "defaultCategory": "news",
    "displayOn": [
-      "mini"
+      "mini",
+      "menuBar"
    ],
    "preferences": [
         {

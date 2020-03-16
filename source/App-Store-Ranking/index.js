@@ -12,12 +12,12 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.feed.results
-        // console.debug(JSON.stringify(entryList));
+        // console.log(JSON.stringify(entryList));
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
 
-        console.log("Updated. Entrylist count: ", entryList.length)
+        // console.log("Updated. Entrylist count: ", entryList.length)
         if (entryList.length <= 0) {
             return here.miniWindow.set({ title: "Entrylist is empty." })
         }
@@ -52,7 +52,7 @@ function updateData() {
                     imageURL: entry.appIcon,
                     imageCornerRadius: 4
                 },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })
@@ -62,14 +62,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 12 hours
     setInterval(updateData, 12*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

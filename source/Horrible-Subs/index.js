@@ -16,7 +16,7 @@ function updateRSS(){
     let resolutionText;
     let splitNum;
 
-    console.log("Got reso;ution code: " + pr.get("resolution"));
+    // console.log("Got reso;ution code: " + pr.get("resolution"));
     switch ( parseInt(pr.get("resolution"))) {
         case 0:
             resolutionText = "sd"
@@ -55,9 +55,9 @@ function updateRSS(){
     } else {
         let rssURL = queryAPI + resolutionText;
         here.parseRSSFeed(rssURL).then((feed) => {
-            console.log("feed: " + feed);
+            // console.log("feed: " + feed);
             feedResult = feed.items;
-            console.log(feed.items.length);
+            // console.log(feed.items.length);
             let rank = 0;
 
             feedResult.forEach(item => {
@@ -70,10 +70,10 @@ function updateRSS(){
                 rank += 1;
                 title = String(item['title']);
                 link = String(item['link'])
-                console.log("Got " + title + " on " + link);
+                // console.log("Got " + title + " on " + link);
                 let d = "r3r3r3";
                 title = title.substring(15, title.length - splitNum);
-                console.log(title);
+                // console.log(title);
                 titleArray = title.split(" - ");
                 titleName = titleArray.slice(0, titleArray.length - 1).join(" ")
                 episode = parseInt(titleArray[titleArray.length - 1]);
@@ -98,7 +98,7 @@ function updateRSS(){
     }
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateRSS();
     setInterval(updateRSS, 30 * 60 * 1000);
 })

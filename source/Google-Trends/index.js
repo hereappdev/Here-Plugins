@@ -12,18 +12,18 @@ function updateData() {
     http.request('https://apispeedy.com/googletrends/')
     .then(function(response) {
     
-        // console.debug(`data: ${data}`)
+        // console.log(`data: ${data}`)
         let data = response.data
         data = data.replace(")]}',\n", "")
         const json = JSON.parse(data)
-        // console.debug(`json: ${json}`)
+        // console.log(`json: ${json}`)
     
         if (json == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
     
         let entryList = json.default.trendingSearches
-        // console.debug(entryList)
+        // console.log(entryList)
         if (entryList.length <= 1) {
             return here.miniWindow.set({ title: "Entrylist is empty." })
         }
@@ -51,11 +51,11 @@ function updateData() {
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
+                title: entry.title,
                 accessory: {
                     title: '🔥' + entry.formattedTraffic
                 },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })
@@ -65,7 +65,7 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);

@@ -27,12 +27,18 @@ function updateData() {
         here.miniWindow.set({
             onClick: () => { if (topFeed[0].url != undefined)  { here.openURL(topFeed[0].url) } },
             title: topFeed[0].title,
-            detail: "V2EX"
+            detail: "V2EX Hot"
         })
         here.popover.set(_.map(entryList, (entry, index) => {
+            // console.log(JSON.stringify(entry.member.avatar_large))
             return {
-                title: (index + 1) + ". " + entry.title,
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                title: entry.title,
+                accessory: {
+                    title: "",
+                    imageURL: "https:" + entry.member.avatar_large,
+                    imageCornerRadius: 4
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })
@@ -42,14 +48,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

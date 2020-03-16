@@ -24,7 +24,7 @@ function updateData() {
     
         // Menu Bar
         here.menuBar.set({
-            title: topFeed.xh_buy,
+            title: Number(topFeed.xh_buy).toFixed(2),
             detail: "CNY/USD"
         })
     
@@ -48,7 +48,7 @@ function updateData() {
     
         // Dock
         here.dock.set({
-            title: topFeed.xh_buy,
+            title: Number(topFeed.xh_buy).toFixed(2),
             detail: "￥/$"
         })
     })
@@ -58,14 +58,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

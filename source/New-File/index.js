@@ -1,5 +1,5 @@
 
-here.onLoad(() => {
+here.on('load', () => {
     const fileName = "NewFile.txt"
     const filePath = `~/Desktop/${fileName}`
 

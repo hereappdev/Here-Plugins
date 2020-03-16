@@ -1,0 +1,15 @@
+{
+   "name": "Apple Coverage Checker",
+   "version": "1.0.0",
+   "description": "Check the Status of AppleCare on your Apple Devices",
+   "icon": "icon.png",
+   "identifier": "app.here.applecoveragechecker",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/feedly/Apple-Coverage-Checker.xml",
+   "script": "index.js",
+   "defaultCategory": "quick",
+   "displayOn": [
+      "mini"
+   ]
+}

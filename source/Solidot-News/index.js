@@ -22,7 +22,7 @@ function updateData() {
         })
         here.popover.set(_.map(feed.items, (item, index) => {
             return {
-                title: `${index + 1}. ${item.title}`,
+                title: item.title,
                 onClick: () => { if (item.link != undefined)  { here.openURL(item.link) } }
             }
         }))
@@ -32,14 +32,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

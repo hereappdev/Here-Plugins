@@ -21,7 +21,7 @@ function updateData() {
         location = json["location"]
     }
 
-    // console.debug(JSON.stringify(json))
+    // console.log(JSON.stringify(json))
 
     if (json["degreeUnits"] != undefined) {
         if(json["degreeUnits"] == 0) {
@@ -34,14 +34,14 @@ function updateData() {
         }
     }
 
-    // console.debug('degreeUnits:' + degreeUnits)
+    // console.log('degreeUnits:' + degreeUnits)
 
     http.get("https://api.herecdn.com/weather/?location=" + location + "&u=" + degreeUnitsCode)
     .then((response) => {
 
         const json = response.data
 
-        // console.debug(json["forecasts"][0])
+        // console.log(json["forecasts"][0])
 
         if (json == undefined) {
             console.error("JSON result undefined")
@@ -70,7 +70,7 @@ function updateData() {
             }
         })
 
-        // console.debug(JSON.stringify(popovers))
+        // console.log(JSON.stringify(popovers))
 
         // Menu Bar
         here.menuBar.set({
@@ -101,14 +101,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

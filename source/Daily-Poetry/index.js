@@ -33,16 +33,22 @@ function updateData() {
         // Menu Bar
         here.menuBar.set({ title: entryList.quote.replace(/\r\n/g,"，") })
         
-        console.log(entryList.author.intro)
+        // console.log(entryList.author.intro)
         // Mini Window
         here.miniWindow.set({
-            onClick: () => { here.openURL("http://meirishici.com") },
+            onClick: () => { here.openURL("http://meirishici.com/poetry/" + entryList.poetry.uuid) },
             title: entryList.quote.replace(/\r\n/g,"，"),
             detail: entryList.author.intro.replace(/\r\n/g,"，")
         })
         here.popover.set([
-            { title: entryList.poetry.content },
-            { title: entryList.author.intro }
+            { 
+                onClick: () => { here.openURL("http://meirishici.com/poetry/" + entryList.poetry.uuid) },
+                title: entryList.author.intro.replace(/\r\n/g,"，")
+            },
+            { 
+                onClick: () => { here.openURL( entryList.author.wiki) },
+                title: entryList.quote.replace(/\r\n/g,"，")
+            }
         ])
     })
     .catch(function(error) {
@@ -51,14 +57,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 12*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

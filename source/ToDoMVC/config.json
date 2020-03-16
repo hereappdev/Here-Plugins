@@ -1,12 +1,12 @@
 {
-   "name": "feedly",
+   "name": "ToDoMVC",
    "version": "1.0.0",
-   "description": "Organize, read and share what matters to you",
+   "description": "A ToDo webapp.",
    "icon": "icon.png",
-   "identifier": "app.here.feedly",
+   "identifier": "app.here.todomvc",
    "createdBy": "Here",
    "website": "https://here.app",
-   "appcast": "https://plugins.herecdn.com/source/feedly/appcast.xml",
+   "appcast": "https://plugins.herecdn.com/source/feedly/ToDoMVC.xml",
    "script": "index.js",
    "defaultCategory": "quick",
    "displayOn": [

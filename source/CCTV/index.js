@@ -39,7 +39,7 @@ function callHere(tvList) {
         popIndex++
 
         popList.push({
-            title: popIndex + ". " + entry.title,
+            title: entry.title,
             accessory: {
                 title: entry.title == tvList['isLive'] ? "正在播放" : entry.showTime,
             }
@@ -97,13 +97,13 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     setInterval(updateData, 5*60*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

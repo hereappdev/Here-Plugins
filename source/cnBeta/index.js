@@ -11,7 +11,7 @@ function updateData() {
     .then(function(response) {
         const json = response.data
         let entryList = json.result.list
-        console.debug(entryList);
+        // console.log(entryList);
         if (entryList == undefined) {
             return here.miniWindow.set({ title: "Invalid data." })
         }
@@ -38,7 +38,7 @@ function updateData() {
             }else{
                 indexNum++;
             }
-            console.log(adNum + "-" + indexNum)
+            // console.log(adNum + "-" + indexNum)
             return {
                 title: indexNum + ". " + entry.title,
                 accessory: {
@@ -46,14 +46,14 @@ function updateData() {
                     imageURL: entry.thumb,
                     imageCornerRadius: 4
                 },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         })
 
         const topFeed = entryList[adNum]
         let popOversNew = popOvers.splice(adNum, popOvers.length)
 
-        console.log(popOversNew)
+        // console.log(popOversNew)
 
         // Mini Window
         here.miniWindow.set({
@@ -63,8 +63,13 @@ function updateData() {
         })
         here.popover.set(_.map(entryList, (entry, index) => {
             return {
-                title: (index + 1) + ". " + entry.title,
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } },
+                title: entry.title,
+                accessory: {
+                    title: "",
+                    imageURL: entry.thumb,
+                    imageCornerRadius: 4
+                },
+                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
             }
         }))
     })
@@ -74,14 +79,14 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
     // Update every 2 hours
     setInterval(updateData, 2*3600*1000);
 })
 
 net.onChange((type) => {
-    console.log("Connection type changed:", type)
+    console.verbose("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

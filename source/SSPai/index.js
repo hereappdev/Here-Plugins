@@ -165,7 +165,7 @@ function initDebugHotKey() {
  * - save plugin pref
  * - reload plugin in Debug Console
  */
-here.onLoad(() => {
+here.on('load', () => {
     debug("========== Plugin Debug Info Start ==========", false, true)
     debug("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓", false, true)
     //main flow

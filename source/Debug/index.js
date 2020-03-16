@@ -40,11 +40,15 @@ function updateData() {
         }
     })
 
-    console.log(JSON.stringify(process.versions.shortVersion))
+    // console.log(JSON.stringify(process.versions.shortVersion))
     // Mini Window
     here.miniWindow.set({
         title: "Debug Info",
-        detail: process.version,
+        detail: "Here " + process.versions.stage,
+        accessory: {
+                title: "v" + process.versions.shortVersion,
+                detail: "(" + process.versions.buildNumber + ")"
+            },
         onClick: () => {
             pb.setText(JSON.stringify(process.versions))
             here.hudNotification("Debug info copied.")
@@ -69,6 +73,6 @@ function updateData() {
     })
 }
 
-here.onLoad(() => {
+here.on('load', () => {
     updateData()
 })
