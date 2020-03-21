@@ -83,6 +83,6 @@ here.on('load', () => {
     updateData()
 })
 
-here.onPopOverAppear(() => {
+here.popover.on('willShow', () => {
     updateData()
 })
