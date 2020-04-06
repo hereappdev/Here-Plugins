@@ -1,6 +1,6 @@
 {
    "name": "App Store Ranking",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "Show Apps rank list on App Store",
    "icon": "icon.png",
    "identifier": "app.here.appstoreranking",
@@ -12,5 +12,19 @@
    "displayOn": [
       "mini",
       "menuBar"
+   ],
+   "preferences": [
+      {
+         "title": "Country Code",
+         "type": "text",
+         "key": "countryCode",
+         "default": "cn"
+      },
+      {
+         "title": "Readme",
+         "type": "text",
+         "key": "readme",
+         "default": "See: https://rss.itunes.apple.com/"
+      }
    ]
 }
