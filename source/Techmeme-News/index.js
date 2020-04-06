@@ -5,7 +5,7 @@ function updateData() {
     const LIMIT = 10
     
     here.miniWindow.set({ title: "Updating…" })
-    here.parseRSSFeed("https://www.techmeme.com/feed.xml")
+    here.parseRSSFeed("https://apispeedy.com/techmeme/")
     .then((feed) => {
         if (feed.items.length <= 0) {
             return here.miniWindow.set({ title: "No item found." })

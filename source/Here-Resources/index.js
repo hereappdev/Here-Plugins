@@ -91,7 +91,7 @@ function updateData() {
                         accessory: {
                             title: ""
                         },
-                        onClick: () => { here.openURL("https://t.me/HereApp") }
+                        onClick: () => { here.openURL("https://res.here.app/img/wx.png") }
                     }
                 ]
             },
