@@ -1,6 +1,6 @@
 {
    "name": "Github Trending",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "Show what the GitHub is most excited about today",
    "icon": "icon.png",
    "identifier": "app.here.githubtrending",
