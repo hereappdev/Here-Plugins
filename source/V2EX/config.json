@@ -1,7 +1,7 @@
 {
    "name": "V2EX",
-   "version": "1.0.2",
-   "description": "显示最新热帖",
+   "version": "1.0.3",
+   "description": "快速查看 V2EX 内容",
    "icon": "icon.png",
    "identifier": "app.here.v2ex",
    "createdBy": "Here",
@@ -12,5 +12,19 @@
    "displayOn": [
       "mini",
       "menuBar"
+   ],
+   "preferences": [
+      {
+         "title": "节点名称Code",
+         "type": "text",
+         "key": "nodeName",
+         "default": "create"
+      },
+      {
+         "title": "说明",
+         "type": "text",
+         "key": "readme",
+         "default": "Code填写URL缩写，如：create, programmer, all4all"
+      }
    ]
 }

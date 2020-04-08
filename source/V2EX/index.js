@@ -1,61 +1,120 @@
 const _ = require("underscore")
 const http = require("http")
 const net = require("net")
+const pref = require("pref")
+
+const jsonPref = pref.all()
+
+function getDate(api) {
+
+    const LIMIT = 25
+
+    let entryList = []
+    return http.get(api)
+        .then(function (response) {
+
+            entryList = Object.values(response.data)
+
+            if (entryList == undefined) {
+                return here.miniWindow.set({ title: "Invalid data." })
+            }
+
+            if (entryList.length <= 0) {
+                return here.miniWindow.set({ title: "Entrylist is empty." })
+            }
+            
+            if (entryList.length > LIMIT) {
+                entryList = entryList.slice(0, LIMIT)
+            }
+
+            return entryList
+        })
+}
 
 function updateData() {
-    const LIMIT = 10
-    
+
     here.miniWindow.set({ title: "Updating…" })
-    http.get('https://www.v2ex.com/api/topics/hot.json')
-    .then(function(response) {
-        // console.verbose(JSON.stringify(response.data))
-        const entryList = response.data
-        if (entryList == undefined) {
-            return here.miniWindow.set({ title: "Invalid data." })
-        }
-    
-        if (entryList.length <= 0) {
-            return here.miniWindow.set({ title: "Entrylist is empty." })
-        }
-    
-        if (entryList.length > LIMIT) {
-            entryList = entryList.slice(0, LIMIT)
-        }
-    
-        const topFeed = entryList
+
+    Promise.all([
+        getDate("https://www.v2ex.com/api/topics/hot.json"),
+        getDate("https://www.v2ex.com/api/topics/latest.json"),
+        getDate("https://www.v2ex.com/api/topics/show.json?node_name=" + jsonPref["nodeName"])
+
+    ]).then(function (values) {
+        const topFeed = values[0][0]
+        
         // Mini Window
         here.miniWindow.set({
-            onClick: () => { if (topFeed[0].url != undefined)  { here.openURL(topFeed[0].url) } },
-            title: topFeed[0].title,
-            detail: "V2EX Hot"
+            onClick: () => { if (topFeed.url != undefined)  { here.openURL(topFeed.url) } },
+            title: topFeed.title,
+            detail: "V2EX"
         })
-        here.popover.set(_.map(entryList, (entry, index) => {
-            // console.log(JSON.stringify(entry.member.avatar_large))
-            return {
-                title: entry.title,
-                accessory: {
-                    title: "",
-                    imageURL: "https:" + entry.member.avatar_large,
-                    imageCornerRadius: 4
-                },
-                onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
+
+        here.menuBar.set({
+            title: ""
+        })
+
+        let tabs = [
+            {
+                title: "最热",
+                data: _.map(values[0], (entry, index) => {
+                    // console.log(entry[index]["target"]["title"])
+                    return {
+                        title: entry.title,
+                        accessory: {
+                            title: "",
+                            imageURL: "https:" + entry.member.avatar_large,
+                            imageCornerRadius: 4
+                        },
+                        onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
+                    }
+                })
+            },
+            {
+                title: "全部",
+                data: _.map(values[1], (entry, index) => {
+                    // console.log(entry[index]["target"]["title"])
+                    return {
+                        title: entry.title,
+                        accessory: {
+                            title: "",
+                            imageURL: "https:" + entry.member.avatar_large,
+                            imageCornerRadius: 4
+                        },
+                        onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
+                    }
+                })
+            },
+            {
+                title: jsonPref["nodeName"],
+                data: _.map(values[2], (entry, index) => {
+                    // console.log(entry[index]["target"]["title"])
+                    return {
+                        title: entry.title,
+                        accessory: {
+                            title: "",
+                            imageURL: "https:" + entry.member.avatar_large,
+                            imageCornerRadius: 4
+                        },
+                        onClick: () => { if (entry.url != undefined)  { here.openURL(entry.url) } }
+                    }
+                })
             }
-        }))
-    })
-    .catch(function(error) {
-        console.error(`Error: ${JSON.stringify(error)}`)
-        here.miniWindow.set({ title: JSON.stringify(error) })
-    })
+        ]
+
+        here.popover.set(tabs)
+
+    });
 }
 
 here.on('load', () => {
     updateData()
     // Update every 2 hours
-    setInterval(updateData, 2*3600*1000);
+    setInterval(updateData, 12 * 3600 * 1000)
 })
 
-net.onChange((type) => {
-    console.verbose("Connection type changed:", type)
+net.on('change', (type) => {
+    console.log("Connection type changed:", type)
     if (net.isReachable()) {
         updateData()
     }

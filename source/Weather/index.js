@@ -36,7 +36,7 @@ function updateData() {
 
     // console.log('degreeUnits:' + degreeUnits)
 
-    http.get("https://api.herecdn.com/weather/?location=" + location + "&u=" + degreeUnitsCode)
+    http.get("https://apispeedy.com/weather/?location=" + location + "&u=" + degreeUnitsCode)
     .then((response) => {
 
         const json = response.data

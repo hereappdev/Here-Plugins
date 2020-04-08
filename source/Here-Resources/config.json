@@ -1,0 +1,16 @@
+{
+   "name": "Here Resources",
+   "version": "1.0.0",
+   "description": "Everything about Here",
+   "icon": "icon.png",
+   "identifier": "app.here.hereresources",
+   "createdBy": "Here",
+   "website": "https://here.app",
+   "appcast": "https://plugins.herecdn.com/source/Here-Resources/appcast.xml",
+   "script": "index.js",
+   "defaultCategory": "news",
+   "displayOn": [
+      "mini",
+      "menuBar"
+   ]
+}
