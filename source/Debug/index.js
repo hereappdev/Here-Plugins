@@ -1,6 +1,7 @@
 const pb = require("pasteboard")
 const process = require("process")
 const _ = require("underscore")
+const i18n = require("i18n")
 
 function updateData() {
     const versions = process.versions
@@ -19,17 +20,17 @@ function updateData() {
     })
     let debug = []
     debug.push({ 
-        title: "Reveal Logs in Finder…",
+        title: __("Reveal Logs in Finder…"),
         onClick: () => { process.openLogsFolder() }
     })
     debug.push({ 
-        title: "Reveal Plugins in Finder…",
+        title: __("Reveal Plugins in Finder…"),
         onClick: () => { process.openPluginsFolder() }
     })
     if (typeof(process.checkForUpdates) === "function") { 
         // checkForUpdates function exists
         debug.push({
-            title: "Check for Updates…",
+            title: __("Check for Updates…"),
             onClick: () => { process.checkForUpdates() }
         })
     }
@@ -44,8 +45,8 @@ function updateData() {
     // console.log(JSON.stringify(process.versions.shortVersion))
     // Mini Window
     here.miniWindow.set({
-        title: "Debug Info",
-        detail: "Here " + process.versions.stage,
+        title: __("Debug Info"),
+        detail: `Here (${process.versions.stage})`,
         accessory: {
                 title: "v" + process.versions.shortVersion,
                 detail: "(" + process.versions.buildNumber + ")"
@@ -60,11 +61,11 @@ function updateData() {
     if (typeof(here.popover.set) == "function") {
         here.popover.set([
             {
-                title: "Version",
+                title: __("Version"),
                 data: versionData
             },
             {
-                title: "Debug",
+                title: __("Debug"),
                 data: debug
             }
         ])
