@@ -41,10 +41,10 @@ function updateData() {
         getDate("https://github-trending-api.now.sh/repositories?since=weekly"),
         getDate("https://github-trending-api.now.sh/repositories?since=monthly")
     ]).then(function (values) {
-        console.log(values)
+        // console.log(values)
         const topFeed = values[0][0]
 
-        console.log(topFeed)
+        // console.log(topFeed)
         
         // Mini Window
         here.miniWindow.set({

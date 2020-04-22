@@ -5,8 +5,8 @@ function updateData() {
     const LIMIT = 10
     
     here.miniWindow.set({ title: "Updating…" })
-    
-    here.parseRSSFeed("https://rsshub.app/xueqiu/hots")
+    // source: https://rsshub.app/xueqiu/hots
+    here.parseRSSFeed("https://apispeedy.com/rsshub/xueqiu/hots")
     .then((feed) => {
         if (feed.items.length <= 0) {
             return here.miniWindow.set({ title: "No item found." })
