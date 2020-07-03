@@ -1,1 +1,0 @@
-* API: https://api.herecdn.com/weather/?location=beijing&u=c

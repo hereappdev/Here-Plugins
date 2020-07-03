@@ -1,0 +1,52 @@
+{
+    "schemaVersion": "1.0.0",
+    "plugins": [
+        {
+            "name": "Battery",
+            "repository": "https://github.com/hereappdev/here-official-plugins/tree/master/source/Battery",
+            "label": ["system", "status"],
+            "release": [
+                    {
+                        "tags": false,
+                        "download": "https://github.com/hereappdev/here-official-plugins/raw/master/downloads/Battery.hereplugin",
+                        "hereVersion": "0.10.0"
+                    }
+            ]
+        },
+        {
+            "name": "Netstat",
+            "repository": "https://github.com/hereappdev/here-official-plugins/tree/master/source/Netstat",
+            "label": ["system"],
+            "release": [
+                    {
+                        "tags": false,
+                        "download": "https://github.com/hereappdev/here-official-plugins/raw/master/downloads/Netstat.hereplugin",
+                        "hereVersion": "0.9.0"
+                    }
+            ]
+        },
+        {
+            "name": "Pure Switch",
+            "repository": "https://github.com/FriendsOfHere/pure-switch",
+            "label": ["tools", "productivity"],
+            "release": [
+                    {
+                        "tags": true,
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
+            "name": "SSPai",
+            "repository": "https://github.com/FriendsOfHere/sspai",
+            "label": ["news", "feeds"],
+            "release": [
+                    {
+                        "tags": true,
+                        "binary": "SSPai.hereplugin",
+                        "hereVersion": "0.9.0"
+                    }
+            ]
+        }
+    ]
+}
