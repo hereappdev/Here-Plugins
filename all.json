@@ -2,10 +2,11 @@
     "schemaVersion": "1.0.0",
     "plugins": [
         {
+            "identifier": "app.here.battery",
             "name": "Battery",
             "repository": "https://github.com/hereappdev/here-official-plugins/tree/master/source/Battery",
-            "label": ["system", "status"],
-            "release": [
+            "labels": ["system", "status"],
+            "releases": [
                     {
                         "tags": false,
                         "download": "https://github.com/hereappdev/here-official-plugins/raw/master/downloads/Battery.hereplugin",
@@ -14,10 +15,11 @@
             ]
         },
         {
+            "identifier": "app.here.netstat",
             "name": "Netstat",
             "repository": "https://github.com/hereappdev/here-official-plugins/tree/master/source/Netstat",
-            "label": ["system"],
-            "release": [
+            "labels": ["system"],
+            "releases": [
                     {
                         "tags": false,
                         "download": "https://github.com/hereappdev/here-official-plugins/raw/master/downloads/Netstat.hereplugin",
@@ -26,10 +28,11 @@
             ]
         },
         {
+            "identifier": "foh.pure-switch",
             "name": "Pure Switch",
             "repository": "https://github.com/FriendsOfHere/pure-switch",
-            "label": ["tools", "productivity"],
-            "release": [
+            "labels": ["tools", "productivity"],
+            "releases": [
                     {
                         "tags": true,
                         "hereVersion": "*"
@@ -37,10 +40,11 @@
             ]
         },
         {
+            "identifier": "foh.sspai",
             "name": "SSPai",
             "repository": "https://github.com/FriendsOfHere/sspai",
-            "label": ["news", "feeds"],
-            "release": [
+            "labels": ["news", "feeds"],
+            "releases": [
                     {
                         "tags": true,
                         "binary": "SSPai.hereplugin",
