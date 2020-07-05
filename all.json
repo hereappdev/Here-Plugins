@@ -4,6 +4,7 @@
         {
             "identifier": "app.here.battery",
             "name": "Battery",
+            "description": "Show battery info.",
             "repository": "https://github.com/hereappdev/here-official-plugins/tree/master/source/Battery",
             "labels": ["system", "status"],
             "releases": [
@@ -17,6 +18,7 @@
         {
             "identifier": "app.here.netstat",
             "name": "Netstat",
+            "description": "Network connection info.",
             "repository": "https://github.com/hereappdev/here-official-plugins/tree/master/source/Netstat",
             "labels": ["system"],
             "releases": [
@@ -30,6 +32,7 @@
         {
             "identifier": "foh.pure-switch",
             "name": "Pure Switch",
+            "description": "A powerful here plugin for toggle switches in one place.",
             "repository": "https://github.com/FriendsOfHere/pure-switch",
             "labels": ["tools", "productivity"],
             "releases": [
@@ -42,6 +45,7 @@
         {
             "identifier": "foh.sspai",
             "name": "SSPai",
+            "description": "A highly configurable here plugin for sspai",
             "repository": "https://github.com/FriendsOfHere/sspai",
             "labels": ["news", "feeds"],
             "releases": [
