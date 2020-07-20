@@ -7,11 +7,12 @@ Plugins for [Here]
 [Here] 是一款全新的 macOS 效率工具，目前正在进行 `Beta` 内测。 
 本仓库包含了 [Here] 插件的下载和源码。
 
-![Here for macOS](https://res.here.app/img/screenshot.png)
+![Here for macOS](https://user-images.githubusercontent.com/46374620/87966518-eff49700-caef-11ea-9631-70363d0e1475.png)
 
 ## 相关资源
 
 * 官网：https://here.app
+* **官方插件示例**：https://github.com/hereappdev/Here-Official-Plugins
 * 插件开发文档：https://doc.here.app
 * 发布日志：https://here.app/release-notes/
 * 电报群：[@HereApp]
