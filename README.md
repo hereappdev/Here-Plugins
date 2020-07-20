@@ -7,11 +7,12 @@ English | [简体中文](./README_zh.md) | [Homepage]
 [Here] is a productivity App for macOS, It's in `Beta Testing` now.  
 This repo contains the source code and downloads of [Here] plugins.
 
-![Here for macOS](https://res.here.app/img/screenshot-en.png)
+![Here for macOS](https://user-images.githubusercontent.com/46374620/87966431-da7f6d00-caef-11ea-8b01-0ca3ac3f677f.png)
 
 ## Resources
 
 * Homepage: https://here.app
+* **Here Official Plugins:** https://github.com/hereappdev/Here-Official-Plugins
 * Documentation: https://doc.here.app
 * Release Notes: https://here.app/release-notes/
 * Telegram Group: [@HereApp]
