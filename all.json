@@ -56,7 +56,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Apple-Developer-Releases",
-            "labels": ["tool", "productivity"],
+            "labels": ["news"],
             "releases": [
                     {
                         "tags": false,
@@ -216,7 +216,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Debug",
-            "labels": ["tool", "development"],
+            "labels": ["others", "development"],
             "releases": [
                     {
                         "tags": false,
@@ -232,7 +232,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Empty-Trash",
-            "labels": ["tool", "productivity"],
+            "labels": ["system"],
             "releases": [
                     {
                         "tags": false,
@@ -264,7 +264,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Github-Trending",
-            "labels": ["ranking", "trends", "news"],
+            "labels": ["ranking", "trends"],
             "releases": [
                     {
                         "tags": false,
@@ -328,7 +328,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Here-Resources",
-            "labels": ["tool", "productivity", "news"],
+            "labels": ["others"],
             "releases": [
                     {
                         "tags": false,
@@ -408,7 +408,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/New-File",
-            "labels": ["tool", "productivity"],
+            "labels": ["system"],
             "releases": [
                     {
                         "tags": false,
@@ -535,7 +535,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Screensaver",
-            "labels": ["tool", "productivity", "system"],
+            "labels": ["system"],
             "releases": [
                     {
                         "tags": false,
@@ -551,7 +551,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Show-Hidden-Files",
-            "labels": ["tool", "productivity"],
+            "labels": ["system"],
             "releases": [
                     {
                         "tags": false,
@@ -567,7 +567,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Stocks",
-            "labels": ["tool", "productivity"],
+            "labels": ["trends"],
             "releases": [
                     {
                         "tags": false,
@@ -631,7 +631,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Test",
-            "labels": ["tool", "productivity", "development"],
+            "labels": ["others", "development"],
             "releases": [
                     {
                         "tags": false,
@@ -679,7 +679,7 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Weather",
-            "labels": ["tool", "productivity"],
+            "labels": ["trends"],
             "releases": [
                     {
                         "tags": false,
@@ -695,7 +695,7 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/DouBan-Movie",
-            "labels": ["news", "feeds"],
+            "labels": ["ranking", "trends"],
             "releases": [
                     {
                         "tags": false,
@@ -727,7 +727,7 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Daily-Poetry",
-            "labels": ["tool", "fun"],
+            "labels": ["others", "fun"],
             "releases": [
                     {
                         "tags": false,
@@ -743,7 +743,7 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Daily-Sentence",
-            "labels": ["tool", "fun"],
+            "labels": ["others", "fun"],
             "releases": [
                     {
                         "tags": false,
@@ -759,7 +759,7 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Exchange-Rate",
-            "labels": ["news", "feeds"],
+            "labels": ["trends"],
             "releases": [
                     {
                         "tags": false,
@@ -855,7 +855,7 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/WeXin-Hot-Search",
-            "labels": ["ranking", "trends", "news"],
+            "labels": ["news"],
             "releases": [
                     {
                         "tags": false,
@@ -871,7 +871,7 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Weibo-Hot-Search",
-            "labels": ["ranking", "trends", "news"],
+            "labels": ["news"],
             "releases": [
                     {
                         "tags": false,
