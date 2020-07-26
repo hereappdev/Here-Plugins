@@ -402,6 +402,21 @@
             ]
         },
         {
+            "name": "Meta News",
+            "identifier": "foh.meta-news",
+            "description": "A plugin to generate news plugin",
+            "createdBy": "Lifesign",
+            "website": "https://github.com/FriendsOfHere",
+            "repository": "https://github.com/FriendsOfHere/meta-news",
+            "labels": ["news", "tools"],
+            "releases": [
+                    {
+                        "tags": true,
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
             "name": "Net Stat",
             "identifier": "app.here.netstat",
             "description": "Download/Upload network speed monitor",
@@ -577,6 +592,21 @@
             ]
         },
         {
+            "name": "Spaceship",
+            "identifier": "foh.spaceship",
+            "description": "A simple shortcut Here plugin. inspired by shuttle",
+            "createdBy": "Lifesign",
+            "website": "https://github.com/FriendsOfHere",
+            "repository": "https://github.com/FriendsOfHere/spaceship",
+            "labels": ["productivity", "tools"],
+            "releases": [
+                    {
+                        "tags": true,
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
             "name": "Stocks",
             "identifier": "app.here.stocks",
             "description": "Show stocks everywhere.",
@@ -609,17 +639,16 @@
             ]
         },
         {
-            "name": "SSPai",
-            "identifier": "foh.sspai",
-            "description": "A highly configurable here plugin for sspai",
+            "name": "Sweet Cal",
+            "identifier": "foh.sweet-cal",
+            "description": "A tiny sweet calendar Here plugin",
             "createdBy": "Lifesign",
             "website": "https://github.com/FriendsOfHere",
-            "repository": "https://github.com/FriendsOfHere/sspai",
-            "labels": ["news", "feeds"],
+            "repository": "https://github.com/FriendsOfHere/sweet-cal",
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": true,
-                        "binary": "SSPai.hereplugin",
                         "hereVersion": "*"
                     }
             ]
@@ -828,6 +857,21 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Gold-Price.hereplugin",
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
+            "name": "少数派",
+            "identifier": "foh.sspai",
+            "description": "一个高度配置化的 here 插件，专为少数派设计",
+            "createdBy": "Lifesign",
+            "website": "https://github.com/FriendsOfHere",
+            "repository": "https://github.com/FriendsOfHere/sspai",
+            "labels": ["news", "feeds"],
+            "releases": [
+                    {
+                        "tags": true,
                         "hereVersion": "*"
                     }
             ]
