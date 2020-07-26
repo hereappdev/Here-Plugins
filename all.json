@@ -146,6 +146,22 @@
             ]
         },
         {
+            "name": "CCTV",
+            "identifier": "com.myluoluo.cctv",
+            "description": "显示 CCTV 频道节目单",
+            "createdBy": "myluoluo",
+            "website": "https://github.com/myluoluo",
+            "repository": "https://github.com/hereappdev/Here-Third-Party-Plugins/tree/master/source/CCTV",
+            "labels": ["trends"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://raw.githubusercontent.com/hereappdev/Here-Third-Party-Plugins/master/downloads/CCTV.hereplugin",
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
             "name": "cnBeta",
             "identifier": "app.here.cnbeta",
             "description": "显示 cnBeta 实时热文",
@@ -354,6 +370,22 @@
             ]
         },
         {
+            "name": "Horrible Subs",
+            "identifier": "app.here.ostrichb.hsubmtor",
+            "description": "So bad yet so good~",
+            "createdBy": "ostrichb",
+            "website": "https://github.com/Ostrichbeta",
+            "repository": "https://github.com/hereappdev/Here-Third-Party-Plugins/tree/master/source/Horrible-Subs",
+            "labels": ["others"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://raw.githubusercontent.com/hereappdev/Here-Third-Party-Plugins/master/downloads/Horrible-Subs.hereplugin",
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
             "name": "IP Checker",
             "identifier": "app.here.ipchecker",
             "description": "Check IP address info",
@@ -412,6 +444,22 @@
             "releases": [
                     {
                         "tags": true,
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
+            "name": "Minecraft Server Check",
+            "identifier": "app.here.ostrichb.mcservercheck",
+            "description": "Measure the status of Minecraft server",
+            "createdBy": "ostrichb",
+            "website": "https://github.com/Ostrichbeta",
+            "repository": "https://github.com/hereappdev/Here-Third-Party-Plugins/tree/master/source/Minecraft-Server-Check",
+            "labels": ["tools"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://raw.githubusercontent.com/hereappdev/Here-Third-Party-Plugins/master/downloads/Minecraft-Server-Check.hereplugin",
                         "hereVersion": "*"
                     }
             ]
@@ -713,6 +761,22 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Weather.hereplugin",
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
+            "name": "Yandex Translator",
+            "identifier": "app.here.ostrichb.yandextranslator",
+            "description": "Translate your texts from your pasteboard",
+            "createdBy": "ostrichb",
+            "website": "https://github.com/Ostrichbeta",
+            "repository": "https://github.com/hereappdev/Here-Third-Party-Plugins/tree/master/source/Yandex-Translator",
+            "labels": ["productivity", "tools"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://raw.githubusercontent.com/hereappdev/Here-Third-Party-Plugins/master/downloads/Yandex-Translator.hereplugin",
                         "hereVersion": "*"
                     }
             ]
