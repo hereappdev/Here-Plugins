@@ -1,6 +1,7 @@
 {
     "schemaVersion": "1.0.0",
-    "plugins": [{
+    "plugins": [
+        {
             "name": "App Center Analytics",
             "identifier": "app.here.appcenteranalytics",
             "description": "Show analytics from Visual Studio App Center",
@@ -865,15 +866,15 @@
         },
         {
             "name": "新型冠状病毒疫情追踪",
-            "identifier": "app.here.covid19",
+            "identifier": "app.here.2019ncovstatus",
             "description": "2019新型冠状病毒疫情追踪(腾讯新闻API)",
             "createdBy": "HereCN",
             "website": "https://here.app",
-            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/COVID-19",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/2019-nCoV-Status",
             "labels": ["status", "tracker"],
             "releases": [{
                 "tags": false,
-                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/COVID-19.hereplugin",
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/2019-nCoV-Status.hereplugin",
                 "hereVersion": "*"
             }]
         },
