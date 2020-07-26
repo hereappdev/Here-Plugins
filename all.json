@@ -13,7 +13,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/App-Center-Analytics.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -29,30 +29,30 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/App-Store-Ranking.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
         {
             "name": "Apple Coverage Checker",
-            "identifier": "app.here.appledeveloperreleases",
-            "description": "Show apple developer releases",
+            "identifier": "app.here.applecoveragechecker",
+            "description": "Check the Status of AppleCare on your Apple Devices",
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Apple-Coverage-Checker",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Apple-Coverage-Checker.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
                     }
             ]
         },
         {
             "name": "Apple Developer Releases",
-            "identifier": "app.here.applecoveragechecker",
-            "description": "Check the Status of AppleCare on your Apple Devices",
+            "identifier": "app.here.appledeveloperreleases",
+            "description": "Show Apple developer releases",
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Apple-Developer-Releases",
@@ -61,7 +61,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Apple-Developer-Releases.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -77,7 +77,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Battery.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -93,14 +93,14 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/BBC-News.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
         {
             "name": "bilibili新番时间表",
             "identifier": "app.here.bilibilitimeline",
-            "description": "显示新番剧目播放时间",
+            "description": "显示 bilibili 新番剧目播放时间",
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Bilibili-Timeline",
@@ -109,7 +109,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Bilibili-Timeline.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -120,12 +120,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Bookmark",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Bookmark.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -141,7 +141,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/BTC-Price.hereplugin",
-                        "hereVersion": "1.1.4"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -157,7 +157,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/cnBeta.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -173,7 +173,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/CNN-News.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -189,7 +189,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/CPU.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -200,12 +200,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Currency-Exchange",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Currency-Exchange.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -221,7 +221,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Debug.hereplugin",
-                        "hereVersion": "1.0.7"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -237,7 +237,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Empty-Trash.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -248,12 +248,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Game-2048",
-            "labels": ["game", "fun"],
+            "labels": ["games", "others"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Game-2048.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -269,7 +269,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Github-Trending.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -285,7 +285,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Google-Trends.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -301,7 +301,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Hacker-News.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -317,7 +317,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Hello-Github.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -333,7 +333,23 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Here-Resources.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
+                    }
+            ]
+        },
+        {
+            "name": "Here Test",
+            "identifier": "app.here.heretest",
+            "description": "Here App API Unit Test",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Here-Test",
+            "labels": ["others", "development"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Here-Test.hereplugin",
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -344,12 +360,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/IP-Checker",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/IP-Checker.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -360,12 +376,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/MD5-Encode",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/MD5-Encode.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -381,7 +397,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Memory.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -397,7 +413,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Netstat.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -413,7 +429,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/New-File.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -429,7 +445,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/NPR-News.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -445,7 +461,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/NYTimes-News.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -456,12 +472,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Open-Search",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Open-Search.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -477,7 +493,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Product-Hunt.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -488,12 +504,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Progress",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Progress.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -504,7 +520,7 @@
             "createdBy": "Lifesign",
             "website": "https://github.com/FriendsOfHere",
             "repository": "https://github.com/FriendsOfHere/pure-switch",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": true,
@@ -519,19 +535,19 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/RSSHub-Reader",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/RSSHub-Reader.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
         {
             "name": "ScreenSaver",
             "identifier": "app.here.screensaver",
-            "description": "Turn On ScreenSaver",
+            "description": "Turn on screenSaver",
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Screensaver",
@@ -540,7 +556,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Screensaver.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -556,7 +572,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Show-Hidden-Files.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -572,7 +588,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Stocks.hereplugin",
-                        "hereVersion": "1.3.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -583,12 +599,12 @@
             "website": "https://here.app",
             "description": "Show and calculation on all your subscription services",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Subscriptions",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Subscriptions.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -604,7 +620,7 @@
                     {
                         "tags": true,
                         "binary": "SSPai.hereplugin",
-                        "hereVersion": "0.9.0"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -620,23 +636,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Techmeme-News.hereplugin",
-                        "hereVersion": "1.0.1"
-                    }
-            ]
-        },
-        {
-            "name": "API Unit Test",
-            "identifier": "app.here.test",
-            "description": "Here App API Unit Test",
-            "createdBy": "Here",
-            "website": "https://here.app",
-            "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Test",
-            "labels": ["others", "development"],
-            "releases": [
-                    {
-                        "tags": false,
-                        "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Test.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -647,12 +647,12 @@
             "createdBy": "Here",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/ToDoMVC",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/ToDoMVC.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -668,7 +668,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/V2EX.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -684,7 +684,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Weather.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -700,14 +700,14 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/DouBan-Movie.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
         {
             "name": "掘金开发者头条",
             "identifier": "app.here.juejin",
-            "description": "显示热门文章",
+            "description": "显示掘金热门文章",
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/JueJin",
@@ -716,7 +716,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/JueJin.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -727,12 +727,12 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Daily-Poetry",
-            "labels": ["others", "fun"],
+            "labels": ["others"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Daily-Poetry.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -743,12 +743,12 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Daily-Sentence",
-            "labels": ["others", "fun"],
+            "labels": ["others"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Daily-Sentence.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -764,7 +764,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Exchange-Rate.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -780,7 +780,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Qdaily.hereplugin",
-                        "hereVersion": "1.0.3"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -791,12 +791,12 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/ShanBei-Dictionary",
-            "labels": ["tool", "productivity"],
+            "labels": ["productivity", "tools"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/ShanBei-Dictionary.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -812,7 +812,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/XueQiu.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -828,14 +828,14 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Gold-Price.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         },
         {
             "name": "湾区日报",
             "identifier": "app.here.wanqu",
-            "description": "显示每日文章",
+            "description": "显示湾区日报文章",
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/WanQu",
@@ -844,7 +844,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/WanQu.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -855,12 +855,12 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/WeXin-Hot-Search",
-            "labels": ["news"],
+            "labels": ["ranking"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/WeXin-Hot-Search.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -871,12 +871,12 @@
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/source/Weibo-Hot-Search",
-            "labels": ["news"],
+            "labels": ["ranking"],
             "releases": [
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Weibo-Hot-Search.hereplugin",
-                        "hereVersion": "1.0.1"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -892,7 +892,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/COVID-19.hereplugin",
-                        "hereVersion": "1.0.0"
+                        "hereVersion": "*"
                     }
             ]
         },
@@ -908,7 +908,7 @@
                     {
                         "tags": false,
                         "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/ZhiHu.hereplugin",
-                        "hereVersion": "1.0.2"
+                        "hereVersion": "*"
                     }
             ]
         }
