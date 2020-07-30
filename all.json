@@ -352,6 +352,20 @@
             }]
         },
         {
+            "name": "Mac玩儿法",
+            "identifier": "app.here.waerfa",
+            "description": "显示Mac玩儿法最新文章",
+            "createdBy": "Waerfa",
+            "website": "https://www.waerfa.com",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Waerfa",
+            "labels": ["news", "feeds"],
+            "releases": [{
+                "tags": false,
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Waerfa.hereplugin",
+                "hereVersion": "*"
+            }]
+        },
+        {
             "name": "MD5 Encode",
             "identifier": "app.here.encode",
             "description": "Quick MD5 tools",
