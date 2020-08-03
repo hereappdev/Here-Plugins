@@ -231,6 +231,20 @@
             "description": "Get to the 2048 Tile!",
             "createdBy": "Here",
             "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Game-Chrome-Dino",
+            "labels": ["games", "others"],
+            "releases": [{
+                "tags": false,
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Game-Chrome-Dino.hereplugin",
+                "hereVersion": "*"
+            }]
+        },
+        {
+            "name": "Game Chrome Dino",
+            "identifier": "app.here.gamechromedino",
+            "description": "Chrome Dino (also known as T-Rex Game, or the NO INTERNET GAME)",
+            "createdBy": "Here",
+            "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Game-2048",
             "labels": ["games", "others"],
             "releases": [{
@@ -778,6 +792,20 @@
             "releases": [{
                 "tags": false,
                 "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Qdaily.hereplugin",
+                "hereVersion": "*"
+            }]
+        },
+        {
+            "name": "人民网新闻",
+            "identifier": "app.here.peoplenews",
+            "description": "显示人民网国内、国际、经济、体育等新闻",
+            "createdBy": "HereCN",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/People-News",
+            "labels": ["news", "feeds"],
+            "releases": [{
+                "tags": false,
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/People-News.hereplugin",
                 "hereVersion": "*"
             }]
         },
