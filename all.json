@@ -879,6 +879,20 @@
             }]
         },
         {
+            "name": "微信公众号热文",
+            "identifier": "app.here.weixinhotpost",
+            "description": "显示微信公众号热门文章",
+            "createdBy": "HereCN",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/WeXin-Hot-Post",
+            "labels": ["news", "feeds"],
+            "releases": [{
+                "tags": false,
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/WeXin-Hot-Post.hereplugin",
+                "hereVersion": "*"
+            }]
+        },
+        {
             "name": "微信热搜榜",
             "identifier": "app.here.weixinhotsearch",
             "description": "显示微信热搜关键词",
