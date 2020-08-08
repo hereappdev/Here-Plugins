@@ -656,6 +656,20 @@
             }]
         },
         {
+            "name": "TheTop热门聚合",
+            "identifier": "app.here.thetop",
+            "description": "显示TheTop热门聚合",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/TheTop",
+            "labels": ["news", "feeds"],
+            "releases": [{
+                "tags": false,
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/TheTop.hereplugin",
+                "hereVersion": "*"
+            }]
+        },
+        {
             "name": "ToDoMVC",
             "identifier": "app.here.todomvc",
             "description": "A ToDo webapp",
