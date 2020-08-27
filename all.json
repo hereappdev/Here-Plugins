@@ -86,6 +86,20 @@
             }]
         },
         {
+            "name": "Bilibili排行榜",
+            "identifier": "app.here.bilibiliranking",
+            "description": "显示 Bilibili 排行榜",
+            "createdBy": "HereCN",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Bilibili-Ranking",
+            "labels": ["ranking", "trends"],
+            "releases": [{
+                "tags": false,
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Bilibili-Ranking.hereplugin",
+                "hereVersion": "*"
+            }]
+        },
+        {
             "name": "bilibili新番时间表",
             "identifier": "app.here.bilibilitimeline",
             "description": "显示 bilibili 新番剧目播放时间",
@@ -945,6 +959,20 @@
             "releases": [{
                 "tags": false,
                 "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/2019-nCoV-Status.hereplugin",
+                "hereVersion": "*"
+            }]
+        },
+        {
+            "name": "鱼塘热榜",
+            "identifier": "app.here.yutang",
+            "description": "显示鱼塘热榜内容",
+            "createdBy": "HereCN",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/YuTang",
+            "labels": ["news", "feeds"],
+            "releases": [{
+                "tags": false,
+                "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/YuTang.hereplugin",
                 "hereVersion": "*"
             }]
         },
