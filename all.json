@@ -258,6 +258,22 @@
             ]
         },
         {
+            "name": "Dock Spacer",
+            "identifier": "app.here.dockspacer",
+            "description": "Add custom spacers to your Dock",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Dock-Spacer",
+            "labels": ["tool"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/downloads/Dock-Spacer.hereplugin",
+                        "hereVersion": "1.0.7"
+                    }
+            ]
+        },
+        {
             "name": "Empty Trash",
             "identifier": "app.here.emptytrash",
             "description": "Quick empty trash",
@@ -510,6 +526,22 @@
                     "download": "https://raw.githubusercontent.com/hereappdev/Here-Third-Party-Plugins/master/downloads/Minecraft-Server-Check.hereplugin",
                     "hereVersion": "*"
                 }
+            ]
+        },
+        {
+            "name": "Nyan Cat",
+            "identifier": "app.here.nyancat",
+            "description": "🐱Nyan Cat everywhere",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Nyan-Cat",
+            "labels": ["game", "other"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/downloads/Nyan-Cat.hereplugin",
+                        "hereVersion": "1.0.1"
+                    }
             ]
         },
         {
@@ -859,6 +891,22 @@
                     "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/DouBan-Movie.hereplugin",
                     "hereVersion": "*"
                 }
+            ]
+        },
+        {
+            "name": "黄历(万年历)",
+            "identifier": "app.here.huangli",
+            "description": "显示黄历(万年历)",
+            "createdBy": "HereCN",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/HuangLi",
+            "labels": ["tool"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/downloads/HuangLi.hereplugin",
+                        "hereVersion": "1.0.3"
+                    }
             ]
         },
         {
