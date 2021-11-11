@@ -242,6 +242,22 @@
             ]
         },
         {
+            "name": "Dark Mode Switch",
+            "identifier": "app.here.darkmodeswitch",
+            "description": "Switch between light and dark mode",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Dark-Mode-Switch",
+            "labels": ["others", "development"],
+            "releases": [
+                {
+                    "tags": false,
+                    "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Dark-Mode-Switch.hereplugin",
+                    "hereVersion": "*"
+                }
+            ]
+        },
+        {
             "name": "Debug Info",
             "identifier": "app.here.debug",
             "description": "Show developing info",
@@ -513,22 +529,6 @@
             ]
         },
         {
-            "name": "Nyan Cat",
-            "identifier": "app.here.nyancat",
-            "description": "🐱Nyan Cat everywhere",
-            "createdBy": "Here",
-            "website": "https://here.app",
-            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Nyan-Cat",
-            "labels": ["game", "other"],
-            "releases": [
-                    {
-                        "tags": false,
-                        "download": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/downloads/Nyan-Cat.hereplugin",
-                        "hereVersion": "1.0.1"
-                    }
-            ]
-        },
-        {
             "name": "Net Stat",
             "identifier": "app.here.netstat",
             "description": "Download/Upload network speed monitor",
@@ -574,6 +574,22 @@
                     "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/NPR-News.hereplugin",
                     "hereVersion": "*"
                 }
+            ]
+        },
+        {
+            "name": "Nyan Cat",
+            "identifier": "app.here.nyancat",
+            "description": "🐱Nyan Cat everywhere",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Nyan-Cat",
+            "labels": ["game", "other"],
+            "releases": [
+                    {
+                        "tags": false,
+                        "download": "https://github.com/hereappdev/Here-Official-Plugins/raw/master/downloads/Nyan-Cat.hereplugin",
+                        "hereVersion": "1.0.1"
+                    }
             ]
         },
         {
@@ -672,6 +688,22 @@
             ]
         },
         {
+            "name": "Sleep Display",
+            "identifier": "app.here.sleepdisplay",
+            "description": "Put display to sleep or wake it up.",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Sleep-Display",
+            "labels": ["system"],
+            "releases": [
+                {
+                    "tags": false,
+                    "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Sleep-Display.hereplugin",
+                    "hereVersion": "*"
+                }
+            ]
+        },
+        {
             "name": "Spaceship",
             "identifier": "foh.spaceship",
             "description": "A simple shortcut Here plugin. inspired by shuttle",
@@ -714,6 +746,22 @@
                 {
                     "tags": false,
                     "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Subscriptions.hereplugin",
+                    "hereVersion": "*"
+                }
+            ]
+        },
+        {
+            "name": "Simple Switch",
+            "identifier": "app.here.switch",
+            "createdBy": "Here",
+            "website": "https://here.app",
+            "description": "All in one simple switch",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/Switch",
+            "labels": ["productivity", "tools"],
+            "releases": [
+                {
+                    "tags": false,
+                    "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Switch.hereplugin",
                     "hereVersion": "*"
                 }
             ]
@@ -784,7 +832,7 @@
         {
             "name": "V2EX",
             "identifier": "app.here.v2ex",
-            "description": "快速查看 V2EX 内容",
+            "description": "Quick view V2EX.com",
             "createdBy": "HereCN",
             "website": "https://here.app",
             "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/V2EX",
@@ -905,6 +953,22 @@
                 {
                     "tags": false,
                     "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/Daily-Sentence.hereplugin",
+                    "hereVersion": "*"
+                }
+            ]
+        },
+        {
+            "name": "农历(万年历)",
+            "identifier": "app.here.nongli",
+            "description": "农历(万年历)",
+            "createdBy": "HereCN",
+            "website": "https://here.app",
+            "repository": "https://github.com/hereappdev/Here-Official-Plugins/tree/master/source/NongLi",
+            "labels": ["others"],
+            "releases": [
+                {
+                    "tags": false,
+                    "download": "https://raw.githubusercontent.com/hereappdev/Here-Official-Plugins/master/downloads/NongLi.hereplugin",
                     "hereVersion": "*"
                 }
             ]
